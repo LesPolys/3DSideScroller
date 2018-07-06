@@ -54,6 +54,8 @@ namespace KinematicCharacterController.Walkthrough.LandingLeavingGround
                 lookInputVector = Vector3.zero;
             }
 
+
+
             // Input for zooming the camera (disabled in WebGL because it can cause problems)
             float scrollInput = -Input.GetAxis(MouseScrollInput);
 #if UNITY_WEBGL
