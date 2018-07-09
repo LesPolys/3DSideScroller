@@ -4,8 +4,6 @@ using UnityEngine;
 using KinematicCharacterController;
 using System;
 
-namespace KinematicCharacterController.Walkthrough.LandingLeavingGround
-{
     public struct PlayerCharacterInputs
     {
         public float MoveAxisForward;
@@ -36,6 +34,9 @@ namespace KinematicCharacterController.Walkthrough.LandingLeavingGround
 
         [Header("Misc")]
         public Vector3 Gravity = new Vector3(0, -30f, 0);
+        private Vector3 BaseGravity = new Vector3(0, -30f, 0);
+        public Vector3 jumpStartMultiplier = new Vector3(0,-25f,0);
+        public Vector3 jumpEndMultiplier = new Vector3(0, -25f, 0);
         public Transform MeshRoot;
 
         public Vector3 _moveInputVector;
@@ -48,6 +49,13 @@ namespace KinematicCharacterController.Walkthrough.LandingLeavingGround
         private bool _doubleJumpConsumed = false;
         private bool _canWallJump = false;
         private Vector3 _wallJumpNormal;
+
+
+        void OnEditorUpdate()
+        {
+
+            
+        }
 
         /// <summary>
         /// This is called every frame by MyPlayer in order to tell the character what its inputs are
@@ -112,6 +120,10 @@ namespace KinematicCharacterController.Walkthrough.LandingLeavingGround
             Vector3 targetMovementVelocity = Vector3.zero;
             if (Motor.GroundingStatus.IsStableOnGround)
             {
+
+                //Reset Gravity to base
+                Gravity = BaseGravity;
+
                 // Reorient velocity on slope
                 currentVelocity = Motor.GetDirectionTangentToSurface(currentVelocity, Motor.GroundingStatus.GroundNormal) * currentVelocity.magnitude;
 
@@ -141,6 +153,18 @@ namespace KinematicCharacterController.Walkthrough.LandingLeavingGround
                     currentVelocity += velocityDiff * AirAccelerationSpeed * deltaTime;
                 }
 
+               
+
+                if (currentVelocity.y < 0)
+                { // if falling
+                    Gravity = jumpEndMultiplier;
+                }
+                else if (currentVelocity.y > 0)
+                {
+                    Gravity = jumpStartMultiplier;
+                }
+             
+
                 // Gravity
                 currentVelocity += Gravity * deltaTime;
 
@@ -163,6 +187,9 @@ namespace KinematicCharacterController.Walkthrough.LandingLeavingGround
 
                             // Add to the return velocity and reset jump state
                             currentVelocity += (Motor.CharacterUp * JumpSpeed) - Vector3.Project(currentVelocity, Motor.CharacterUp);
+
+                     
+
                             _jumpRequested = false;
                             _doubleJumpConsumed = true;
                             _jumpedThisFrame = true;
@@ -283,4 +310,3 @@ namespace KinematicCharacterController.Walkthrough.LandingLeavingGround
             Debug.Log("Left ground");
         }
     }
-}

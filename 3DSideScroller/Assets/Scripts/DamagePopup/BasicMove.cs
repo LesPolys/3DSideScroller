@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BasicMove : MonoBehaviour {
 
+
+    public GameObject FloatingDamageText;
+
 	// Use this for initialization
 	void Awake () {
 		DamagePopUpController.Initialize ();	
@@ -28,7 +31,7 @@ public class BasicMove : MonoBehaviour {
 		}
 
 		if(Input.GetKeyDown(KeyCode.Space)){
-			DamagePopUpController.CreatFloatingText (Random.Range (1, 100).ToString(), transform);
+			//DamagePopUpController.CreatFloatingText (Random.Range (1, 100).ToString(), transform);
 		}
 
 	}
