@@ -102,7 +102,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4274588085399504}
-  - component: {fileID: 136164074382073412}
   - component: {fileID: 114501334140070714}
   - component: {fileID: 143170399264078778}
   m_Layer: 0
@@ -466,6 +465,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  Gravity: 0
+  _groundChecker: {fileID: 0}
+  GroundDistance: 0.2
+  Ground:
+    serializedVersion: 2
+    m_Bits: 0
+  JumpHeight: 2
+  DashDistance: 5
+  Drag: {x: 0, y: 0, z: 0}
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 0
+  startTimeBetweenLightAttack: 0
+  lightAttackPos: {fileID: 0}
+  lightAttackRange: 0
 --- !u!114 &114733363478049804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -579,19 +593,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_maskType: 0
---- !u!136 &136164074382073412
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1890025696160742}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.9639628
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.024098754, z: 0}
 --- !u!143 &143170399264078778
 CharacterController:
   m_ObjectHideFlags: 1

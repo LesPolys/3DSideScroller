@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using EZCameraShake;
 
 
 // This is just a simple "player" script that rotates and colors a cube
@@ -12,20 +13,63 @@ public class Player : MonoBehaviour
 	public PlayerActions Actions { get; set; }
 
     private CharacterController _controller;
+    private Animator _animator;
 
+    private enum PlayerStates {IDLE, WALKING, ATTACK_LIGHT, ATTACK_HEAVY, ATTACK_MAGIC, JUMP, BLOCK , HIT, DEAD };
+    PlayerStates currentState = PlayerStates.IDLE;
 
     [SerializeField]
     float moveSpeed = 4f;
 
     Vector3 forward, right, lastCurrent;
 
+    #region Jumping/Grounding
+    private Vector3 _velocity;
+    public float Gravity;
+    public Transform _groundChecker;
+    public float GroundDistance = 0.2f;
+    public LayerMask Ground;
+    private bool _isGrounded = true;
+    public float JumpHeight = 2f;
+    #endregion
 
+    #region Dashing
+    public float DashDistance = 5f;
+    public Vector3 Drag;
+    #endregion //TEST DONT REAL NEED
+
+    #region MOVEMENTTYPES
     private enum MoveTypes {FULLROT, LTTP, CC, EOE };
     private MoveTypes currMoveType = MoveTypes.LTTP;
-    private float angleLTTP;
+    private float FULLROT;
+    #endregion
 
-      void Awake()
+    public LayerMask enemyMask; //forAttacks and knowing about enemies
+
+    #region LIGHTATTACK
+    private float timeBetweenLightAttack; //stop button mashing
+    public float startTimeBetweenLightAttack;
+    public Transform lightAttackPos;
+    public float lightAttackRange;
+    #endregion
+
+    #region HEAVYATTACK
+    private float timeBetweenHeavyAttack; //stop button mashing
+    public float startTimeBetweenHeavyAttack;
+    public Transform heavyAttackPos;
+    public float heavyAttackRange;
+    #endregion
+
+    #region MAGICATTACK
+    #endregion
+
+    #region BLOCK
+    #endregion
+
+
+    void Awake()
     {
+        _animator = GetComponent<Animator>();
         _controller = GetComponent<CharacterController>();
 
         forward = Camera.main.transform.forward;
@@ -57,6 +101,30 @@ public class Player : MonoBehaviour
     void Update()
 	{
 
+        Animate();
+        HandleInput();
+
+        _isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore); // Check if grounded to reset velocity
+        if (_isGrounded && _velocity.y < 0)
+            _velocity.y = 0f;
+
+
+
+        _velocity.y += Gravity * Time.deltaTime; //add gravity to velocity
+
+
+        #region DASHDRAG
+        _velocity.x /= 1 + Drag.x * Time.deltaTime;
+        _velocity.y /= 1 + Drag.y * Time.deltaTime;
+        _velocity.z /= 1 + Drag.z * Time.deltaTime;
+        #endregion
+
+        _controller.Move(_velocity * Time.deltaTime); //move agent down
+
+    }
+
+    void HandleInput()
+    {
 
         if (Actions.Start.WasPressed)
         {
@@ -64,10 +132,110 @@ public class Player : MonoBehaviour
         }
 
 
-		if(Actions.Move){
+        if (Actions.Move)
+        {
             Move();
-		}
-	}
+        }
+
+
+        if (Actions.A && _isGrounded)
+        { //jump
+            _velocity.y += Mathf.Sqrt(JumpHeight * -2f * Gravity);
+
+        }
+
+        if (Actions.B)
+        {
+
+        }
+
+
+        if (timeBetweenLightAttack <= 0) { 
+            if (Actions.X)
+            {
+                //CameraShaker.Instance.ShakeOnce(1f, 1f, 0.1f, 0.1f);
+                //  Debug.Log("Dash");
+                //  _velocity += Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
+                Collider[] enemiesToDamage = Physics.OverlapSphere(lightAttackPos.position, lightAttackRange, enemyMask);
+               
+                for (int i = 0; i < enemiesToDamage.Length; i++)
+                {
+                    enemiesToDamage[i].GetComponent<TestEnemy>().Damage(1);
+                }
+                timeBetweenLightAttack = startTimeBetweenLightAttack;
+            }
+           
+        }
+        else
+        {
+            timeBetweenLightAttack -= Time.deltaTime;
+        }
+
+
+        if (timeBetweenHeavyAttack <= 0)
+        {
+            if (Actions.Y)
+            {
+                //CameraShaker.Instance.ShakeOnce(1f, 1f, 0.1f, 0.1f);
+                //  Debug.Log("Dash");
+                //  _velocity += Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
+                Collider[] enemiesToDamage = Physics.OverlapSphere(heavyAttackPos.position, heavyAttackRange, enemyMask);
+              
+                for (int i = 0; i < enemiesToDamage.Length; i++)
+                {
+                    enemiesToDamage[i].GetComponent<TestEnemy>().Damage(2);
+                }
+                timeBetweenHeavyAttack = startTimeBetweenHeavyAttack;
+            }
+        }
+        else
+        {
+            timeBetweenHeavyAttack -= Time.deltaTime;
+        }
+
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(lightAttackPos.position, lightAttackRange);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(heavyAttackPos.position, heavyAttackRange);
+
+    }
+
+    void Animate()
+    {
+        switch (currentState)
+        {
+            case PlayerStates.IDLE:
+                
+                break;
+
+            case PlayerStates.WALKING:
+                break;
+
+            case PlayerStates.ATTACK_LIGHT:
+                break;
+
+            case PlayerStates.ATTACK_HEAVY:
+                break;
+
+            case PlayerStates.ATTACK_MAGIC:
+                break;
+
+            case PlayerStates.BLOCK:
+                break;
+
+            case PlayerStates.HIT:
+                break;
+
+            case PlayerStates.DEAD:
+                break;
+
+        }
+    }
 
     void Move()
     {
@@ -82,15 +250,17 @@ public class Player : MonoBehaviour
 
         switch (currMoveType)
         {
-          
 
+            #region FULLROT
             case MoveTypes.FULLROT:
                 //Set Faceing of Player
                 rotHeading = Vector3.Normalize(rightMovement + upMovement);
                 transform.forward = rotHeading;
                 _controller.Move(heading * Time.deltaTime * moveSpeed); // move the player
                 break;
+            #endregion
 
+            #region LTTP
             case MoveTypes.LTTP:
                 //rotHeading = Vector3.Normalize(rightMovement + upMovement);
                
@@ -189,9 +359,6 @@ public class Player : MonoBehaviour
                     
                 }
 
-
-
-
                 if (rotHeading != Vector3.zero)
                 {
                     transform.forward = rotHeading;
@@ -207,14 +374,28 @@ public class Player : MonoBehaviour
 
 
                 break;
+            #endregion
 
-            case MoveTypes.CC:
+            #region CC
+            case MoveTypes.CC: 
+
                 rotHeading = Vector3.Normalize(rightMovement);
-                transform.forward = rotHeading;
-                _controller.Move(heading * Time.deltaTime * moveSpeed); // move the player
-                break;
 
+                if (rightMovement != Vector3.zero) // check for the case where we arnt hitting a left or right key
+                {
+                    transform.forward = rotHeading;
+                    lastCurrent = rotHeading;
+                    
+                }
+                _controller.Move(heading * Time.deltaTime * moveSpeed); // move the player
+
+
+                break;
+                #endregion
         }
+
+
+      
 
 
     }
@@ -229,6 +410,21 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    public void Hit(bool unblockable)
+    {
+
+        if (unblockable)
+        {
+
+        }
+        else
+        {
+
+        }
+
+    }
+
 
 
 

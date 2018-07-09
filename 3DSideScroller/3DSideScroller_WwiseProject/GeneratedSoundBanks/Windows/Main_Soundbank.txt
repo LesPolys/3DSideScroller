@@ -1,9 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	1068347553	Music_Test			\Default Work Unit\Music_Test	
-
-Audio Bus	ID	Name			Wwise Object Path	Notes
-	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
-
-In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	269678924	Curb	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Curb_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Curb\Curb		4621744
-
