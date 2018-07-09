@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4623FE79-9402-412D-9413-FCC5AEED9A88}" SchemaVersion="85">
+	<InteractiveMusic>
+		<WorkUnit Name="Default Work Unit" ID="{4623FE79-9402-412D-9413-FCC5AEED9A88}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicSegment Name="Curb" ID="{1545C301-5888-4175-9CB9-233F9FC62047}" ShortID="1014316034">
+					<PropertyList>
+						<Property Name="EndPosition" Type="Real64" Value="26200"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{AE5F18A1-CAEF-46D8-B1FD-7C6FF2FDAF75}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3968CD09-6A35-4CC2-BFA0-65A59FA8D72F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="Curb" ID="{0FFDEF28-7266-47A3-BDE5-36A63C9A0BDE}" ShortID="820364296">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3968CD09-6A35-4CC2-BFA0-65A59FA8D72F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Curb" ID="{556110C5-2C5D-4818-98A3-FCA10FA50C43}" ShortID="269678924">
+									<Language>SFX</Language>
+									<AudioFile>Curb.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{FA1C1113-254C-4A0C-9F3E-EAEF59F721AD}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<SequenceList>
+								<MusicTrackSequence Name="" ID="{3E520075-18E1-4EDB-9A3D-53B97D709E22}">
+									<ClipList>
+										<MusicClip Name="Curb" ID="{63A7AE4B-1535-4A9D-BAF2-1F03913579F8}">
+											<PropertyList>
+												<Property Name="EndTrimOffset" Type="Real64" Value="26200"/>
+												<Property Name="FadeInMode" Type="int16" Value="0"/>
+												<Property Name="FadeOutMode" Type="int16" Value="0"/>
+											</PropertyList>
+											<AudioSourceRef Name="Curb" ID="{556110C5-2C5D-4818-98A3-FCA10FA50C43}"/>
+										</MusicClip>
+									</ClipList>
+								</MusicTrackSequence>
+							</SequenceList>
+						</MusicTrack>
+					</ChildrenList>
+					<CueList>
+						<MusicCue Name="Entry Cue" ID="{A6F7539C-5D7E-4B3C-ACB4-BBDCF702A00C}"/>
+						<MusicCue Name="Exit Cue" ID="{D617AC4C-CD14-4E86-AB1E-958615561AD1}">
+							<PropertyList>
+								<Property Name="CueType" Type="int16" Value="1"/>
+								<Property Name="TimeMs" Type="Real64" Value="26200"/>
+							</PropertyList>
+						</MusicCue>
+					</CueList>
+				</MusicSegment>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>
