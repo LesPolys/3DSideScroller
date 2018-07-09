@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     float moveSpeed = 4f;
 
-    Vector3 forward, right;
+    Vector3 forward, right, lastCurrent;
 
 
     private enum MoveTypes {FULLROT, LTTP, CC, EOE };
@@ -92,8 +92,120 @@ public class Player : MonoBehaviour
                 break;
 
             case MoveTypes.LTTP:
-                rotHeading = Vector3.Normalize(rightMovement + upMovement);
-                print(rotHeading);
+                //rotHeading = Vector3.Normalize(rightMovement + upMovement);
+               
+
+                //Up
+                if (Actions.Move.Y < 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5 )
+                {
+                    rotHeading = new Vector3(0.7f, 0.0f, 0.7f);
+
+                }
+
+                //Down
+
+                if (Actions.Move.Y > 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5)
+                {
+                    rotHeading = new Vector3(-0.7f, 0.0f,- 0.7f);
+
+                }
+
+                //Left
+
+                if (Actions.Move.X < 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
+                {
+                    rotHeading = new Vector3(-0.7f, 0.0f, 0.7f);
+
+                }
+
+                //Right
+
+                if (Actions.Move.X > 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
+                {
+                    rotHeading = new Vector3(0.7f, 0.0f, -0.7f);
+
+                }
+
+                //UPLEFT
+
+                if (Actions.Move.X < 0 && Actions.Move.Y <= -0.20 && Actions.Move.Y >= -0.75)
+                {
+                    rotHeading = new Vector3(0.1f, 0.0f, 1.0f);
+
+                }
+
+                //UPRIGHT
+
+                if (Actions.Move.X > 0 && Actions.Move.Y <= -0.20 && Actions.Move.Y >= -0.75)
+                {
+                    rotHeading = new Vector3(1.0f, 0.0f, 0.1f);
+
+                }
+
+                //DOWNLEFT
+
+                if (Actions.Move.X < 0 && Actions.Move.Y >= 0.20 && Actions.Move.Y <= 0.75)
+                {
+
+                    rotHeading = new Vector3(-1.0f, 0.0f, 0.1f);
+                }
+
+                //DOWNRIGHT
+
+                if (Actions.Move.X > 0 && Actions.Move.Y >= 0.20 && Actions.Move.Y <= 0.75)
+                {
+                    rotHeading = new Vector3(0.1f, 0.0f, -1.0f);
+
+                }
+
+                //Up
+                if (Actions.Move.Y < 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5)
+                {
+                    rotHeading = new Vector3(0.7f, 0.0f, 0.7f);
+
+                }
+
+                //Down
+
+                if (Actions.Move.Y > 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5)
+                {
+                    rotHeading = new Vector3(-0.7f, 0.0f, -0.7f);
+
+                }
+
+                //Left
+
+                if (Actions.Move.X < 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
+                {
+                    rotHeading = new Vector3(-0.7f, 0.0f, 0.7f);
+
+                }
+
+                //Right
+
+                if (Actions.Move.X > 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
+                {
+                    rotHeading = new Vector3(0.7f, 0.0f, -0.7f);
+                    
+                }
+
+
+
+
+                if (rotHeading != Vector3.zero)
+                {
+                    transform.forward = rotHeading;
+                    lastCurrent = rotHeading;
+                    _controller.Move(rotHeading * Time.deltaTime * moveSpeed); // move the player
+
+                }
+                else
+                {
+                    _controller.Move(lastCurrent * Time.deltaTime * moveSpeed); // move the player
+
+                }
+
+
                 break;
 
             case MoveTypes.CC:
