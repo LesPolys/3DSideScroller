@@ -5,13 +5,18 @@ using TMPro;
 
 public class TestEnemy : MonoBehaviour {
 
-    public TextMeshPro healthText;
-
+   
+    public GameObject DamageText;
    
 
     [SerializeField]
     float moveSpeed = 4f;
     float health = 10;
+
+    enum States {SEARCHING, TRACKING }
+    States currState = States.SEARCHING;
+    LayerMask playerMask;
+    GameObject target;
 
     private CharacterController _controller;
 
@@ -30,15 +35,29 @@ public class TestEnemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        switch (currState)
+        {
+
+            case States.SEARCHING:
+              //  target  Physics.OverlapSphere(transform.position, playerMask);
+
+                break;
+            case States.TRACKING:
+                break;
+
+
+        }
        
-       // _controller.Move(transform.forward * Time.deltaTime * moveSpeed);
-        healthText.text = health.ToString();
+
 
     }
 
+    
+
     public void Damage(int damage)
     {
-       // print("HELLO");
         health -= damage;
+        GameObject popup = Instantiate(DamageText, this.transform.position, Quaternion.identity, transform);
+        popup.GetComponentInChildren<TextMeshPro>().text = damage.ToString();
     }
 }
