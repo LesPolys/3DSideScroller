@@ -1,9 +1,26 @@
 Event	ID	Name			Wwise Object Path	Notes
+	751122599	Player_LightAttack			\Default Work Unit\Player\Attack\Player_LightAttack	
 	1068347553	Music_Test			\Default Work Unit\Music_Test	
+	1305133589	Player_Jump			\Default Work Unit\Player\Jump\Player_Jump	
+	1833036836	Player_Block			\Default Work Unit\Player\Hit\Player_Block	
+	2074073782	Player_Damage			\Default Work Unit\Player\Hit\Player_Damage	
+	3816881566	Player_HeavyAttack			\Default Work Unit\Player\Attack\Player_HeavyAttack	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	398828362	Curb	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Curb_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Curb\Curb		4621744
+	18194984	Player_HeavyAttack_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_HeavyAttack_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_HeavyAttack\Player_HeavyAttack_03		133184
+	75773141	Player_Jump_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Jump_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Jump\Player_Jump\Player_Jump_01		52032
+	273365161	Player_Block_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Block_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hit\Player_Block\Player_Block_01		79936
+	313078258	Player_HeavyAttack_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_HeavyAttack_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_HeavyAttack\Player_HeavyAttack_01		124480
+	396509472	Player_HeavyAttack_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_HeavyAttack_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_HeavyAttack\Player_HeavyAttack_02		132160
+	397474051	Icepick_July 5_V1	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Icepick_July 5_V1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Icepick_July 5_V1\Icepick_July 5_V1		9777664
+	418150509	Player_LightAttack_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_LightAttack_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_LightAttack\Player_LightAttack_01		76224
+	527821656	Player_Damage_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Damage_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hit\Player_Damage\Player_Damage_02		87104
+	534963747	Player_Jump_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Jump_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Jump\Player_Jump\Player_Jump_02		46528
+	767889989	Player_Block_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Block_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hit\Player_Block\Player_Block_02		97344
+	800335321	Player_LightAttack_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_LightAttack_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_LightAttack\Player_LightAttack_02		80960
+	918671085	Player_Damage_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Damage_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hit\Player_Damage\Player_Damage_01		90176
+	920939829	Player_LightAttack_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_LightAttack_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_LightAttack\Player_LightAttack_03		79936
 

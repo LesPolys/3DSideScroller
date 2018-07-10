@@ -16,5 +16,72 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
+		<SoundBank Id="3200950630" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Soundbank_01</ObjectPath>
+			<ShortName>Soundbank_01</ShortName>
+			<Path>Soundbank_01.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1068347553" Name="Music_Test" ObjectPath="\Events\Default Work Unit\Music_Test"/>
+				<Event Id="1833036836" Name="Player_Block" ObjectPath="\Events\Default Work Unit\Player\Hit\Player_Block"/>
+				<Event Id="2074073782" Name="Player_Damage" ObjectPath="\Events\Default Work Unit\Player\Hit\Player_Damage"/>
+				<Event Id="3816881566" Name="Player_HeavyAttack" ObjectPath="\Events\Default Work Unit\Player\Attack\Player_HeavyAttack"/>
+				<Event Id="1305133589" Name="Player_Jump" ObjectPath="\Events\Default Work Unit\Player\Jump\Player_Jump"/>
+				<Event Id="751122599" Name="Player_LightAttack" ObjectPath="\Events\Default Work Unit\Player\Attack\Player_LightAttack"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="18194984" Language="SFX">
+					<ShortName>Player_HeavyAttack_03.wav</ShortName>
+					<Path>SFX\Player_HeavyAttack_03_1C9C67B2.wem</Path>
+				</File>
+				<File Id="75773141" Language="SFX">
+					<ShortName>Player_Jump_01.wav</ShortName>
+					<Path>SFX\Player_Jump_01_1C9C67B2.wem</Path>
+				</File>
+				<File Id="273365161" Language="SFX">
+					<ShortName>Player_Block_01.wav</ShortName>
+					<Path>SFX\Player_Block_01_1C9C67B2.wem</Path>
+				</File>
+				<File Id="313078258" Language="SFX">
+					<ShortName>Player_HeavyAttack_01.wav</ShortName>
+					<Path>SFX\Player_HeavyAttack_01_1C9C67B2.wem</Path>
+				</File>
+				<File Id="396509472" Language="SFX">
+					<ShortName>Player_HeavyAttack_02.wav</ShortName>
+					<Path>SFX\Player_HeavyAttack_02_1C9C67B2.wem</Path>
+				</File>
+				<File Id="397474051" Language="SFX">
+					<ShortName>Icepick_July 5_V1.wav</ShortName>
+					<Path>SFX\Icepick_July 5_V1_F17FB28C.wem</Path>
+				</File>
+				<File Id="418150509" Language="SFX">
+					<ShortName>Player_LightAttack_01.wav</ShortName>
+					<Path>SFX\Player_LightAttack_01_1C9C67B2.wem</Path>
+				</File>
+				<File Id="527821656" Language="SFX">
+					<ShortName>Player_Damage_02.wav</ShortName>
+					<Path>SFX\Player_Damage_02_1C9C67B2.wem</Path>
+				</File>
+				<File Id="534963747" Language="SFX">
+					<ShortName>Player_Jump_02.wav</ShortName>
+					<Path>SFX\Player_Jump_02_1C9C67B2.wem</Path>
+				</File>
+				<File Id="767889989" Language="SFX">
+					<ShortName>Player_Block_02.wav</ShortName>
+					<Path>SFX\Player_Block_02_1C9C67B2.wem</Path>
+				</File>
+				<File Id="800335321" Language="SFX">
+					<ShortName>Player_LightAttack_02.wav</ShortName>
+					<Path>SFX\Player_LightAttack_02_1C9C67B2.wem</Path>
+				</File>
+				<File Id="918671085" Language="SFX">
+					<ShortName>Player_Damage_01.wav</ShortName>
+					<Path>SFX\Player_Damage_01_1C9C67B2.wem</Path>
+				</File>
+				<File Id="920939829" Language="SFX">
+					<ShortName>Player_LightAttack_03.wav</ShortName>
+					<Path>SFX\Player_LightAttack_03_1C9C67B2.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

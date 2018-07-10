@@ -5,18 +5,106 @@
 			<ChildrenList>
 				<Event Name="Music_Test" ID="{FFB68F6E-AC11-4D47-8234-B742C04578FC}">
 					<ChildrenList>
-						<Action Name="" ID="{8076DC2F-AAAC-4F59-B053-A31C02AD2D61}" ShortID="855729014">
+						<Action Name="" ID="{AE9238AC-C78E-410C-B2FA-FC19401C50FF}" ShortID="1045490103">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Curb" ID="{D0714D91-8CE4-4D24-93E9-F69ACDF783C9}" WorkUnitID="{C70FC4DB-5732-4249-BDF9-044646307A56}"/>
+									<ObjectRef Name="Icepick_July 5_V1" ID="{66502218-87A1-4D98-8162-BA7D38D59976}" WorkUnitID="{C70FC4DB-5732-4249-BDF9-044646307A56}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="Player" ID="{12F787C2-D870-417D-80DE-AB65ACF0C39D}" ShortID="788026059">
+					<ChildrenList>
+						<Folder Name="Footsteps" ID="{BE858B36-F2A6-4D6C-893E-FEFAC00883A0}" ShortID="120104406"/>
+						<Folder Name="Attack" ID="{922BD491-765A-439D-8DB0-16C5E294F3FE}" ShortID="685001950">
+							<ChildrenList>
+								<Event Name="Player_LightAttack" ID="{6FC2E34A-04C4-4E11-BD6A-C3A0C3F2CFC2}">
+									<ChildrenList>
+										<Action Name="" ID="{5EDBA198-8B1B-496B-8F3E-06C7D039A59E}" ShortID="45259221">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_LightAttack" ID="{9A1012D4-2944-4A2E-86B6-C3A177599191}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Player_HeavyAttack" ID="{D7344239-652C-4CE1-8621-D671E5D7B94A}">
+									<ChildrenList>
+										<Action Name="" ID="{35D9D387-5977-44DB-9835-91D3D02E3136}" ShortID="910149622">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_HeavyAttack" ID="{CE4CB6AA-A514-49AB-8E39-EFF1DFF288E3}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Hit" ID="{C9D6A9C5-0503-4027-AF34-6EE9E2F8B6FF}" ShortID="741928674">
+							<ChildrenList>
+								<Event Name="Player_Block" ID="{C47206EC-7363-4DFC-A684-09153651FD1A}">
+									<ChildrenList>
+										<Action Name="" ID="{27D597BC-820E-4B83-9EFA-62F3C5851DCA}" ShortID="522564640">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Block" ID="{DA44EEBE-B0D7-479C-A5AC-AFCF0ADA35BD}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Player_Damage" ID="{F226C327-2993-4AB6-B6C8-2E48FF82F762}">
+									<ChildrenList>
+										<Action Name="" ID="{6BC1A54A-63C1-4A31-ACFF-9C457CE345EC}" ShortID="974285422">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Damage" ID="{0F1978B8-3719-4277-8988-6AA8752D353D}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Pickup" ID="{949B8B60-45DE-46D5-A182-084A474B58EC}" ShortID="985899541"/>
+						<Folder Name="Jump" ID="{104F663C-5144-438B-AAC2-D0C4CB2A985F}" ShortID="938110325">
+							<ChildrenList>
+								<Event Name="Player_Jump" ID="{3AF15E33-E12B-402D-BCA0-017DB51B60FC}">
+									<ChildrenList>
+										<Action Name="" ID="{5FA67CFE-5486-46F0-8681-71C575AA83C3}" ShortID="162929319">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Jump" ID="{2C05E539-5BF1-4D27-8A0C-FEA8A5A2A08E}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

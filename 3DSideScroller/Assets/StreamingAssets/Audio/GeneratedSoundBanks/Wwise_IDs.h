@@ -11,6 +11,22 @@
 
 namespace AK
 {
+    namespace EVENTS
+    {
+        static const AkUniqueID MUSIC_TEST = 1068347553U;
+        static const AkUniqueID PLAYER_BLOCK = 1833036836U;
+        static const AkUniqueID PLAYER_DAMAGE = 2074073782U;
+        static const AkUniqueID PLAYER_HEAVYATTACK = 3816881566U;
+        static const AkUniqueID PLAYER_JUMP = 1305133589U;
+        static const AkUniqueID PLAYER_LIGHTATTACK = 751122599U;
+    } // namespace EVENTS
+
+    namespace BANKS
+    {
+        static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID SOUNDBANK_01 = 3200950630U;
+    } // namespace BANKS
+
     namespace BUSSES
     {
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
