@@ -164,7 +164,7 @@ public class PlayerManager : MonoBehaviour
 		Destroy( player.gameObject );
 	}
 
-
+    /*
 	void OnGUI()
 	{
 		const float h = 22.0f;
@@ -178,5 +178,5 @@ public class PlayerManager : MonoBehaviour
 			GUI.Label( new Rect( 10, y, 300, y + h ), "Press a button or a/s/d/f key to join!" );
 			y += h;
 		}
-	}
+	}*/
 }

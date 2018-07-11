@@ -56,7 +56,7 @@ public class Slicer : Enemy {
 
             if (ac.animationClips[i].name == "slice")        //If it has the same name as your clip
             {
-               startTimeBetweenAttack = ac.animationClips[i].length;
+               startTimeBetweenAttack = ac.animationClips[i].length + 1.0f;
             }
 
         }
@@ -131,11 +131,14 @@ public class Slicer : Enemy {
                         for (int i = 0; i < playersToDamage.Length; i++)
                         {
 
-                         
+                            if (playersToDamage[i].GetComponent<Player>() != null)
                                 playersToDamage[i].GetComponent<Player>().Damage(1);
-                            
 
-                        }
+                            if (playersToDamage[i].GetComponent<Enemy>() != null)
+                                playersToDamage[i].GetComponent<Enemy>().Damage(1);
+
+
+                    }
 
                         timeBetweenAttack = startTimeBetweenAttack;
 
