@@ -19,6 +19,7 @@ namespace AK
         static const AkUniqueID PLAYER_HEAVYATTACK = 3816881566U;
         static const AkUniqueID PLAYER_JUMP = 1305133589U;
         static const AkUniqueID PLAYER_LIGHTATTACK = 751122599U;
+        static const AkUniqueID SLICER_FOOTSTEPS = 2298066109U;
     } // namespace EVENTS
 
     namespace BANKS

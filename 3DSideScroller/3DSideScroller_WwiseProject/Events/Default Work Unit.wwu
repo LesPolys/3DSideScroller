@@ -105,6 +105,28 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Enemies" ID="{EFE98C13-753D-4C8A-80D3-D91F8042BCE6}" ShortID="922685347">
+					<ChildrenList>
+						<Folder Name="Slicer" ID="{24FF6939-CB9B-4644-AF47-304322875AD3}" ShortID="892228716">
+							<ChildrenList>
+								<Event Name="Slicer_Footsteps" ID="{B8F4AD5E-3C20-48D4-B46A-B3BA417A5D2B}">
+									<ChildrenList>
+										<Action Name="" ID="{ACDD94C0-DD4E-49EF-81ED-2B09D230A388}" ShortID="388871073">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Slicer_Footsteps" ID="{DE2500C9-CF6A-4413-B312-C1EBC4F3340F}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

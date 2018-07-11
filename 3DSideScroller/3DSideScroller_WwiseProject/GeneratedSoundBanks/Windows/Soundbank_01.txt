@@ -4,6 +4,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1305133589	Player_Jump			\Default Work Unit\Player\Jump\Player_Jump	
 	1833036836	Player_Block			\Default Work Unit\Player\Hit\Player_Block	
 	2074073782	Player_Damage			\Default Work Unit\Player\Hit\Player_Damage	
+	2298066109	Slicer_Footsteps			\Default Work Unit\Enemies\Slicer\Slicer_Footsteps	
 	3816881566	Player_HeavyAttack			\Default Work Unit\Player\Attack\Player_HeavyAttack	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
@@ -11,8 +12,12 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	18194984	Player_HeavyAttack_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_HeavyAttack_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_HeavyAttack\Player_HeavyAttack_03		133184
+	62236274	Slicer_Footsteps_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Slicer_Footsteps_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Slicer_Footsteps\Slicer_Footsteps_01		49216
 	75773141	Player_Jump_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Jump_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Jump\Player_Jump\Player_Jump_01		52032
+	162363131	Slicer_Footsteps_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Slicer_Footsteps_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Slicer_Footsteps\Slicer_Footsteps_03		58176
 	273365161	Player_Block_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Block_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hit\Player_Block\Player_Block_01		79936
+	278658358	Slicer_Footsteps_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Slicer_Footsteps_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Slicer_Footsteps\Slicer_Footsteps_02		46912
+	297194671	Slicer_Footsteps_04	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Slicer_Footsteps_04_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Slicer_Footsteps\Slicer_Footsteps_04		67136
 	313078258	Player_HeavyAttack_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_HeavyAttack_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_HeavyAttack\Player_HeavyAttack_01		124480
 	396509472	Player_HeavyAttack_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_HeavyAttack_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_HeavyAttack\Player_HeavyAttack_02		132160
 	397474051	Icepick_July 5_V1	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Icepick_July 5_V1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Icepick_July 5_V1\Icepick_July 5_V1		9777664
@@ -20,7 +25,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	527821656	Player_Damage_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Damage_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hit\Player_Damage\Player_Damage_02		87104
 	534963747	Player_Jump_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Jump_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Jump\Player_Jump\Player_Jump_02		46528
 	767889989	Player_Block_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Block_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hit\Player_Block\Player_Block_02		97344
+	783400296	Slicer_Footsteps_06	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Slicer_Footsteps_06_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Slicer_Footsteps\Slicer_Footsteps_06		53568
 	800335321	Player_LightAttack_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_LightAttack_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_LightAttack\Player_LightAttack_02		80960
+	892917799	Slicer_Footsteps_05	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Slicer_Footsteps_05_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Slicer_Footsteps\Slicer_Footsteps_05		45888
 	918671085	Player_Damage_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Damage_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hit\Player_Damage\Player_Damage_01		90176
 	920939829	Player_LightAttack_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_LightAttack_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_LightAttack\Player_LightAttack_03		79936
 

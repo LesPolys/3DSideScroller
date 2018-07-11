@@ -27,19 +27,36 @@
 				<Event Id="3816881566" Name="Player_HeavyAttack" ObjectPath="\Events\Default Work Unit\Player\Attack\Player_HeavyAttack"/>
 				<Event Id="1305133589" Name="Player_Jump" ObjectPath="\Events\Default Work Unit\Player\Jump\Player_Jump"/>
 				<Event Id="751122599" Name="Player_LightAttack" ObjectPath="\Events\Default Work Unit\Player\Attack\Player_LightAttack"/>
+				<Event Id="2298066109" Name="Slicer_Footsteps" ObjectPath="\Events\Default Work Unit\Enemies\Slicer\Slicer_Footsteps"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="18194984" Language="SFX">
 					<ShortName>Player_HeavyAttack_03.wav</ShortName>
 					<Path>SFX\Player_HeavyAttack_03_1C9C67B2.wem</Path>
 				</File>
+				<File Id="62236274" Language="SFX">
+					<ShortName>Slicer_Footsteps_01.wav</ShortName>
+					<Path>SFX\Slicer_Footsteps_01_1C9C67B2.wem</Path>
+				</File>
 				<File Id="75773141" Language="SFX">
 					<ShortName>Player_Jump_01.wav</ShortName>
 					<Path>SFX\Player_Jump_01_1C9C67B2.wem</Path>
 				</File>
+				<File Id="162363131" Language="SFX">
+					<ShortName>Slicer_Footsteps_03.wav</ShortName>
+					<Path>SFX\Slicer_Footsteps_03_1C9C67B2.wem</Path>
+				</File>
 				<File Id="273365161" Language="SFX">
 					<ShortName>Player_Block_01.wav</ShortName>
 					<Path>SFX\Player_Block_01_1C9C67B2.wem</Path>
+				</File>
+				<File Id="278658358" Language="SFX">
+					<ShortName>Slicer_Footsteps_02.wav</ShortName>
+					<Path>SFX\Slicer_Footsteps_02_1C9C67B2.wem</Path>
+				</File>
+				<File Id="297194671" Language="SFX">
+					<ShortName>Slicer_Footsteps_04.wav</ShortName>
+					<Path>SFX\Slicer_Footsteps_04_1C9C67B2.wem</Path>
 				</File>
 				<File Id="313078258" Language="SFX">
 					<ShortName>Player_HeavyAttack_01.wav</ShortName>
@@ -69,9 +86,17 @@
 					<ShortName>Player_Block_02.wav</ShortName>
 					<Path>SFX\Player_Block_02_1C9C67B2.wem</Path>
 				</File>
+				<File Id="783400296" Language="SFX">
+					<ShortName>Slicer_Footsteps_06.wav</ShortName>
+					<Path>SFX\Slicer_Footsteps_06_1C9C67B2.wem</Path>
+				</File>
 				<File Id="800335321" Language="SFX">
 					<ShortName>Player_LightAttack_02.wav</ShortName>
 					<Path>SFX\Player_LightAttack_02_1C9C67B2.wem</Path>
+				</File>
+				<File Id="892917799" Language="SFX">
+					<ShortName>Slicer_Footsteps_05.wav</ShortName>
+					<Path>SFX\Slicer_Footsteps_05_1C9C67B2.wem</Path>
 				</File>
 				<File Id="918671085" Language="SFX">
 					<ShortName>Player_Damage_01.wav</ShortName>
