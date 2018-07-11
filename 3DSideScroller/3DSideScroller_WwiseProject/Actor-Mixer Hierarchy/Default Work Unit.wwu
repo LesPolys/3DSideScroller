@@ -411,7 +411,7 @@
 										</ModifierInfo>
 									</ModifierList>
 								</Property>
-								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">

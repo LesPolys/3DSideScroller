@@ -266,7 +266,7 @@ ModelImporter:
       - time: 0.2320917
         functionName: CallAudioEvent
         data: Slicer_Footsteps
-        objectReferenceParameter: {fileID: 1522691385707128, guid: 75b8a44a44041f846a7dd938e11c2b2a,
+        objectReferenceParameter: {fileID: 1306949394986052, guid: 96c4524b4fdf0e74dbe511220d866f1f,
           type: 2}
         floatParameter: 0
         intParameter: 0
