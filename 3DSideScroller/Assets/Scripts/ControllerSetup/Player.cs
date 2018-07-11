@@ -10,18 +10,23 @@ using EZCameraShake;
 //
 public class Player : MonoBehaviour
 {
-	public PlayerActions Actions { get; set; }
+    public PlayerActions Actions { get; set; }
 
     private CharacterController _controller;
     private Animator _animator;
 
-    private enum PlayerStates {IDLE, WALKING, ATTACK_LIGHT, ATTACK_HEAVY, ATTACK_MAGIC, JUMP, BLOCK , HIT, DEAD };
+    private enum PlayerStates { IDLE, WALKING, ATTACK_LIGHT, ATTACK_HEAVY, ATTACK_MAGIC, JUMP, BLOCK, HIT, DEAD };
     PlayerStates currentState = PlayerStates.IDLE;
 
     [SerializeField]
     float moveSpeed = 4f;
 
     Vector3 forward, right, lastCurrent;
+
+
+   
+    [SerializeField]
+    private float health;
 
     #region Jumping/Grounding
     private Vector3 _velocity;
@@ -160,7 +165,7 @@ public class Player : MonoBehaviour
                
                 for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
-                    enemiesToDamage[i].GetComponent<TestEnemy>().Damage(1);
+                    enemiesToDamage[i].GetComponent<Enemy>().Damage(1);
                 }
                 timeBetweenLightAttack = startTimeBetweenLightAttack;
             }
@@ -183,7 +188,7 @@ public class Player : MonoBehaviour
               
                 for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
-                    enemiesToDamage[i].GetComponent<TestEnemy>().Damage(2);
+                    enemiesToDamage[i].GetComponent<Enemy>().Damage(2);
                 }
                 timeBetweenHeavyAttack = startTimeBetweenHeavyAttack;
             }
@@ -425,6 +430,19 @@ public class Player : MonoBehaviour
 
     }
 
+
+    public void Damage(int damage)
+    {
+        health -= damage;
+
+        
+
+        if(health <= 0)
+        {
+
+        }
+        
+    }
 
 
 

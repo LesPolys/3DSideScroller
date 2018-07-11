@@ -60,7 +60,7 @@ public class ArenaManager : MonoBehaviour {
 
             case ArenaManagerStates.FIGHTNING:
 
-                if (numEnemies <= 0)
+                if (Enemy.enemyCount <= 0)
                 {
                     StartRestTime();
                 }
