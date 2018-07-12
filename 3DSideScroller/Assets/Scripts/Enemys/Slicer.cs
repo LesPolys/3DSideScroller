@@ -250,7 +250,7 @@ public class Slicer : Enemy {
     {
       
 
-        if(Random.Range(0,100) <= cowardicePerc)
+        if(Random.Range(0,100) < cowardicePerc)
         {
             PickNewRandomPoint();
             currState = SlicerStates.FLEE;
