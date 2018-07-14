@@ -10,6 +10,16 @@ using UnityEngine;
 //
 public class PlayerManager : MonoBehaviour
 {
+
+	private enum PlayerManagerStates{ISREADYINGPLAYERS, PLAYERSAREREADY  };
+	private PlayerManagerStates currentPLayerManagerState = PlayerManagerStates.ISREADYINGPLAYERS;
+	
+	[SerializeField]
+	private ReadyUpUI[] readyUpSpots;
+	private int readyAssignedIndex = 0;
+	int readyPlayerCount = 0; // how many players are ready from the list
+
+
 	public GameObject playerPrefab;
 
 	const int maxPlayers = 4;
@@ -40,13 +50,79 @@ public class PlayerManager : MonoBehaviour
 
 	void Update()
 	{
-		if (JoinButtonWasPressedOnListener( joystickListener ))
+
+		//if state bool is set to UI Mode, then when the button is pressed we will assign control of the UI element to the specific input device, 
+		//Sonce the ready up buttons have all been pressed then it runs the create player section for each player
+
+		switch(currentPLayerManagerState){
+
+			case PlayerManagerStates.ISREADYINGPLAYERS:
+
+				if(readyAssignedIndex < maxPlayers){
+					if (JoinButtonWasPressedOnListener( joystickListener ))
+					{
+						var inputDevice = InputManager.ActiveDevice;
+
+						if (ThereIsNoReadyUpUsingJoystick( inputDevice )) //make a copy of this function that checks against the UI element list rather than the player
+						{
+							readyUpSpots[readyAssignedIndex].Actions.Device = inputDevice;
+							readyAssignedIndex++;
+						}
+					}
+
+					if (JoinButtonWasPressedOnListener( keyboardListener ))
+					{
+						if (ThereIsNoReadyUpUsingKeyboard()) //make a copy of this function that checks against the UI element list rather than the player
+						{
+							print("EYLMAO");
+							readyUpSpots[readyAssignedIndex].Actions = keyboardListener;
+							readyAssignedIndex++;
+						}
+					}
+				}
+
+				if(readyAssignedIndex > maxPlayers){
+					readyAssignedIndex = maxPlayers;
+				}
+
+
+				for(int i = 0; i < readyUpSpots.Length; i++){
+					if(readyUpSpots[i].isReady){
+						readyPlayerCount++; // for easch player count if there ready
+					}
+				}
+
+				if(players.Count > 1 && readyPlayerCount == players.Count){ //are all players ready
+					for(int i = 0; i < readyUpSpots.Length; i++){
+						if(readyUpSpots[i].Actions == keyboardListener){//if it is a keyboard binding then we add the player
+							CreatePlayer(null);
+						}else if(readyUpSpots[i].Actions.Device != null ){ // if we have a device bound which only happens with joysticks or gamepads so we can safely assume we can bind it to the new player
+							CreatePlayer(readyUpSpots[i].Actions.Device);
+						}
+					}
+					currentPLayerManagerState = PlayerManagerStates.PLAYERSAREREADY;
+				}else{
+					readyPlayerCount = 0;
+				}
+
+				break;
+
+			case PlayerManagerStates.PLAYERSAREREADY:
+				
+				//Move the UI Elements out of the way so we can see the GameScreen
+						
+				break;
+
+
+		}
+/* 
+	if (JoinButtonWasPressedOnListener( joystickListener ))
 		{
 			var inputDevice = InputManager.ActiveDevice;
 
 			if (ThereIsNoPlayerUsingJoystick( inputDevice ))
 			{
-				CreatePlayer( inputDevice );
+				//CreatePlayer( inputDevice ); // change this to look at ui element first
 			}
 		}
 
@@ -54,9 +130,12 @@ public class PlayerManager : MonoBehaviour
 		{
 			if (ThereIsNoPlayerUsingKeyboard())
 			{
-				CreatePlayer( null );
+				//	CreatePlayer( null );
 			}
-		}
+		}*/
+
+
+		
 	}
 
 
@@ -64,6 +143,7 @@ public class PlayerManager : MonoBehaviour
 	{
 		return actions.A.WasPressed || actions.B.WasPressed || actions.X.WasPressed || actions.Y.WasPressed;
 	}
+
 
 
 	Player FindPlayerUsingJoystick( InputDevice inputDevice )
@@ -81,10 +161,30 @@ public class PlayerManager : MonoBehaviour
 		return null;
 	}
 
+	
+	ReadyUpUI FindReadyUpUsingJoystick( InputDevice inputDevice )
+	{
+		var readyCount = readyUpSpots.Length;
+		for (var i = 0; i < readyCount; i++)
+		{
+			var readyUp = readyUpSpots[i];
+			if (readyUp.Actions.Device == inputDevice)
+			{
+				return readyUp;
+			}
+		}
+
+		return null;
+	}
 
 	bool ThereIsNoPlayerUsingJoystick( InputDevice inputDevice )
 	{
 		return FindPlayerUsingJoystick( inputDevice ) == null;
+	}
+
+	bool ThereIsNoReadyUpUsingJoystick( InputDevice inputDevice )
+	{
+		return FindReadyUpUsingJoystick( inputDevice ) == null;
 	}
 
 
@@ -103,10 +203,30 @@ public class PlayerManager : MonoBehaviour
 		return null;
 	}
 
+		ReadyUpUI FindReadyUpUsingKeyboard()
+	{
+		var	readyCount = readyUpSpots.Length;
+		for (var i = 0; i < readyCount; i++)
+		{
+			var readyUp = readyUpSpots[i];
+			if (readyUp.Actions == keyboardListener)
+			{
+				return readyUp;
+			}
+		}
+
+		return null;
+	}
+
 
 	bool ThereIsNoPlayerUsingKeyboard()
 	{
 		return FindPlayerUsingKeyboard() == null;
+	}
+
+	bool ThereIsNoReadyUpUsingKeyboard()
+	{
+		return FindReadyUpUsingKeyboard() == null;
 	}
 
 
@@ -154,6 +274,9 @@ public class PlayerManager : MonoBehaviour
 
 		return null;
 	}
+
+
+
 
 
 	void RemovePlayer( Player player )

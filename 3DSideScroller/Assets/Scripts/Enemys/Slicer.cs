@@ -152,7 +152,7 @@ public class Slicer : Enemy {
                 }
                 else
                 {
-                    _animator.Play("IDLE");
+                   // _animator.Play("Idle");
                     timeBetweenAttack -= Time.deltaTime;
                 }
 
