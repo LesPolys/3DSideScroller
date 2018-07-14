@@ -14,6 +14,9 @@ public class PlayerManager : MonoBehaviour
 	private enum PlayerManagerStates{ISREADYINGPLAYERS, PLAYERSAREREADY  };
 	private PlayerManagerStates currentPLayerManagerState = PlayerManagerStates.ISREADYINGPLAYERS;
 	
+	public GameObject playerSelectScreen;
+
+
 	[SerializeField]
 	private ReadyUpUI[] readyUpSpots;
 	private int readyAssignedIndex = 0;
@@ -65,6 +68,7 @@ public class PlayerManager : MonoBehaviour
 
 						if (ThereIsNoReadyUpUsingJoystick( inputDevice )) //make a copy of this function that checks against the UI element list rather than the player
 						{
+							print("CONTROLLER ADDED");
 							readyUpSpots[readyAssignedIndex].Actions.Device = inputDevice;
 							readyAssignedIndex++;
 						}
@@ -74,7 +78,7 @@ public class PlayerManager : MonoBehaviour
 					{
 						if (ThereIsNoReadyUpUsingKeyboard()) //make a copy of this function that checks against the UI element list rather than the player
 						{
-							print("EYLMAO");
+							print("KEYBOARD ADDED");
 							readyUpSpots[readyAssignedIndex].Actions = keyboardListener;
 							readyAssignedIndex++;
 						}
@@ -85,57 +89,54 @@ public class PlayerManager : MonoBehaviour
 					readyAssignedIndex = maxPlayers;
 				}
 
-
-				for(int i = 0; i < readyUpSpots.Length; i++){
-					if(readyUpSpots[i].isReady){
-						readyPlayerCount++; // for easch player count if there ready
-					}
-				}
-
-				if(players.Count > 1 && readyPlayerCount == players.Count){ //are all players ready
-					for(int i = 0; i < readyUpSpots.Length; i++){
-						if(readyUpSpots[i].Actions == keyboardListener){//if it is a keyboard binding then we add the player
-							CreatePlayer(null);
-						}else if(readyUpSpots[i].Actions.Device != null ){ // if we have a device bound which only happens with joysticks or gamepads so we can safely assume we can bind it to the new player
-							CreatePlayer(readyUpSpots[i].Actions.Device);
-						}
-					}
-					currentPLayerManagerState = PlayerManagerStates.PLAYERSAREREADY;
-				}else{
-					readyPlayerCount = 0;
-				}
-
 				break;
 
 			case PlayerManagerStates.PLAYERSAREREADY:
-				
+				playerSelectScreen.GetComponent<Animator>().Play("SlideUp");
 				//Move the UI Elements out of the way so we can see the GameScreen
 						
 				break;
 
 
 		}
-/* 
-	if (JoinButtonWasPressedOnListener( joystickListener ))
-		{
-			var inputDevice = InputManager.ActiveDevice;
-
-			if (ThereIsNoPlayerUsingJoystick( inputDevice ))
-			{
-				//CreatePlayer( inputDevice ); // change this to look at ui element first
-			}
-		}
-
-		if (JoinButtonWasPressedOnListener( keyboardListener ))
-		{
-			if (ThereIsNoPlayerUsingKeyboard())
-			{
-				//	CreatePlayer( null );
-			}
-		}*/
 
 
 		
+	}
+
+	public void AreAllPlayersReady(){
+
+
+		for(int i = 0; i < readyUpSpots.Length; i++){
+					if(readyUpSpots[i].isReady){
+						
+						readyPlayerCount++; // for easch player count if there ready
+					}
+				}
+
+			if(readyAssignedIndex >= 1 && readyAssignedIndex == readyPlayerCount){ //are all players ready
+								print("are you ready to rumble"); // the problem is here
+
+				for(int i = 0; i < readyPlayerCount; i++){
+					if(readyUpSpots[i].Actions == keyboardListener){//if it is a keyboard binding then we add the player
+										
+						if (ThereIsNoPlayerUsingKeyboard())
+						{
+								CreatePlayer( null );
+						}
+						
+					}else if(readyUpSpots[i].Actions.Device != null ){ // if we have a device bound which only happens with joysticks or gamepads so we can safely assume we can bind it to the new player
+						
+						if (ThereIsNoPlayerUsingJoystick( readyUpSpots[i].Actions.Device ))
+						{
+							CreatePlayer( readyUpSpots[i].Actions.Device ); // change this to look at ui element first
+						}
+					}
+				}
+				currentPLayerManagerState = PlayerManagerStates.PLAYERSAREREADY;
+			}else{
+				readyPlayerCount = 0;
+			}
 	}
 
 

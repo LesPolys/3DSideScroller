@@ -11,9 +11,14 @@ public class ReadyUpUI : MonoBehaviour {
 	public Image playerIconImage;
 	public Image readyUpImage;
 
+
+	[SerializeField]
+	PlayerManager PlayerManager;
+
 	[HideInInspector]
 	public bool isReady = false;
 
+	[HideInInspector]
 	public bool hasAssignedInput = false;
 
 	// Use this for initialization
@@ -38,14 +43,22 @@ public class ReadyUpUI : MonoBehaviour {
 			
 			hasAssignedInput = true;
 
-			if(Actions.A){
+			if(Actions.A.WasPressed){
+
+				if(isReady){
+					PlayerManager.AreAllPlayersReady();
+				}
+
 				if(!isReady){
+					readyUpImage.color = Color.green;
 					isReady = true;
 				}
+				
 			}
 
 			if(Actions.B){
 				if(isReady){
+					readyUpImage.color = Color.red;
 					isReady = false;
 				}
 			}
