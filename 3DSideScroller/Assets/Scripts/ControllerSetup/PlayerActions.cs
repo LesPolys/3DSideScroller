@@ -79,6 +79,13 @@ public class PlayerActions : PlayerActionSet
 
         return actions;
 	}
+
+public static PlayerActions CreateEmptyBinding(){
+	var actions = new PlayerActions();
+	return actions;
+
+}
+
 }
 
 

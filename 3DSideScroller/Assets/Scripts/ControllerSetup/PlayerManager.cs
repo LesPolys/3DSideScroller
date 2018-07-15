@@ -34,6 +34,13 @@ public class PlayerManager : MonoBehaviour
 	PlayerActions keyboardListener;
 	PlayerActions joystickListener;
 
+	void Awake(){
+		foreach(ReadyUpUI ready in readyUpSpots){
+			ready.Actions = PlayerActions.CreateEmptyBinding();
+//			ready.Actions.Device = null;
+		}
+	}
+
 
 	void OnEnable()
 	{
@@ -69,6 +76,7 @@ public class PlayerManager : MonoBehaviour
 						if (ThereIsNoReadyUpUsingJoystick( inputDevice )) //make a copy of this function that checks against the UI element list rather than the player
 						{
 							print("CONTROLLER ADDED");
+							readyUpSpots[readyAssignedIndex].Actions = PlayerActions.CreateWithJoystickBindings();
 							readyUpSpots[readyAssignedIndex].Actions.Device = inputDevice;
 							readyAssignedIndex++;
 						}
@@ -79,6 +87,7 @@ public class PlayerManager : MonoBehaviour
 						if (ThereIsNoReadyUpUsingKeyboard()) //make a copy of this function that checks against the UI element list rather than the player
 						{
 							print("KEYBOARD ADDED");
+							readyUpSpots[readyAssignedIndex].Actions = PlayerActions.CreateWithKeyboardBindings();
 							readyUpSpots[readyAssignedIndex].Actions = keyboardListener;
 							readyAssignedIndex++;
 						}
@@ -169,9 +178,17 @@ public class PlayerManager : MonoBehaviour
 		for (var i = 0; i < readyCount; i++)
 		{
 			var readyUp = readyUpSpots[i];
-			if (readyUp.Actions.Device == inputDevice)
-			{
-				return readyUp;
+		//	print(readyUp);
+		//	print(readyUpSpots[i]);
+		//	print(readyUpSpots[i].Actions);
+		//	print(readyUpSpots[i].Actions.Device);
+		//	print(inputDevice);
+
+			if(readyUp.Actions != null){
+				if (readyUp.Actions.Device == inputDevice)
+				{
+					return readyUp;
+				}
 			}
 		}
 
