@@ -39,7 +39,7 @@ public class Slicer : Enemy {
     public SlicerStates currState;
     #endregion
 
-   
+    private bool dissapearing = false;
 
     protected override void Awake()
     {
@@ -116,6 +116,11 @@ public class Slicer : Enemy {
                 _animator.Play("Dead");
                 //turn off colliders
                 _controller.enabled = false;
+                if (!dissapearing)
+                {
+                    StartCoroutine(Dissapear());
+                }
+            
                 //wait for timer
                 //fall down through floor (manual pos move)and delete
 
@@ -206,6 +211,34 @@ public class Slicer : Enemy {
 
 
 	}
+
+    IEnumerator Dissapear()
+    {
+
+        dissapearing = true;
+        float elapsedTime = 0f;
+        Vector3 startPos = transform.position;
+
+        yield return new WaitForSeconds(3f);
+   
+
+        while (elapsedTime < 5)
+        {
+           transform.position = Vector3.Lerp(startPos, new Vector3(transform.position.x, -20f, transform.position.z), (elapsedTime/5));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+
+            if(transform.position.y < -10f)
+            {
+                Destroy(gameObject);
+            }
+
+            dissapearing = false;
+        }
+    
+
+      
+    }
 
     void ResetTarget()
     {

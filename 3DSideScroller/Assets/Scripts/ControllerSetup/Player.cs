@@ -15,13 +15,13 @@ public class Player : MonoBehaviour
     private CharacterController _controller;
     private Animator _animator;
 
-    private enum PlayerStates { IDLE, WALKING, ATTACK_LIGHT, ATTACK_HEAVY, ATTACK_MAGIC, JUMP, BLOCK, HIT, DEAD };
-    PlayerStates currentState = PlayerStates.IDLE;
 
     [SerializeField]
     float moveSpeed = 4f;
 
     Vector3 forward, right, lastCurrent;
+
+    private bool attacking = false;
 
 
    
@@ -53,34 +53,67 @@ public class Player : MonoBehaviour
 
     #region LIGHTATTACK
     private float timeBetweenLightAttack; //stop button mashing
-    public float startTimeBetweenLightAttack;
+    private float startTimeBetweenLightAttack;
     public Transform lightAttackPos;
     public float lightAttackRange;
     #endregion
 
     #region HEAVYATTACK
     private float timeBetweenHeavyAttack; //stop button mashing
-    public float startTimeBetweenHeavyAttack;
+    private float startTimeBetweenHeavyAttack;
     public Transform heavyAttackPos;
     public float heavyAttackRange;
     #endregion
 
-    #region MAGICATTACK
+    #region SPECIALATTACK
+    private float timeBetweenSpecialAttack; //stop button mashing
+    private float startTimeBetweenSpecialAttack;
+    public Transform specialAttackPos;
+    public float specialAttackRange;
     #endregion
 
     #region BLOCK
     #endregion
 
 
+    private bool affectedByGravity = true;
+
     void Awake()
     {
-        _animator = GetComponent<Animator>();
+        _animator = GetComponentInChildren<Animator>();
         _controller = GetComponent<CharacterController>();
+
+        GetAnimationLengths();
 
         forward = Camera.main.transform.forward;
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
+    }
+
+    void GetAnimationLengths()
+    {
+
+        RuntimeAnimatorController ac = _animator.runtimeAnimatorController;    //Get Animator controller
+        for (int i = 0; i < ac.animationClips.Length; i++)                 //For all animations
+        {
+            if (ac.animationClips[i].name == "Attack")        //If it has the same name as your clip
+            {
+                startTimeBetweenLightAttack = ac.animationClips[i].length;
+            }
+
+            if (ac.animationClips[i].name == "Heavy")        //If it has the same name as your clip
+            {
+                startTimeBetweenHeavyAttack = ac.animationClips[i].length;
+            }
+
+            if (ac.animationClips[i].name == "Spin")        //If it has the same name as your clip
+            {
+                startTimeBetweenSpecialAttack = ac.animationClips[i].length;
+            }
+
+        }
+
     }
 
 
@@ -106,17 +139,13 @@ public class Player : MonoBehaviour
     void Update()
 	{
 
-        Animate();
+       
         HandleInput();
+        CheckForHits();
 
         _isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore); // Check if grounded to reset velocity
         if (_isGrounded && _velocity.y < 0)
             _velocity.y = 0f;
-
-
-
-        _velocity.y += Gravity * Time.deltaTime; //add gravity to velocity
-
 
         #region DASHDRAG
         _velocity.x /= 1 + Drag.x * Time.deltaTime;
@@ -124,9 +153,48 @@ public class Player : MonoBehaviour
         _velocity.z /= 1 + Drag.z * Time.deltaTime;
         #endregion
 
-        _controller.Move(_velocity * Time.deltaTime); //move agent down
+
+
+
+        if (affectedByGravity)
+        {
+            _velocity.y += Gravity * Time.deltaTime; //add gravity to velocity
+        }
+
+
+
+
+        _controller.Move(_velocity * Time.deltaTime);
+
 
     }
+
+    //CameraShaker.Instance.ShakeOnce(1f, 1f, 0.1f, 0.1f);
+    //  Debug.Log("Dash");
+    //  _velocity += Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
+
+    void CheckForHits()
+    {
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            //print("ATTACK");
+            CheckForEnemiesHit(lightAttackPos, lightAttackRange, 1);
+
+        }
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Heavy"))
+        {
+           // print("HEAVY");
+            CheckForEnemiesHit(heavyAttackPos, heavyAttackRange, 1);
+
+        }
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Spin"))
+        {
+            //print("SPIN");
+            CheckForEnemiesHit(specialAttackPos, specialAttackRange, 1);
+
+        }
+    }
+
 
     void HandleInput()
     {
@@ -143,61 +211,70 @@ public class Player : MonoBehaviour
         }
 
 
-        if (Actions.A && _isGrounded)
+        if (Actions.A && _isGrounded && !attacking)
         { //jump
             _velocity.y += Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
         }
 
-        if (Actions.B)
-        {
-
-        }
 
 
-        if (timeBetweenLightAttack <= 0) { 
-            if (Actions.X)
-            {
-                //CameraShaker.Instance.ShakeOnce(1f, 1f, 0.1f, 0.1f);
-                //  Debug.Log("Dash");
-                //  _velocity += Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
-                Collider[] enemiesToDamage = Physics.OverlapSphere(lightAttackPos.position, lightAttackRange, enemyMask);
-               
-                for (int i = 0; i < enemiesToDamage.Length; i++)
-                {
-                    enemiesToDamage[i].GetComponent<Enemy>().Damage(1);
-                }
-                timeBetweenLightAttack = startTimeBetweenLightAttack;
-            }
+        if (timeBetweenLightAttack <= 0) {
            
+            if (Actions.X.WasPressed)
+            {
+                attacking = true;
+                _animator.Play("Attack");
+                timeBetweenLightAttack = startTimeBetweenLightAttack;
+            
+            }
         }
         else
         {
+           
             timeBetweenLightAttack -= Time.deltaTime;
         }
 
-
         if (timeBetweenHeavyAttack <= 0)
         {
-            if (Actions.Y)
+        
+            if (Actions.Y.WasPressed)
             {
-                //CameraShaker.Instance.ShakeOnce(1f, 1f, 0.1f, 0.1f);
-                //  Debug.Log("Dash");
-                //  _velocity += Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
-                Collider[] enemiesToDamage = Physics.OverlapSphere(heavyAttackPos.position, heavyAttackRange, enemyMask);
-              
-                for (int i = 0; i < enemiesToDamage.Length; i++)
-                {
-                    enemiesToDamage[i].GetComponent<Enemy>().Damage(2);
-                }
+                attacking = true;
+                _animator.Play("Heavy");
                 timeBetweenHeavyAttack = startTimeBetweenHeavyAttack;
             }
         }
         else
         {
+           
             timeBetweenHeavyAttack -= Time.deltaTime;
         }
 
+
+
+        if (timeBetweenSpecialAttack <= 0)
+        {
+            
+            if (Actions.B.WasPressed)
+            {
+                attacking = true;
+                _animator.Play("Spin");
+                timeBetweenSpecialAttack = startTimeBetweenSpecialAttack;
+            }
+        }
+        else
+        {
+            
+            timeBetweenSpecialAttack -= Time.deltaTime;
+        }
+
+
+    }
+
+    public void AttackOver()
+    {
+        attacking = false;
     }
 
     void OnDrawGizmos()
@@ -208,39 +285,30 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(heavyAttackPos.position, heavyAttackRange);
 
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(specialAttackPos.position, specialAttackRange);
+
     }
 
-    void Animate()
+
+    void CheckForEnemiesHit(Transform attackPos, float attackRange, int damage)
     {
-        switch (currentState)
+
+        Collider[] enemiesToDamage = Physics.OverlapSphere(attackPos.position, attackRange, enemyMask);
+
+        for (int i = 0; i < enemiesToDamage.Length; i++)
         {
-            case PlayerStates.IDLE:
-                
-                break;
-
-            case PlayerStates.WALKING:
-                break;
-
-            case PlayerStates.ATTACK_LIGHT:
-                break;
-
-            case PlayerStates.ATTACK_HEAVY:
-                break;
-
-            case PlayerStates.ATTACK_MAGIC:
-                break;
-
-            case PlayerStates.BLOCK:
-                break;
-
-            case PlayerStates.HIT:
-                break;
-
-            case PlayerStates.DEAD:
-                break;
-
+     
+            CameraShaker.Instance.ShakeOnce(0.5f, 1f, 0.1f, 0.1f);
+            enemiesToDamage[i].GetComponent<Enemy>().Damage(damage);
         }
+
+
+     
     }
+
+    
+
 
     void Move()
     {
@@ -253,150 +321,155 @@ public class Player : MonoBehaviour
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
         Vector3 rotHeading = new Vector3();
 
-        switch (currMoveType)
+        if (!_isGrounded || !attacking)
         {
+            switch (currMoveType)
+            {
 
-            #region FULLROT
-            case MoveTypes.FULLROT:
-                //Set Faceing of Player
-                rotHeading = Vector3.Normalize(rightMovement + upMovement);
-                transform.forward = rotHeading;
-                _controller.Move(heading * Time.deltaTime * moveSpeed); // move the player
-                break;
-            #endregion
-
-            #region LTTP
-            case MoveTypes.LTTP:
-                //rotHeading = Vector3.Normalize(rightMovement + upMovement);
-               
-
-                //Up
-                if (Actions.Move.Y < 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5 )
-                {
-                    rotHeading = new Vector3(0.7f, 0.0f, 0.7f);
-
-                }
-
-                //Down
-
-                if (Actions.Move.Y > 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5)
-                {
-                    rotHeading = new Vector3(-0.7f, 0.0f,- 0.7f);
-
-                }
-
-                //Left
-
-                if (Actions.Move.X < 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
-                {
-                    rotHeading = new Vector3(-0.7f, 0.0f, 0.7f);
-
-                }
-
-                //Right
-
-                if (Actions.Move.X > 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
-                {
-                    rotHeading = new Vector3(0.7f, 0.0f, -0.7f);
-
-                }
-
-                //UPLEFT
-
-                if (Actions.Move.X < 0 && Actions.Move.Y <= -0.20 && Actions.Move.Y >= -0.75)
-                {
-                    rotHeading = new Vector3(0.1f, 0.0f, 1.0f);
-
-                }
-
-                //UPRIGHT
-
-                if (Actions.Move.X > 0 && Actions.Move.Y <= -0.20 && Actions.Move.Y >= -0.75)
-                {
-                    rotHeading = new Vector3(1.0f, 0.0f, 0.1f);
-
-                }
-
-                //DOWNLEFT
-
-                if (Actions.Move.X < 0 && Actions.Move.Y >= 0.20 && Actions.Move.Y <= 0.75)
-                {
-
-                    rotHeading = new Vector3(-1.0f, 0.0f, 0.1f);
-                }
-
-                //DOWNRIGHT
-
-                if (Actions.Move.X > 0 && Actions.Move.Y >= 0.20 && Actions.Move.Y <= 0.75)
-                {
-                    rotHeading = new Vector3(0.1f, 0.0f, -1.0f);
-
-                }
-
-                //Up
-                if (Actions.Move.Y < 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5)
-                {
-                    rotHeading = new Vector3(0.7f, 0.0f, 0.7f);
-
-                }
-
-                //Down
-
-                if (Actions.Move.Y > 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5)
-                {
-                    rotHeading = new Vector3(-0.7f, 0.0f, -0.7f);
-
-                }
-
-                //Left
-
-                if (Actions.Move.X < 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
-                {
-                    rotHeading = new Vector3(-0.7f, 0.0f, 0.7f);
-
-                }
-
-                //Right
-
-                if (Actions.Move.X > 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
-                {
-                    rotHeading = new Vector3(0.7f, 0.0f, -0.7f);
-                    
-                }
-
-                if (rotHeading != Vector3.zero)
-                {
+                #region FULLROT
+                case MoveTypes.FULLROT:
+                    //Set Faceing of Player
+                    rotHeading = Vector3.Normalize(rightMovement + upMovement);
                     transform.forward = rotHeading;
-                    lastCurrent = rotHeading;
-                    _controller.Move(rotHeading * Time.deltaTime * moveSpeed); // move the player
-
-                }
-                else
-                {
-                    _controller.Move(lastCurrent * Time.deltaTime * moveSpeed); // move the player
-
-                }
-
-
-                break;
-            #endregion
-
-            #region CC
-            case MoveTypes.CC: 
-
-                rotHeading = Vector3.Normalize(rightMovement);
-
-                if (rightMovement != Vector3.zero) // check for the case where we arnt hitting a left or right key
-                {
-                    transform.forward = rotHeading;
-                    lastCurrent = rotHeading;
-                    
-                }
-                _controller.Move(heading * Time.deltaTime * moveSpeed); // move the player
-
-
-                break;
+                    _controller.Move(heading * Time.deltaTime * moveSpeed); // move the player
+                    break;
                 #endregion
+
+                #region LTTP
+                case MoveTypes.LTTP:
+                    //rotHeading = Vector3.Normalize(rightMovement + upMovement);
+
+                    print(Actions.Move.X);
+
+
+                    //Up
+                    if (Actions.Move.Y < 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5)
+                    {
+                        rotHeading = new Vector3(0.7f, 0.0f, 0.7f);
+
+                    }
+
+                    //Down
+
+                    if (Actions.Move.Y > 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5)
+                    {
+                        rotHeading = new Vector3(-0.7f, 0.0f, -0.7f);
+
+                    }
+
+                    //Left
+
+                    if (Actions.Move.X < 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
+                    {
+                        rotHeading = new Vector3(-0.7f, 0.0f, 0.7f);
+
+                    }
+
+                    //Right
+
+                    if (Actions.Move.X > 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
+                    {
+                        rotHeading = new Vector3(0.7f, 0.0f, -0.7f);
+
+                    }
+
+                    //UPLEFT
+
+                    if (Actions.Move.X < 0 && Actions.Move.Y <= -0.20 && Actions.Move.Y >= -0.75)
+                    {
+                        rotHeading = new Vector3(0.1f, 0.0f, 1.0f);
+
+                    }
+
+                    //UPRIGHT
+
+                    if (Actions.Move.X > 0 && Actions.Move.Y <= -0.20 && Actions.Move.Y >= -0.75)
+                    {
+                        rotHeading = new Vector3(1.0f, 0.0f, 0.1f);
+
+                    }
+
+                    //DOWNLEFT
+
+                    if (Actions.Move.X < 0 && Actions.Move.Y >= 0.20 && Actions.Move.Y <= 0.75)
+                    {
+
+                        rotHeading = new Vector3(-1.0f, 0.0f, 0.1f);
+                    }
+
+                    //DOWNRIGHT
+
+                    if (Actions.Move.X > 0 && Actions.Move.Y >= 0.20 && Actions.Move.Y <= 0.75)
+                    {
+                        rotHeading = new Vector3(0.1f, 0.0f, -1.0f);
+
+                    }
+
+                    //Up
+                    if (Actions.Move.Y < 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5)
+                    {
+                        rotHeading = new Vector3(0.7f, 0.0f, 0.7f);
+
+                    }
+
+                    //Down
+
+                    if (Actions.Move.Y > 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5)
+                    {
+                        rotHeading = new Vector3(-0.7f, 0.0f, -0.7f);
+
+                    }
+
+                    //Left
+
+                    if (Actions.Move.X < 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
+                    {
+                        rotHeading = new Vector3(-0.7f, 0.0f, 0.7f);
+
+                    }
+
+                    //Right
+
+                    if (Actions.Move.X > 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
+                    {
+                        rotHeading = new Vector3(0.7f, 0.0f, -0.7f);
+
+                    }
+
+                    if (rotHeading != Vector3.zero)
+                    {
+                        transform.forward = rotHeading;
+                        lastCurrent = rotHeading;
+                        _controller.Move(rotHeading * Time.deltaTime * moveSpeed); // move the player
+
+                    }
+                    else
+                    {
+                        _controller.Move(lastCurrent * Time.deltaTime * moveSpeed); // move the player
+
+                    }
+
+
+                    break;
+                #endregion
+
+                #region CC
+                case MoveTypes.CC:
+
+                    rotHeading = Vector3.Normalize(rightMovement);
+
+                    if (rightMovement != Vector3.zero) // check for the case where we arnt hitting a left or right key
+                    {
+                        transform.forward = rotHeading;
+                        lastCurrent = rotHeading;
+
+                    }
+                    _controller.Move(heading * Time.deltaTime * moveSpeed); // move the player
+
+
+                    break;
+                    #endregion
+            }
         }
 
 
