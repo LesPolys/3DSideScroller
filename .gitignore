@@ -34,3 +34,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+3DSideScroller/Assets/Models/Stan/Attack.anim
+3DSideScroller/Assets/Models/Stan/Heavy.anim
+3DSideScroller/Assets/Models/Stan/Walk.anim
