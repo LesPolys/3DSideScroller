@@ -164,7 +164,7 @@ public class Player : MonoBehaviour
 
 
 
-      
+        _controller.Move(_velocity * Time.deltaTime);
 
 
     }
@@ -211,7 +211,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (Actions.A && _isGrounded)
+        if (Actions.A && _isGrounded && !attacking)
         { //jump
             _velocity.y += Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
@@ -321,7 +321,7 @@ public class Player : MonoBehaviour
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
         Vector3 rotHeading = new Vector3();
 
-        if (!attacking)
+        if (!_isGrounded || !attacking)
         {
             switch (currMoveType)
             {
