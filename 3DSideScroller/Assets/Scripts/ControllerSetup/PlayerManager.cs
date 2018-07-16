@@ -124,7 +124,7 @@ public class PlayerManager : MonoBehaviour
 				}
 
 			if(readyAssignedIndex >= 1 && readyAssignedIndex == readyPlayerCount){ //are all players ready
-								print("are you ready to rumble"); // the problem is here
+								//print("are you ready to rumble"); // the problem is here
 
 				for(int i = 0; i < readyPlayerCount; i++){
 					if(readyUpSpots[i].Actions == keyboardListener){//if it is a keyboard binding then we add the player
