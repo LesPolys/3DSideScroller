@@ -48,8 +48,8 @@ MonoBehaviour:
   defaultPoolSize: 4096
   EventWwu:
   - Guid: '{47AA1460-C47F-46D5-BF75-A67269DB8827}'
-    m_lastTimePart2: -1999246886
-    m_lastTimePsrt1: -1607233210
+    m_lastTimePart2: -1999246869
+    m_lastTimePsrt1: 2039976597
     ParentPhysicalPath: 
     PhysicalPath: Events\Default Work Unit.wwu
     List:
@@ -615,6 +615,7 @@ MonoBehaviour:
   - /3DSideScroller_WwiseProject
   - /3DSideScroller_WwiseProject/Events
   - /3DSideScroller_WwiseProject/Events/Default Work Unit
+  - /3DSideScroller_WwiseProject/Events/Default Work Unit/Music
   language: English(US)
   lowerPoolSize: 2048
   m_lastPopulateTimePart2: 0

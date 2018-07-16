@@ -214,7 +214,7 @@ public class Player : MonoBehaviour
         if (Actions.A && _isGrounded && !attacking)
         { //jump
             _velocity.y += Mathf.Sqrt(JumpHeight * -2f * Gravity);
-
+            AkSoundEngine.PostEvent("Player_Jump", gameObject);
         }
 
 

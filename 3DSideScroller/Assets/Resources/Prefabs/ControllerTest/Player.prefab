@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 4951840080956048}
   - component: {fileID: 95574533175176906}
   - component: {fileID: 114263423531740196}
+  - component: {fileID: 114183083057067476}
   m_Layer: 0
   m_Name: Stan
   m_TagString: Untagged
@@ -961,7 +962,7 @@ Transform:
   - {fileID: 4211694032706004}
   m_Father: {fileID: 4553180800619474}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 29.279882, y: -31.31505, z: 132.42725}
+  m_LocalEulerAnglesHint: {x: 20.542423, y: -27.578678, z: 139.41261}
 --- !u!4 &4188556589236462
 Transform:
   m_ObjectHideFlags: 1
@@ -1154,8 +1155,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1256617393244176}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.35, z: 0}
+  m_LocalRotation: {x: -0, y: -0.99983305, z: -0, w: 0.018274337}
+  m_LocalPosition: {x: 0, y: 5.74, z: 20.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4951840080956048}
@@ -1385,7 +1386,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4967662472105754}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -16.277035, y: -21.35532, z: -4.8186765}
+  m_LocalEulerAnglesHint: {x: -16.277033, y: -21.35532, z: -4.8186755}
 --- !u!4 &4721581696788638
 Transform:
   m_ObjectHideFlags: 1
@@ -1494,7 +1495,7 @@ Transform:
   - {fileID: 4409012428064942}
   m_Father: {fileID: 4553180800619474}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 57.993862, y: 153.34941, z: 8.537648}
+  m_LocalEulerAnglesHint: {x: 67.54699, y: 146.48091, z: 1.6098174}
 --- !u!4 &4916772631121632
 Transform:
   m_ObjectHideFlags: 1
@@ -1570,6 +1571,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114183083057067476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063708262891680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7592907406edb674b98d49fb6db33b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114263423531740196
 MonoBehaviour:
   m_ObjectHideFlags: 1
