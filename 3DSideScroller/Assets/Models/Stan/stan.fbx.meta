@@ -111,6 +111,7 @@ ModelImporter:
     7400008: RunningAttack
     7400010: Spin
     7400012: Walk
+    7400014: Walk (1)
     9500000: //RootNode
     13700000: Head
   externalObjects: {}
@@ -142,10 +143,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Attack
-      takeName: Attack
+      name: Walk (1)
+      takeName: Walk
       firstFrame: 0
-      lastFrame: 16
+      lastFrame: 8
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -192,7 +193,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.5949764
+        functionName: CallAudioEvent
+        data: Player_LightAttack
+        objectReferenceParameter: {fileID: 1042184214707428, guid: 9fdcfcca0abc2fb4c80dec8b2f55f39b,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.711146
+        functionName: CallAudioEvent
+        data: Player_HeavyAttack
+        objectReferenceParameter: {fileID: 1042184214707428, guid: 9fdcfcca0abc2fb4c80dec8b2f55f39b,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -248,7 +265,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.19152278
+        functionName: CallAudioEvent
+        data: Player_FootstepsLeft
+        objectReferenceParameter: {fileID: 1042184214707428, guid: 9fdcfcca0abc2fb4c80dec8b2f55f39b,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.62794346
+        functionName: CallAudioEvent
+        data: Player_FootstepsRight
+        objectReferenceParameter: {fileID: 1042184214707428, guid: 9fdcfcca0abc2fb4c80dec8b2f55f39b,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

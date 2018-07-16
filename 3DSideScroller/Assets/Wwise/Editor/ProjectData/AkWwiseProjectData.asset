@@ -48,19 +48,565 @@ MonoBehaviour:
   defaultPoolSize: 4096
   EventWwu:
   - Guid: '{47AA1460-C47F-46D5-BF75-A67269DB8827}'
-    m_lastTimePart2: -1999247907
-    m_lastTimePsrt1: -393118929
+    m_lastTimePart2: -1999246886
+    m_lastTimePsrt1: -1607233210
     ParentPhysicalPath: 
     PhysicalPath: Events\Default Work Unit.wwu
     List:
-    - Guid: 6e8fb6ff11ac474d8234b742c04578fc
-      ID: 1068347553
-      Name: Music_Test
-      Path: Default Work Unit\Music_Test
+    - Guid: 1626a408f3b0274583f4d6acdec4e42b
+      ID: -1663726378
+      Name: Character_Ready
+      Path: Default Work Unit\UI\Character Select\Character_Ready
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Music_Test
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: Character Select
+        ObjectType: 4
+      - ElementName: Character_Ready
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 38306b9150547c4b8dc12ca1a409797b
+      ID: 1205999388
+      Name: Enemy_Death
+      Path: Default Work Unit\Enemies\Shared\Enemy_Death
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: Shared
+        ObjectType: 4
+      - ElementName: Enemy_Death
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: a833623a7b23ee478b41d67465daa626
+      ID: 1010055213
+      Name: Enemy_Hit
+      Path: Default Work Unit\Enemies\Shared\Enemy_Hit
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: Shared
+        ObjectType: 4
+      - ElementName: Enemy_Hit
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 14400b506da56348974aff6abbf9b471
+      ID: 1432716332
+      Name: Game_Over
+      Path: Default Work Unit\UI\Game State\Game_Over
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: Game State
+        ObjectType: 4
+      - ElementName: Game_Over
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 45a057754834844aa7cb55914b3a0e08
+      ID: -1076591640
+      Name: Game_Win
+      Path: Default Work Unit\UI\Game State\Game_Win
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: Game State
+        ObjectType: 4
+      - ElementName: Game_Win
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 9e13a0c76f9d22438c2701c2b17d2ca5
+      ID: 1244594577
+      Name: Level_Music
+      Path: Default Work Unit\Music\Level_Music
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Level_Music
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 0bff4baa2f866c4894c2822140e5837b
+      ID: -865678437
+      Name: Menu_Accept
+      Path: Default Work Unit\UI\Menu\Menu_Accept
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: Menu
+        ObjectType: 4
+      - ElementName: Menu_Accept
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 6ff3fd6a0f544e47bad54ebbb370f8a8
+      ID: -1114057919
+      Name: Menu_Cancel
+      Path: Default Work Unit\UI\Menu\Menu_Cancel
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: Menu
+        ObjectType: 4
+      - ElementName: Menu_Cancel
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 3f63edc4acda2f46b99cfeb0a178e982
+      ID: -2124957321
+      Name: Menu_Pause
+      Path: Default Work Unit\UI\Menu\Menu_Pause
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: Menu
+        ObjectType: 4
+      - ElementName: Menu_Pause
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 3e1bf2c71704284bbc13a7540adcc2db
+      ID: 2072673020
+      Name: Menu_Scroll
+      Path: Default Work Unit\UI\Menu\Menu_Scroll
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: Menu
+        ObjectType: 4
+      - ElementName: Menu_Scroll
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 70bbb14e814c1747b91cc16d77710099
+      ID: -1643109761
+      Name: MrSpines_Attack
+      Path: Default Work Unit\Enemies\MrSpines\MrSpines_Attack
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: MrSpines
+        ObjectType: 4
+      - ElementName: MrSpines_Attack
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 0fea9c7f9edeb24e8aacdde8ff01bbf1
+      ID: -1158620864
+      Name: MrSpines_Footsteps
+      Path: Default Work Unit\Enemies\MrSpines\MrSpines_Footsteps
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: MrSpines
+        ObjectType: 4
+      - ElementName: MrSpines_Footsteps
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: f75c9d036b841941a3083ffbd1933e10
+      ID: 187604770
+      Name: Oozer_Footsteps
+      Path: Default Work Unit\Enemies\Oozer\Oozer_Footsteps
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: Oozer
+        ObjectType: 4
+      - ElementName: Oozer_Footsteps
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 70631fb9f363b645ae96d54dff80d132
+      ID: 837528085
+      Name: Oozer_HitGround
+      Path: Default Work Unit\Enemies\Oozer\Oozer_HitGround
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: Oozer
+        ObjectType: 4
+      - ElementName: Oozer_HitGround
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 049cd4648062c5489e7100e291b9fe4a
+      ID: 366571179
+      Name: Oozer_HitPlayer
+      Path: Default Work Unit\Enemies\Oozer\Oozer_HitPlayer
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: Oozer
+        ObjectType: 4
+      - ElementName: Oozer_HitPlayer
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: e5ba2dc6dbde1140aa32edcec6c48c13
+      ID: -1100502318
+      Name: Oozer_Shoot
+      Path: Default Work Unit\Enemies\Oozer\Oozer_Shoot
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: Oozer
+        ObjectType: 4
+      - ElementName: Oozer_Shoot
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: ec0672c46373fc4da68409153651fd1a
+      ID: 1833036836
+      Name: Player_Block
+      Path: Default Work Unit\Player\Hit\Player_Block
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: Hit
+        ObjectType: 4
+      - ElementName: Player_Block
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 27c326f29329b64ab6c82e48ff82f762
+      ID: 2074073782
+      Name: Player_Damage
+      Path: Default Work Unit\Player\Hit\Player_Damage
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: Hit
+        ObjectType: 4
+      - ElementName: Player_Damage
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: a847b0d64d2f464180fffdbe63fae226
+      ID: -1412187815
+      Name: Player_FootstepsLeft
+      Path: Default Work Unit\Player\Footsteps\Player_FootstepsLeft
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: Footsteps
+        ObjectType: 4
+      - ElementName: Player_FootstepsLeft
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 9659c8de7aad4c4a8ac0b0e53ca2259a
+      ID: 269686156
+      Name: Player_FootstepsRight
+      Path: Default Work Unit\Player\Footsteps\Player_FootstepsRight
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: Footsteps
+        ObjectType: 4
+      - ElementName: Player_FootstepsRight
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 77d3fa8c43413943812bd8a89f42b50e
+      ID: -752747481
+      Name: Player_HealthPickup
+      Path: Default Work Unit\Player\Pickup\Player_HealthPickup
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: Pickup
+        ObjectType: 4
+      - ElementName: Player_HealthPickup
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 394234d72c65e14c8621d671e5d7b94a
+      ID: -478085730
+      Name: Player_HeavyAttack
+      Path: Default Work Unit\Player\Attack\Player_HeavyAttack
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: Attack
+        ObjectType: 4
+      - ElementName: Player_HeavyAttack
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 335ef13a2be12d40bca0017db51b60fc
+      ID: 1305133589
+      Name: Player_Jump
+      Path: Default Work Unit\Player\Jump\Player_Jump
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: Jump
+        ObjectType: 4
+      - ElementName: Player_Jump
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 4ae3c26fc404114ebd6ac3a0c3f2cfc2
+      ID: 751122599
+      Name: Player_LightAttack
+      Path: Default Work Unit\Player\Attack\Player_LightAttack
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: Attack
+        ObjectType: 4
+      - ElementName: Player_LightAttack
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: acfc796198e3444ab3e481437fb1862f
+      ID: 853366470
+      Name: Player_MagicAttack
+      Path: Default Work Unit\Player\Attack\Player_MagicAttack
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: Attack
+        ObjectType: 4
+      - ElementName: Player_MagicAttack
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 0133dcb1bb8e1347ac5d0f8d7833e9ea
+      ID: 1256435816
+      Name: Player_PowerPickup
+      Path: Default Work Unit\Player\Pickup\Player_PowerPickup
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: Pickup
+        ObjectType: 4
+      - ElementName: Player_PowerPickup
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 115c9c5cefcbf140ab4f022683297f4b
+      ID: -85536276
+      Name: Slicer_Attack
+      Path: Default Work Unit\Enemies\Slicer\Slicer_Attack
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: Slicer
+        ObjectType: 4
+      - ElementName: Slicer_Attack
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 5eadf4b8203cd448b46ab3ba417a5d2b
+      ID: -1996901187
+      Name: Slicer_Footsteps
+      Path: Default Work Unit\Enemies\Slicer\Slicer_Footsteps
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: Slicer
+        ObjectType: 4
+      - ElementName: Slicer_Footsteps
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: fb3f4aae8f605c40bd85ca6f8c88e42a
+      ID: -633718184
+      Name: Tanker_Footsteps
+      Path: Default Work Unit\Enemies\Tanker\Tanker_Footsteps
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: Tanker
+        ObjectType: 4
+      - ElementName: Tanker_Footsteps
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: f13e15eed169a043ac6e453a830acb37
+      ID: -1013484474
+      Name: Tanker_Hook
+      Path: Default Work Unit\Enemies\Tanker\Tanker_Hook
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: Tanker
+        ObjectType: 4
+      - ElementName: Tanker_Hook
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 43ec76ff06ba154c8a6388fab1da83c1
+      ID: 951923072
+      Name: Tanker_ShockWave
+      Path: Default Work Unit\Enemies\Tanker\Tanker_ShockWave
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: Tanker
+        ObjectType: 4
+      - ElementName: Tanker_ShockWave
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 35bf967067d3da4b93b06a514edaefaa
+      ID: -1731025637
+      Name: Tanker_Swipe
+      Path: Default Work Unit\Enemies\Tanker\Tanker_Swipe
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: Tanker
+        ObjectType: 4
+      - ElementName: Tanker_Swipe
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 087862f21b6f4145a82e759e7c449449
+      ID: 534424066
+      Name: Vex_ChantFinish
+      Path: Default Work Unit\Enemies\Vex\Vex_ChantFinish
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: Vex
+        ObjectType: 4
+      - ElementName: Vex_ChantFinish
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 78d5c8d23ebff144abe84944d15d21c4
+      ID: 276150034
+      Name: Vex_ChantWindup
+      Path: Default Work Unit\Enemies\Vex\Vex_ChantWindup
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: Vex
+        ObjectType: 4
+      - ElementName: Vex_ChantWindup
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 2f778e671efa2c409fb93b932f31abd3
+      ID: -1390457870
+      Name: Vex_Footsteps
+      Path: Default Work Unit\Enemies\Vex\Vex_Footsteps
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Enemies
+        ObjectType: 4
+      - ElementName: Vex
+        ObjectType: 4
+      - ElementName: Vex_Footsteps
         ObjectType: 3
       maxAttenuation: 0
       maxDuration: 0
@@ -69,8 +615,6 @@ MonoBehaviour:
   - /3DSideScroller_WwiseProject
   - /3DSideScroller_WwiseProject/Events
   - /3DSideScroller_WwiseProject/Events/Default Work Unit
-  - /3DSideScroller_WwiseProject/SoundBanks
-  - /3DSideScroller_WwiseProject/SoundBanks/Default Work Unit
   language: English(US)
   lowerPoolSize: 2048
   m_lastPopulateTimePart2: 0

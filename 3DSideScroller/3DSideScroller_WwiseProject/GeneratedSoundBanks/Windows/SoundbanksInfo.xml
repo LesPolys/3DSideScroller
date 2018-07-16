@@ -21,30 +21,94 @@
 			<ShortName>Soundbank_01</ShortName>
 			<Path>Soundbank_01.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1068347553" Name="Music_Test" ObjectPath="\Events\Default Work Unit\Music_Test"/>
+				<Event Id="2631240918" Name="Character_Ready" ObjectPath="\Events\Default Work Unit\UI\Character Select\Character_Ready" MaxAttenuation="0.000000"/>
+				<Event Id="1205999388" Name="Enemy_Death" ObjectPath="\Events\Default Work Unit\Enemies\Shared\Enemy_Death"/>
+				<Event Id="1010055213" Name="Enemy_Hit" ObjectPath="\Events\Default Work Unit\Enemies\Shared\Enemy_Hit"/>
+				<Event Id="1432716332" Name="Game_Over" ObjectPath="\Events\Default Work Unit\UI\Game State\Game_Over" MaxAttenuation="0.000000"/>
+				<Event Id="3218375656" Name="Game_Win" ObjectPath="\Events\Default Work Unit\UI\Game State\Game_Win" MaxAttenuation="0.000000"/>
+				<Event Id="1244594577" Name="Level_Music" ObjectPath="\Events\Default Work Unit\Music\Level_Music"/>
+				<Event Id="3429288859" Name="Menu_Accept" ObjectPath="\Events\Default Work Unit\UI\Menu\Menu_Accept" MaxAttenuation="0.000000"/>
+				<Event Id="3180909377" Name="Menu_Cancel" ObjectPath="\Events\Default Work Unit\UI\Menu\Menu_Cancel" MaxAttenuation="0.000000"/>
+				<Event Id="2170009975" Name="Menu_Pause" ObjectPath="\Events\Default Work Unit\UI\Menu\Menu_Pause" MaxAttenuation="0.000000"/>
+				<Event Id="2072673020" Name="Menu_Scroll" ObjectPath="\Events\Default Work Unit\UI\Menu\Menu_Scroll" MaxAttenuation="0.000000"/>
+				<Event Id="2651857535" Name="MrSpines_Attack" ObjectPath="\Events\Default Work Unit\Enemies\MrSpines\MrSpines_Attack"/>
+				<Event Id="3136346432" Name="MrSpines_Footsteps" ObjectPath="\Events\Default Work Unit\Enemies\MrSpines\MrSpines_Footsteps"/>
+				<Event Id="187604770" Name="Oozer_Footsteps" ObjectPath="\Events\Default Work Unit\Enemies\Oozer\Oozer_Footsteps"/>
+				<Event Id="837528085" Name="Oozer_HitGround" ObjectPath="\Events\Default Work Unit\Enemies\Oozer\Oozer_HitGround"/>
+				<Event Id="366571179" Name="Oozer_HitPlayer" ObjectPath="\Events\Default Work Unit\Enemies\Oozer\Oozer_HitPlayer"/>
+				<Event Id="3194464978" Name="Oozer_Shoot" ObjectPath="\Events\Default Work Unit\Enemies\Oozer\Oozer_Shoot"/>
 				<Event Id="1833036836" Name="Player_Block" ObjectPath="\Events\Default Work Unit\Player\Hit\Player_Block"/>
 				<Event Id="2074073782" Name="Player_Damage" ObjectPath="\Events\Default Work Unit\Player\Hit\Player_Damage"/>
+				<Event Id="2882779481" Name="Player_FootstepsLeft" ObjectPath="\Events\Default Work Unit\Player\Footsteps\Player_FootstepsLeft"/>
+				<Event Id="269686156" Name="Player_FootstepsRight" ObjectPath="\Events\Default Work Unit\Player\Footsteps\Player_FootstepsRight"/>
+				<Event Id="3542219815" Name="Player_HealthPickup" ObjectPath="\Events\Default Work Unit\Player\Pickup\Player_HealthPickup" MaxAttenuation="0.000000"/>
 				<Event Id="3816881566" Name="Player_HeavyAttack" ObjectPath="\Events\Default Work Unit\Player\Attack\Player_HeavyAttack"/>
 				<Event Id="1305133589" Name="Player_Jump" ObjectPath="\Events\Default Work Unit\Player\Jump\Player_Jump"/>
 				<Event Id="751122599" Name="Player_LightAttack" ObjectPath="\Events\Default Work Unit\Player\Attack\Player_LightAttack"/>
+				<Event Id="853366470" Name="Player_MagicAttack" ObjectPath="\Events\Default Work Unit\Player\Attack\Player_MagicAttack" MaxAttenuation="0.000000"/>
+				<Event Id="1256435816" Name="Player_PowerPickup" ObjectPath="\Events\Default Work Unit\Player\Pickup\Player_PowerPickup" MaxAttenuation="0.000000"/>
+				<Event Id="4209431020" Name="Slicer_Attack" ObjectPath="\Events\Default Work Unit\Enemies\Slicer\Slicer_Attack"/>
 				<Event Id="2298066109" Name="Slicer_Footsteps" ObjectPath="\Events\Default Work Unit\Enemies\Slicer\Slicer_Footsteps"/>
+				<Event Id="3661249112" Name="Tanker_Footsteps" ObjectPath="\Events\Default Work Unit\Enemies\Tanker\Tanker_Footsteps"/>
+				<Event Id="3281482822" Name="Tanker_Hook" ObjectPath="\Events\Default Work Unit\Enemies\Tanker\Tanker_Hook"/>
+				<Event Id="951923072" Name="Tanker_ShockWave" ObjectPath="\Events\Default Work Unit\Enemies\Tanker\Tanker_ShockWave"/>
+				<Event Id="2563941659" Name="Tanker_Swipe" ObjectPath="\Events\Default Work Unit\Enemies\Tanker\Tanker_Swipe"/>
+				<Event Id="534424066" Name="Vex_ChantFinish" ObjectPath="\Events\Default Work Unit\Enemies\Vex\Vex_ChantFinish" MaxAttenuation="0.000000"/>
+				<Event Id="276150034" Name="Vex_ChantWindup" ObjectPath="\Events\Default Work Unit\Enemies\Vex\Vex_ChantWindup" MaxAttenuation="0.000000"/>
+				<Event Id="2904509426" Name="Vex_Footsteps" ObjectPath="\Events\Default Work Unit\Enemies\Vex\Vex_Footsteps"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="542909" Language="SFX">
+					<ShortName>Tanker_Footsteps_04.wav</ShortName>
+					<Path>SFX\Tanker_Footsteps_04_1C9C67B2.wem</Path>
+				</File>
 				<File Id="18194984" Language="SFX">
 					<ShortName>Player_HeavyAttack_03.wav</ShortName>
 					<Path>SFX\Player_HeavyAttack_03_1C9C67B2.wem</Path>
+				</File>
+				<File Id="42664974" Language="SFX">
+					<ShortName>Enemy_Death_03.wav</ShortName>
+					<Path>SFX\Enemy_Death_03_1C9C67B2.wem</Path>
 				</File>
 				<File Id="62236274" Language="SFX">
 					<ShortName>Slicer_Footsteps_01.wav</ShortName>
 					<Path>SFX\Slicer_Footsteps_01_1C9C67B2.wem</Path>
 				</File>
+				<File Id="70792518" Language="SFX">
+					<ShortName>Tanker_Footsteps_01.wav</ShortName>
+					<Path>SFX\Tanker_Footsteps_01_1C9C67B2.wem</Path>
+				</File>
 				<File Id="75773141" Language="SFX">
 					<ShortName>Player_Jump_01.wav</ShortName>
 					<Path>SFX\Player_Jump_01_1C9C67B2.wem</Path>
 				</File>
+				<File Id="90691482" Language="SFX">
+					<ShortName>Enemy_Hit_04.wav</ShortName>
+					<Path>SFX\Enemy_Hit_04_1C9C67B2.wem</Path>
+				</File>
+				<File Id="123445036" Language="SFX">
+					<ShortName>Player_FootstepsRight_03.wav</ShortName>
+					<Path>SFX\Player_FootstepsRight_03_1C9C67B2.wem</Path>
+				</File>
+				<File Id="147565251" Language="SFX">
+					<ShortName>Tanker_Footsteps_05.wav</ShortName>
+					<Path>SFX\Tanker_Footsteps_05_1C9C67B2.wem</Path>
+				</File>
 				<File Id="162363131" Language="SFX">
 					<ShortName>Slicer_Footsteps_03.wav</ShortName>
 					<Path>SFX\Slicer_Footsteps_03_1C9C67B2.wem</Path>
+				</File>
+				<File Id="173472038" Language="SFX">
+					<ShortName>Slicer_Attack_02.wav</ShortName>
+					<Path>SFX\Slicer_Attack_02_1C9C67B2.wem</Path>
+				</File>
+				<File Id="195939589" Language="SFX">
+					<ShortName>Enemy_Hit_02.wav</ShortName>
+					<Path>SFX\Enemy_Hit_02_1C9C67B2.wem</Path>
+				</File>
+				<File Id="225566854" Language="SFX">
+					<ShortName>Enemy_Hit_03.wav</ShortName>
+					<Path>SFX\Enemy_Hit_03_1C9C67B2.wem</Path>
 				</File>
 				<File Id="273365161" Language="SFX">
 					<ShortName>Player_Block_01.wav</ShortName>
@@ -62,6 +126,10 @@
 					<ShortName>Player_HeavyAttack_01.wav</ShortName>
 					<Path>SFX\Player_HeavyAttack_01_1C9C67B2.wem</Path>
 				</File>
+				<File Id="376012603" Language="SFX">
+					<ShortName>Tanker_Footsteps_02.wav</ShortName>
+					<Path>SFX\Tanker_Footsteps_02_1C9C67B2.wem</Path>
+				</File>
 				<File Id="396509472" Language="SFX">
 					<ShortName>Player_HeavyAttack_02.wav</ShortName>
 					<Path>SFX\Player_HeavyAttack_02_1C9C67B2.wem</Path>
@@ -70,9 +138,17 @@
 					<ShortName>Icepick_July 5_V1.wav</ShortName>
 					<Path>SFX\Icepick_July 5_V1_F17FB28C.wem</Path>
 				</File>
+				<File Id="397909767" Language="SFX">
+					<ShortName>Mellchunk_Mix_V1.wav</ShortName>
+					<Path>SFX\Mellchunk_Mix_V1_F17FB28C.wem</Path>
+				</File>
 				<File Id="418150509" Language="SFX">
 					<ShortName>Player_LightAttack_01.wav</ShortName>
 					<Path>SFX\Player_LightAttack_01_1C9C67B2.wem</Path>
+				</File>
+				<File Id="469836435" Language="SFX">
+					<ShortName>Player_FootstepsRight_04.wav</ShortName>
+					<Path>SFX\Player_FootstepsRight_04_1C9C67B2.wem</Path>
 				</File>
 				<File Id="527821656" Language="SFX">
 					<ShortName>Player_Damage_02.wav</ShortName>
@@ -82,13 +158,57 @@
 					<ShortName>Player_Jump_02.wav</ShortName>
 					<Path>SFX\Player_Jump_02_1C9C67B2.wem</Path>
 				</File>
+				<File Id="553139650" Language="SFX">
+					<ShortName>Player_FootstepsLeft_04.wav</ShortName>
+					<Path>SFX\Player_FootstepsLeft_04_1C9C67B2.wem</Path>
+				</File>
+				<File Id="567230979" Language="SFX">
+					<ShortName>Player_FootstepsRight_01.wav</ShortName>
+					<Path>SFX\Player_FootstepsRight_01_1C9C67B2.wem</Path>
+				</File>
+				<File Id="597642798" Language="SFX">
+					<ShortName>Enemy_Death_05.wav</ShortName>
+					<Path>SFX\Enemy_Death_05_1C9C67B2.wem</Path>
+				</File>
+				<File Id="636492112" Language="SFX">
+					<ShortName>Player_FootstepsLeft_02.wav</ShortName>
+					<Path>SFX\Player_FootstepsLeft_02_1C9C67B2.wem</Path>
+				</File>
+				<File Id="680167162" Language="SFX">
+					<ShortName>Enemy_Hit_05.wav</ShortName>
+					<Path>SFX\Enemy_Hit_05_1C9C67B2.wem</Path>
+				</File>
+				<File Id="689879146" Language="SFX">
+					<ShortName>Player_FootstepsRight_02.wav</ShortName>
+					<Path>SFX\Player_FootstepsRight_02_1C9C67B2.wem</Path>
+				</File>
+				<File Id="689902386" Language="SFX">
+					<ShortName>Enemy_Hit_01.wav</ShortName>
+					<Path>SFX\Enemy_Hit_01_1C9C67B2.wem</Path>
+				</File>
+				<File Id="742938008" Language="SFX">
+					<ShortName>Tanker_Footsteps_03.wav</ShortName>
+					<Path>SFX\Tanker_Footsteps_03_1C9C67B2.wem</Path>
+				</File>
+				<File Id="762934067" Language="SFX">
+					<ShortName>Player_FootstepsLeft_01.wav</ShortName>
+					<Path>SFX\Player_FootstepsLeft_01_1C9C67B2.wem</Path>
+				</File>
 				<File Id="767889989" Language="SFX">
 					<ShortName>Player_Block_02.wav</ShortName>
 					<Path>SFX\Player_Block_02_1C9C67B2.wem</Path>
 				</File>
+				<File Id="768975541" Language="SFX">
+					<ShortName>Slicer_Attack_01.wav</ShortName>
+					<Path>SFX\Slicer_Attack_01_1C9C67B2.wem</Path>
+				</File>
 				<File Id="783400296" Language="SFX">
 					<ShortName>Slicer_Footsteps_06.wav</ShortName>
 					<Path>SFX\Slicer_Footsteps_06_1C9C67B2.wem</Path>
+				</File>
+				<File Id="796772036" Language="SFX">
+					<ShortName>Enemy_Death_04.wav</ShortName>
+					<Path>SFX\Enemy_Death_04_1C9C67B2.wem</Path>
 				</File>
 				<File Id="800335321" Language="SFX">
 					<ShortName>Player_LightAttack_02.wav</ShortName>
@@ -98,6 +218,10 @@
 					<ShortName>Slicer_Footsteps_05.wav</ShortName>
 					<Path>SFX\Slicer_Footsteps_05_1C9C67B2.wem</Path>
 				</File>
+				<File Id="907919031" Language="SFX">
+					<ShortName>Slicer_Attack_03.wav</ShortName>
+					<Path>SFX\Slicer_Attack_03_1C9C67B2.wem</Path>
+				</File>
 				<File Id="918671085" Language="SFX">
 					<ShortName>Player_Damage_01.wav</ShortName>
 					<Path>SFX\Player_Damage_01_1C9C67B2.wem</Path>
@@ -105,6 +229,18 @@
 				<File Id="920939829" Language="SFX">
 					<ShortName>Player_LightAttack_03.wav</ShortName>
 					<Path>SFX\Player_LightAttack_03_1C9C67B2.wem</Path>
+				</File>
+				<File Id="969934758" Language="SFX">
+					<ShortName>Enemy_Death_02.wav</ShortName>
+					<Path>SFX\Enemy_Death_02_1C9C67B2.wem</Path>
+				</File>
+				<File Id="999720611" Language="SFX">
+					<ShortName>Player_FootstepsLeft_03.wav</ShortName>
+					<Path>SFX\Player_FootstepsLeft_03_1C9C67B2.wem</Path>
+				</File>
+				<File Id="1059291202" Language="SFX">
+					<ShortName>Enemy_Death_01_V2.wav</ShortName>
+					<Path>SFX\Enemy_Death_01_V2_1C9C67B2.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

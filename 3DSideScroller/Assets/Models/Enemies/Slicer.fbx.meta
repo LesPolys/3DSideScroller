@@ -122,7 +122,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.10675039
+        functionName: CallAudioEvent
+        data: Enemy_Death
+        objectReferenceParameter: {fileID: 1522691385707128, guid: 75b8a44a44041f846a7dd938e11c2b2a,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -150,7 +158,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.13657771
+        functionName: CallAudioEvent
+        data: Slicer_Footsteps
+        objectReferenceParameter: {fileID: 1522691385707128, guid: 75b8a44a44041f846a7dd938e11c2b2a,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6357928
+        functionName: CallAudioEvent
+        data: Slicer_Footsteps
+        objectReferenceParameter: {fileID: 1522691385707128, guid: 75b8a44a44041f846a7dd938e11c2b2a,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -178,7 +202,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.49372235
+        functionName: CallAudioEvent
+        data: Enemy_Hit
+        objectReferenceParameter: {fileID: 1522691385707128, guid: 75b8a44a44041f846a7dd938e11c2b2a,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -206,7 +238,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.3037249
+        functionName: CallAudioEvent
+        data: Slicer_Footsteps
+        objectReferenceParameter: {fileID: 1522691385707128, guid: 75b8a44a44041f846a7dd938e11c2b2a,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6819484
+        functionName: CallAudioEvent
+        data: Slicer_Footsteps
+        objectReferenceParameter: {fileID: 1522691385707128, guid: 75b8a44a44041f846a7dd938e11c2b2a,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -234,7 +282,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.40725178
+        functionName: CallAudioEvent
+        data: Slicer_Attack
+        objectReferenceParameter: {fileID: 1522691385707128, guid: 75b8a44a44041f846a7dd938e11c2b2a,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

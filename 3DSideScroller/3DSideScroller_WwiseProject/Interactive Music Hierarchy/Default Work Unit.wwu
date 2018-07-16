@@ -67,6 +67,105 @@
 						</MusicCue>
 					</CueList>
 				</MusicSegment>
+				<MusicPlaylistContainer Name="Level_Music" ID="{0E428DE5-7582-4D3C-A803-D32E60DD22D0}" ShortID="127754746">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{303B7FD5-8973-4961-B03C-AF8FB88CBFB1}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="Level_Music" ID="{F736CB6E-8D1C-45A6-9DD0-0C5F0276EB60}" ShortID="1010109911">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="182640.232444399"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{303B7FD5-8973-4961-B03C-AF8FB88CBFB1}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="Mellchunk_Mix_V1" ID="{01B514F1-7AD2-4FD8-8FC0-B1D7C7200F0E}" ShortID="1050910288">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{303B7FD5-8973-4961-B03C-AF8FB88CBFB1}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Mellchunk_Mix_V1" ID="{B7BC77BF-24E4-4E53-9902-67558122A88D}" ShortID="397909767">
+											<Language>SFX</Language>
+											<AudioFile>Mellchunk_Mix_V1.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{42961841-CEE8-4C07-A8DF-326EE3A10329}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{C68FBE9C-3579-430E-948E-F360AF36EDEA}">
+											<ClipList>
+												<MusicClip Name="Mellchunk_Mix_V1" ID="{8F5BD486-7323-4A9B-8805-F8888C56A43C}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="162461.519274376"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="Mellchunk_Mix_V1" ID="{B7BC77BF-24E4-4E53-9902-67558122A88D}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+									</SequenceList>
+								</MusicTrack>
+							</ChildrenList>
+							<CueList>
+								<MusicCue Name="Entry Cue" ID="{F9227956-E0CB-4A68-8AC2-586C3EC2D23E}"/>
+								<MusicCue Name="Exit Cue" ID="{B74CCC28-09AC-431C-A184-69391CEA7CB6}">
+									<PropertyList>
+										<Property Name="CueType" Type="int16" Value="1"/>
+										<Property Name="TimeMs" Type="Real64" Value="162461.519274376"/>
+									</PropertyList>
+								</MusicCue>
+							</CueList>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{72DB0A2A-8A50-47BE-8FD7-4230547A1035}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{8C6D94FE-555D-4DE4-A836-2D7D23B11BB3}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{364790F9-3E94-4546-82A2-97E5068F9537}" ShortID="101872107">
+							<PropertyList>
+								<Property Name="LoopCount" Type="int16" Value="0"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{7EFF41BE-C858-4385-8F23-6261A26FF3AD}" ShortID="628191863">
+									<PropertyList>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="Level_Music" ID="{F736CB6E-8D1C-45A6-9DD0-0C5F0276EB60}"/>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</InteractiveMusic>
