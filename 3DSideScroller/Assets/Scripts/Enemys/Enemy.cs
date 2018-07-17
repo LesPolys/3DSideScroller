@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour {
             transform.position += transform.up * 100 * Time.deltaTime;
         }
 
-        OnDamage();
+      
     }
 
 

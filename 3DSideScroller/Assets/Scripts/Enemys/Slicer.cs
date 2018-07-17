@@ -160,10 +160,14 @@ public class Slicer : Enemy {
                         {
 
                             if (playersToDamage[i].GetComponent<Player>() != null)
-                                playersToDamage[i].GetComponent<Player>().Damage(1);
+                            {
+                                //playersToDamage[i].GetComponent<Player>().Damage(1);
+                                 playersToDamage[i].GetComponent<Player>().Hit(1, false);
+                            }
+                                
 
-                            if (playersToDamage[i].GetComponent<Enemy>() != null)
-                                playersToDamage[i].GetComponent<Enemy>().Damage(1);
+                         //   if (playersToDamage[i].GetComponent<Enemy>() != null)
+                         //       playersToDamage[i].GetComponent<Enemy>().Damage(1);
 
 
                     }
@@ -338,7 +342,8 @@ public class Slicer : Enemy {
     {
         if (!isDead) {
             currState = SlicerStates.HIT;
-            _animator.Play("Hit");
+            //PlayMode.StopAll
+            _animator.Play("Hit",-1,0f);
         }
 
         if (!testedCourage)

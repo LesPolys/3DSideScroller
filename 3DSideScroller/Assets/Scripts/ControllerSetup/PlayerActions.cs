@@ -10,7 +10,8 @@ public class PlayerActions : PlayerActionSet
 	public PlayerAction A;
 	public PlayerAction B;
 	public PlayerAction X;
-	public PlayerAction Y;
+    public PlayerAction Y;
+    public PlayerAction LT;
 	public PlayerAction Left;
 	public PlayerAction Right;
 	public PlayerAction Up;
@@ -28,6 +29,8 @@ public class PlayerActions : PlayerActionSet
 		B = CreatePlayerAction( "B" );
 		X = CreatePlayerAction( "X" );
 		Y = CreatePlayerAction( "Y" );
+        LT = CreatePlayerAction("LT"); //Left Trigger
+    
 		Left = CreatePlayerAction( "Left" );
 		Right = CreatePlayerAction( "Right" );
 		Up = CreatePlayerAction( "Up" );
@@ -48,6 +51,7 @@ public class PlayerActions : PlayerActionSet
 		actions.B.AddDefaultBinding( Key.S );
 		actions.X.AddDefaultBinding( Key.D );
 		actions.Y.AddDefaultBinding( Key.F );
+        actions.LT.AddDefaultBinding(Key.Q);
 
 		actions.Up.AddDefaultBinding( Key.UpArrow );
 		actions.Down.AddDefaultBinding( Key.DownArrow );
@@ -68,6 +72,7 @@ public class PlayerActions : PlayerActionSet
 		actions.B.AddDefaultBinding( InputControlType.Action2 );
 		actions.X.AddDefaultBinding( InputControlType.Action3 );
 		actions.Y.AddDefaultBinding( InputControlType.Action4 );
+        actions.LT.AddDefaultBinding(InputControlType.LeftTrigger);
 
 		actions.Up.AddDefaultBinding( InputControlType.LeftStickUp );
 		actions.Down.AddDefaultBinding( InputControlType.LeftStickDown );

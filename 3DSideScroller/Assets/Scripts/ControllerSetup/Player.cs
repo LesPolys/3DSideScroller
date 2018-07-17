@@ -16,13 +16,22 @@ public class Player : MonoBehaviour
     private Animator _animator;
 
 
+    #region Movement
     [SerializeField]
-    float moveSpeed = 4f;
+    float normalMoveSpeed = 4f;
+    [SerializeField]
+    float blockMoveSpeed = 1f;
+
+    float moveSpeed;
+    #endregion
+
+
 
     Vector3 forward, right, lastCurrent;
 
     private bool attacking = false;
-
+    private bool blocking = false;
+    public GameObject block;
 
    
     [SerializeField]
@@ -87,7 +96,7 @@ public class Player : MonoBehaviour
         GetAnimationLengths();
 
 
-
+        moveSpeed = normalMoveSpeed;
 
         forward = Camera.main.transform.forward;
         forward.y = 0;
@@ -221,6 +230,16 @@ public class Player : MonoBehaviour
 
         }
 
+        if (Actions.LT && _isGrounded && !attacking )
+        {
+            blocking = true;
+            block.active = true;
+        }
+        else
+        {
+            blocking = false;
+            block.active = false;
+        }
 
 
         if (timeBetweenLightAttack <= 0) {
@@ -338,6 +357,26 @@ public class Player : MonoBehaviour
 
         if (!_isGrounded || !attacking)
         {
+
+
+            if (blocking)
+            {
+                if (!_isGrounded)
+                {
+                    moveSpeed = normalMoveSpeed;
+
+                }
+                else
+                {
+                    moveSpeed = blockMoveSpeed;
+                }
+                
+            }
+            else
+            {
+                moveSpeed = normalMoveSpeed;
+            }
+
             switch (currMoveType)
             {
 
@@ -352,104 +391,14 @@ public class Player : MonoBehaviour
 
                 #region LTTP
                 case MoveTypes.LTTP:
-                    //rotHeading = Vector3.Normalize(rightMovement + upMovement);
-
-                    //print(Actions.Move.X);
+            
 
 
-                    //Up
-                    if (Actions.Move.Y < 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5)
-                    {
-                        rotHeading = new Vector3(0.7f, 0.0f, 0.7f);
+                    rightMovement = right * moveSpeed * Time.deltaTime * Mathf.RoundToInt(Actions.Move.X);
+                    upMovement = forward * moveSpeed * Time.deltaTime * Mathf.RoundToInt(-1 * Actions.Move.Y);
 
-                    }
+                    rotHeading = Vector3.Normalize(rightMovement + upMovement);
 
-                    //Down
-
-                    if (Actions.Move.Y > 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5)
-                    {
-                        rotHeading = new Vector3(-0.7f, 0.0f, -0.7f);
-
-                    }
-
-                    //Left
-
-                    if (Actions.Move.X < 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
-                    {
-                        rotHeading = new Vector3(-0.7f, 0.0f, 0.7f);
-
-                    }
-
-                    //Right
-
-                    if (Actions.Move.X > 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
-                    {
-                        rotHeading = new Vector3(0.7f, 0.0f, -0.7f);
-
-                    }
-
-                    //UPLEFT
-
-                    if (Actions.Move.X < 0 && Actions.Move.Y <= -0.20 && Actions.Move.Y >= -0.75)
-                    {
-                        rotHeading = new Vector3(0.1f, 0.0f, 1.0f);
-
-                    }
-
-                    //UPRIGHT
-
-                    if (Actions.Move.X > 0 && Actions.Move.Y <= -0.20 && Actions.Move.Y >= -0.75)
-                    {
-                        rotHeading = new Vector3(1.0f, 0.0f, 0.1f);
-
-                    }
-
-                    //DOWNLEFT
-
-                    if (Actions.Move.X < 0 && Actions.Move.Y >= 0.20 && Actions.Move.Y <= 0.75)
-                    {
-
-                        rotHeading = new Vector3(-1.0f, 0.0f, 0.1f);
-                    }
-
-                    //DOWNRIGHT
-
-                    if (Actions.Move.X > 0 && Actions.Move.Y >= 0.20 && Actions.Move.Y <= 0.75)
-                    {
-                        rotHeading = new Vector3(0.1f, 0.0f, -1.0f);
-
-                    }
-
-                    //Up
-                    if (Actions.Move.Y < 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5)
-                    {
-                        rotHeading = new Vector3(0.7f, 0.0f, 0.7f);
-
-                    }
-
-                    //Down
-
-                    if (Actions.Move.Y > 0 && Actions.Move.X <= 0.5 && Actions.Move.X >= -0.5)
-                    {
-                        rotHeading = new Vector3(-0.7f, 0.0f, -0.7f);
-
-                    }
-
-                    //Left
-
-                    if (Actions.Move.X < 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
-                    {
-                        rotHeading = new Vector3(-0.7f, 0.0f, 0.7f);
-
-                    }
-
-                    //Right
-
-                    if (Actions.Move.X > 0 && Actions.Move.Y <= 0.5 && Actions.Move.Y >= -0.5)
-                    {
-                        rotHeading = new Vector3(0.7f, 0.0f, -0.7f);
-
-                    }
 
                     if (rotHeading != Vector3.zero)
                     {
@@ -504,16 +453,25 @@ public class Player : MonoBehaviour
 
     }
 
-    public void Hit(bool unblockable)
+    public void Hit(int damage, bool unblockable)
     {
 
         if (unblockable)
         {
-
+            Damage(damage);
         }
         else
         {
-
+            if (blocking)
+            {
+                Damage(0);
+                //print("BLOCKED BITCH");
+                //play block effects and sounds
+            }
+            else
+            {
+                Damage(damage);
+            }
         }
 
     }
@@ -522,8 +480,8 @@ public class Player : MonoBehaviour
     public void Damage(int damage)
     {
         health -= damage;
-
-        
+       // print("OUCH: " + damage + "Im at: " + health);
+        //play damage effect and sound
 
         if(health <= 0)
         {
