@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using EZCameraShake;
+using System.Collections;
 
 
 // This is just a simple "player" script that rotates and colors a cube
@@ -8,7 +9,7 @@ using EZCameraShake;
 //
 // See comments in PlayerManager.cs for more details.
 //
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour 
 {
     public PlayerActions Actions { get; set; }
 
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
 
 
     #region Movement
+    [Header("MOVEMENT")]
     [SerializeField]
     float normalMoveSpeed = 4f;
     [SerializeField]
@@ -29,9 +31,7 @@ public class Player : MonoBehaviour
 
     Vector3 forward, right, lastCurrent;
 
-    private bool attacking = false;
-    private bool blocking = false;
-    public GameObject block;
+  
 
    
     [SerializeField]
@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
 
     #region Jumping/Grounding
     private Vector3 _velocity;
+    [Header("JUMPING AND GROUNDING")]
     public float Gravity;
     public Transform _groundChecker;
     public float GroundDistance = 0.2f;
@@ -62,31 +63,57 @@ public class Player : MonoBehaviour
     public LayerMask enemyMask; //forAttacks and knowing about enemies
 
     #region LIGHTATTACK
+  
     private float timeBetweenLightAttack; //stop button mashing
     private float startTimeBetweenLightAttack;
+    [Header("LIGHT ATTACK")]
     public Transform lightAttackPos;
     public float lightAttackRange;
+    [Space (20)]
     #endregion
 
     #region HEAVYATTACK
+   
     private float timeBetweenHeavyAttack; //stop button mashing
     private float startTimeBetweenHeavyAttack;
+    [Header("HEAVY ATTACK")]
     public Transform heavyAttackPos;
     public float heavyAttackRange;
+    [Space(20)]
     #endregion
 
     #region SPECIALATTACK
+ 
     private float timeBetweenSpecialAttack; //stop button mashing
     private float startTimeBetweenSpecialAttack;
+    [Header("SPECIAL ATACK")]
     public Transform specialAttackPos;
     public float specialAttackRange;
+
+    private bool charging = false;
+    private float chargeTime;
+    public float tier1Time;
+    private bool isTier1 = false;
+    public float tier2Time;
+    private bool isTier2 = false;
+    public float tier3Time;
+    private bool isTier3 = false;
+    public float maxChargeTime;
+    private bool forcedRelease = false;
+    [Space(20)]
     #endregion
 
     #region BLOCK
+  
+    private bool attacking = false;
+    private bool blocking = false;
+    [Header("BLOCK")]
+    public GameObject block;
+   
     #endregion
 
 
-    
+
 
     void Awake()
     {
@@ -186,27 +213,7 @@ public class Player : MonoBehaviour
     //  Debug.Log("Dash");
     //  _velocity += Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
 
-    void CheckForHits()
-    {
-        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
-        {
-            //print("ATTACK");
-            CheckForEnemiesHit(lightAttackPos, lightAttackRange, 1);
 
-        }
-        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Heavy"))
-        {
-           // print("HEAVY");
-            CheckForEnemiesHit(heavyAttackPos, heavyAttackRange, 1);
-
-        }
-        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Spin"))
-        {
-            //print("SPIN");
-            CheckForEnemiesHit(specialAttackPos, specialAttackRange, 1);
-
-        }
-    }
 
 
     void HandleInput()
@@ -233,12 +240,12 @@ public class Player : MonoBehaviour
         if (Actions.LT && _isGrounded && !attacking )
         {
             blocking = true;
-            block.active = true;
+            block.SetActive(true);
         }
         else
         {
             blocking = false;
-            block.active = false;
+            block.SetActive(false) ;
         }
 
 
@@ -281,16 +288,100 @@ public class Player : MonoBehaviour
             
             if (Actions.B.WasPressed && !attacking)
             {
-                attacking = true;
-                _animator.Play("Spin");
-                timeBetweenSpecialAttack = startTimeBetweenSpecialAttack;
+                charging = true;
+                print("pressed");
             }
+
+            if (charging) //charging special attack
+            {
+                chargeTime += Time.deltaTime;
+                print(chargeTime);
+
+                if (chargeTime >= tier1Time)
+                {
+                    isTier1 = true;
+                    print("Tier1Achieved");
+                    if(chargeTime >= tier2Time)
+                    {
+                        isTier2 = true;
+                        print("Tier2Achieved");
+                        if (chargeTime >= tier3Time)
+                        {
+                            isTier3 = true;
+                            print("Tier3Achieved");
+                            if (chargeTime >= maxChargeTime)
+                            {
+                                print("POWER OVERWHELMING!");
+                                forcedRelease = true;
+                                SpecialAttack();
+                                
+                            }
+
+                        }
+                    }
+                }
+            }
+
+
+            if (Actions.B.WasReleased && !attacking)
+            {
+                if (forcedRelease)
+                {
+                    print("control relinquished");
+                    forcedRelease = false;
+                }
+                else
+                {
+                    print("released");
+                    SpecialAttack();
+                }
+               
+            }
+
+
         }
         else
         {
             
             timeBetweenSpecialAttack -= Time.deltaTime;
         }
+
+
+    }
+
+    private void SpecialAttack()
+    {
+        chargeTime = 0;
+        charging = false;
+        //attacking = true;
+
+        if (isTier3)
+        {
+            print("Tier3 Attack");
+            _animator.Play("Spin");
+            timeBetweenSpecialAttack = startTimeBetweenSpecialAttack;
+
+        }
+        else if (isTier2)
+        {
+            print("Tier3 Attack");
+            _animator.Play("Spin");
+            timeBetweenSpecialAttack = startTimeBetweenSpecialAttack;
+
+        }
+        else if (isTier1)
+        {
+            print("Tier3 Attack");
+            _animator.Play("Spin");
+            timeBetweenSpecialAttack = startTimeBetweenSpecialAttack;
+        }
+
+        print("Tier3 Spent");
+        isTier3 = false;
+        print("Tier2 Spent");
+        isTier2 = false;
+        print("Tier1 Spent");
+        isTier1 = false;
 
 
     }
@@ -313,6 +404,28 @@ public class Player : MonoBehaviour
 
     }
 
+
+    void CheckForHits()
+    {
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            //print("ATTACK");
+            CheckForEnemiesHit(lightAttackPos, lightAttackRange, 1);
+
+        }
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Heavy"))
+        {
+            // print("HEAVY");
+            CheckForEnemiesHit(heavyAttackPos, heavyAttackRange, 2);
+
+        }
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Spin"))
+        {
+            //print("SPIN");
+            CheckForEnemiesHit(specialAttackPos, specialAttackRange, 1);
+
+        }
+    }
 
     void CheckForEnemiesHit(Transform attackPos, float attackRange, int damage)
     {

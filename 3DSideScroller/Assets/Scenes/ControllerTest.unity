@@ -1411,7 +1411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logDebugInfo: 1
-  invertYAxis: 1
+  invertYAxis: 0
   useFixedUpdate: 0
   dontDestroyOnLoad: 0
   suspendInBackground: 0
@@ -2149,11 +2149,6 @@ Prefab:
     - target: {fileID: 1256617393244176, guid: d7579476e2ffe9940a7c33f63ea22787, type: 2}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114729597494191428, guid: d7579476e2ffe9940a7c33f63ea22787,
-        type: 2}
-      propertyPath: health
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7579476e2ffe9940a7c33f63ea22787, type: 2}

@@ -1944,7 +1944,7 @@ TrailRenderer:
   m_Time: 0.44
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.5
+    widthMultiplier: 2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -2044,8 +2044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalMoveSpeed: 15
   blockMoveSpeed: 5
-  block: {fileID: 1309287624202018}
-  health: 0
+  health: 30
   Gravity: -30
   _groundChecker: {fileID: 4058516008326462}
   GroundDistance: 0.2
@@ -2064,6 +2063,11 @@ MonoBehaviour:
   heavyAttackRange: 1.2
   specialAttackPos: {fileID: 4400136375841524}
   specialAttackRange: 0.63
+  tier1Time: 1
+  tier2Time: 2
+  tier3Time: 3
+  maxChargeTime: 3.2
+  block: {fileID: 1309287624202018}
 --- !u!137 &137088807293094702
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
