@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour {
     [SerializeField]
     protected float health;
 
+    public bool canBeJuggled; 
 
     protected float stunTime;
     protected float startStunTime = 0;
@@ -48,11 +49,31 @@ public class Enemy : MonoBehaviour {
         stunTime = startStunTime;
         health -= damage;
         OnDamage();
+
+
     }
+
+
+    public void AirDamage(int damage, Transform playerPos)
+    {
+        print("cjknbf");
+        stunTime = startStunTime;
+        health -= damage;
+        OnDamage();
+
+        if (canBeJuggled)
+        {
+            print("cjknbf");
+            transform.position += transform.up * 100 * Time.deltaTime;
+        }
+
+        OnDamage();
+    }
+
 
     protected virtual void OnDamage()
     {
-
+        //play effects
     }
 
 }

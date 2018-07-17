@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     public LayerMask Ground;
     private bool _isGrounded = true;
     public float JumpHeight = 2f;
+    private bool affectedByGravity = true;
     #endregion
 
     #region Dashing
@@ -76,7 +77,7 @@ public class Player : MonoBehaviour
     #endregion
 
 
-    private bool affectedByGravity = true;
+    
 
     void Awake()
     {
@@ -303,7 +304,15 @@ public class Player : MonoBehaviour
         {
      
             CameraShaker.Instance.ShakeOnce(0.5f, 1f, 0.1f, 0.1f);
-            enemiesToDamage[i].GetComponent<Enemy>().Damage(damage);
+            if (!_isGrounded && enemiesToDamage[i].GetComponent<Enemy>().canBeJuggled)
+            {
+                enemiesToDamage[i].GetComponent<Enemy>().AirDamage(damage, transform);
+            }
+            else
+            {
+                enemiesToDamage[i].GetComponent<Enemy>().Damage(damage);
+            }
+            
         }
 
 

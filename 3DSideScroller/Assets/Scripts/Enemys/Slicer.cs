@@ -39,6 +39,17 @@ public class Slicer : Enemy {
     public SlicerStates currState;
     #endregion
 
+    #region Jumping/Grounding
+    private Vector3 _velocity;
+    public float Gravity;
+    public Transform _groundChecker;
+    public float GroundDistance = 0.2f;
+    public LayerMask Ground;
+    private bool _isGrounded = true;
+    private bool affectedByGravity = true;
+    #endregion
+
+
     private bool dissapearing = false;
 
     protected override void Awake()
@@ -75,6 +86,18 @@ public class Slicer : Enemy {
 	// Update is called once per frame
 	void Update () {
 
+        _isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore); // Check if grounded to reset velocity
+        if (_isGrounded && _velocity.y < 0)
+        {
+            _velocity.y = 0f;
+        }
+
+        if (affectedByGravity)
+        {
+            _velocity.y += Gravity * Time.deltaTime; //add gravity to velocity
+        }
+
+        _controller.Move(_velocity * Time.deltaTime);
 
         switch (currState)
         {
