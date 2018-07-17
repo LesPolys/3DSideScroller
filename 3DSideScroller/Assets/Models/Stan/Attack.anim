@@ -27115,6 +27115,13 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
+  - time: 0.083333336
+    functionName: TurnOnLightTrailRenderer
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.13333334
     functionName: CallAudioEvent
     data: Player_LightAttack
@@ -27124,6 +27131,13 @@ AnimationClip:
     messageOptions: 0
   - time: 0.21666667
     functionName: EndOfAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.23333333
+    functionName: TurnOffLightTrailRender
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

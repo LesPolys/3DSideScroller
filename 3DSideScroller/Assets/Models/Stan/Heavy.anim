@@ -27619,6 +27619,13 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
+  - time: 0.0952381
+    functionName: TurnOnHeavyTrailRenderer
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.4047619
     functionName: CallAudioEvent
     data: Player_HeavyAttack
@@ -27628,6 +27635,13 @@ AnimationClip:
     messageOptions: 0
   - time: 0.52380955
     functionName: EndOfAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.52380955
+    functionName: TurnOffHeavyTrailRender
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
