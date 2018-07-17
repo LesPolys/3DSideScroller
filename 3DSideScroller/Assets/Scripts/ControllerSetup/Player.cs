@@ -306,12 +306,15 @@ public class Player : MonoBehaviour
             CameraShaker.Instance.ShakeOnce(0.5f, 1f, 0.1f, 0.1f);
             if (!_isGrounded && enemiesToDamage[i].GetComponent<Enemy>().canBeJuggled)
             {
+
                 enemiesToDamage[i].GetComponent<Enemy>().AirDamage(damage, transform);
             }
             else
             {
                 enemiesToDamage[i].GetComponent<Enemy>().Damage(damage);
             }
+
+
             
         }
 

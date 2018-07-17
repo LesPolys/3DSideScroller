@@ -34,6 +34,8 @@ public class PlayerManager : MonoBehaviour
 	PlayerActions keyboardListener;
 	PlayerActions joystickListener;
 
+    public MultiTargetCamera mltiCam;
+
 	void Awake(){
 		foreach(ReadyUpUI ready in readyUpSpots){
 			ready.Actions = PlayerActions.CreateEmptyBinding();
@@ -287,6 +289,8 @@ public class PlayerManager : MonoBehaviour
 
 			players.Add( player );
 
+            mltiCam.AddTarget(player.transform);
+
 			return player;
 		}
 
@@ -301,6 +305,9 @@ public class PlayerManager : MonoBehaviour
 	{
 		//playerPositions.Insert( 0, player.transform );
 		players.Remove( player );
+
+        mltiCam.RemoveTarget(player.transform);
+
 		player.Actions = null;
 		Destroy( player.gameObject );
 	}
