@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class Slicer : Enemy {
 
@@ -35,7 +36,7 @@ public class Slicer : Enemy {
     #endregion
 
     #region STATES
-    public enum SlicerStates { SEARCHING, FLEE, DEAD, SLICE, HIT, WALKING }
+    public enum SlicerStates { SEARCHING, FLEE, DEAD, SLICE, HIT, WALKING, IDLE }
     public SlicerStates currState;
     #endregion
 
@@ -65,9 +66,9 @@ public class Slicer : Enemy {
                 startStunTime = ac.animationClips[i].length;
             }
 
-            if (ac.animationClips[i].name == "slice")        //If it has the same name as your clip
+            if (ac.animationClips[i].name == "Idle")        //If it has the same name as your clip
             {
-               startTimeBetweenAttack = ac.animationClips[i].length + 1.0f;
+               startTimeBetweenAttack = ac.animationClips[i].length * 2;
             }
 
         }
@@ -98,6 +99,9 @@ public class Slicer : Enemy {
         }
 
         _controller.Move(_velocity * Time.deltaTime);
+
+
+        CheckForHits();
 
         switch (currState)
         {
@@ -151,42 +155,42 @@ public class Slicer : Enemy {
             case SlicerStates.SLICE:
                 //play attack anim
 
+               
+
                 if (timeBetweenAttack <= 0)
-                {     
-                      
-                        Collider[] playersToDamage = Physics.OverlapSphere(attackPos.position, attackRadius, playerMask);
-                    
-                        for (int i = 0; i < playersToDamage.Length; i++)
-                        {
-
-                            if (playersToDamage[i].GetComponent<Player>() != null)
-                            {
-                                //playersToDamage[i].GetComponent<Player>().Damage(1);
-                                 playersToDamage[i].GetComponent<Player>().Hit(1, false);
-                            }
-                                
-
-                         //   if (playersToDamage[i].GetComponent<Enemy>() != null)
-                         //       playersToDamage[i].GetComponent<Enemy>().Damage(1);
-
-
-                    }
-
-                        timeBetweenAttack = startTimeBetweenAttack;
+                {
 
                     _animator.Play("Slice");
 
-                    if (playersToDamage.Length <= 0)
-                    {
-                        ResetTarget();
-                    }
+                }
+              
+
+                //print(timeBetweenAttack);
+
+
+                break;
+
+            case SlicerStates.IDLE:
+                //play attack anim
+
+                if (timeBetweenAttack <= 0)
+                {
+
+                    ResetTarget();
 
                 }
                 else
                 {
-                   // _animator.Play("Idle");
+                    _animator.Play("Idle");
                     timeBetweenAttack -= Time.deltaTime;
                 }
+
+
+              
+                
+
+                //print(timeBetweenAttack);
+
 
                 break;
             case SlicerStates.HIT:
@@ -238,6 +242,12 @@ public class Slicer : Enemy {
 
 
 	}
+
+    public void EndOfSlice()
+    {
+        timeBetweenAttack = startTimeBetweenAttack;
+        currState = SlicerStates.IDLE;
+    }
 
     IEnumerator Dissapear()
     {
@@ -338,11 +348,14 @@ public class Slicer : Enemy {
 
     }
 
-    protected override void OnDamage()
+    protected override void OnDamage(int damage )
     {
-        if (!isDead) {
+        if (!isDead && currState != SlicerStates.HIT) {
+            stunTime = startStunTime;
             currState = SlicerStates.HIT;
             //PlayMode.StopAll
+            health -= damage;
+            CameraShaker.Instance.ShakeOnce(0.5f, 1f, 0.1f, 0.1f);
             _animator.Play("Hit",-1,0f);
         }
 
@@ -354,6 +367,48 @@ public class Slicer : Enemy {
                 TestOfCourage();
             }
         }
+
+
+    }
+
+    void CheckForHits()
+    {
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Slice"))
+        {
+            //print("ATTACK");
+            CheckForHit(attackPos, attackRadius, 1);
+
+        }
+      
+    }
+
+    void CheckForHit(Transform attackPos, float attackRange, int damage)
+    {
+
+        Collider[] playersToDamage = Physics.OverlapSphere(attackPos.position, attackRadius, playerMask);
+
+        for (int i = 0; i < playersToDamage.Length; i++)
+        {
+          
+            if (playersToDamage[i].GetComponent<Player>() != null)
+            {
+             
+                playersToDamage[i].GetComponent<Player>().Hit(1, false);
+            }
+            
+
+
+        }
+
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        {
+            if (playersToDamage.Length <= 0)
+            {
+                ResetTarget();
+            }
+
+        }
+         
 
 
     }

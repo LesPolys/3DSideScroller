@@ -46,9 +46,9 @@ public class Enemy : MonoBehaviour {
 
     public void Damage(int damage)
     {
-        stunTime = startStunTime;
-        health -= damage;
-        OnDamage();
+     
+      
+        OnDamage(damage);
 
 
     }
@@ -56,14 +56,13 @@ public class Enemy : MonoBehaviour {
 
     public void AirDamage(int damage, Transform playerPos)
     {
-        print("cjknbf");
-        stunTime = startStunTime;
-        health -= damage;
-        OnDamage();
+       
+        
+        OnDamage(damage);
 
         if (canBeJuggled)
         {
-            print("cjknbf");
+            //print("cjknbf");
             transform.position += transform.up * 100 * Time.deltaTime;
         }
 
@@ -71,8 +70,10 @@ public class Enemy : MonoBehaviour {
     }
 
 
-    protected virtual void OnDamage()
+    protected virtual void OnDamage(int damage)
     {
+
+
         //play effects
     }
 

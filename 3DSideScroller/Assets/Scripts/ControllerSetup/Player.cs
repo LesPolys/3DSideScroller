@@ -109,9 +109,15 @@ public class Player : MonoBehaviour
     private bool blocking = false;
     [Header("BLOCK")]
     public GameObject block;
-   
+
     #endregion
 
+
+    #region STUN
+    protected float stunTime;
+    protected float startStunTime = 0.1f;
+    bool isInHitStun = false;
+    #endregion
 
 
 
@@ -151,6 +157,12 @@ public class Player : MonoBehaviour
             {
                 startTimeBetweenSpecialAttack = ac.animationClips[i].length;
             }
+            /*
+            if (ac.animationClips[i].name == "Stun")        //If it has the same name as your clip
+            {
+                startStunTime = ac.animationClips[i].length;
+            }*/
+
 
         }
 
@@ -178,9 +190,17 @@ public class Player : MonoBehaviour
 
     void Update()
 	{
-
-       
-        HandleInput();
+        if (stunTime <= 0)
+        {
+            isInHitStun = false;
+            HandleInput();
+        }
+        else
+        {
+           
+            stunTime -= Time.deltaTime;
+        }
+      
         CheckForHits();
 
         _isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore); // Check if grounded to reset velocity
@@ -435,7 +455,7 @@ public class Player : MonoBehaviour
         for (int i = 0; i < enemiesToDamage.Length; i++)
         {
      
-            CameraShaker.Instance.ShakeOnce(0.5f, 1f, 0.1f, 0.1f);
+            
             if (!_isGrounded && enemiesToDamage[i].GetComponent<Enemy>().canBeJuggled)
             {
 
@@ -450,8 +470,6 @@ public class Player : MonoBehaviour
             
         }
 
-
-     
     }
 
     
@@ -593,14 +611,23 @@ public class Player : MonoBehaviour
 
     public void Damage(int damage)
     {
-        health -= damage;
-        // print("OUCH: " + damage + "Im at: " + health);
-        //play damage effect and sound
-        AkSoundEngine.PostEvent("Player_Damage", gameObject);
-        if (health <= 0)
-        {
 
+        if(damage > 0 && !isInHitStun)
+        {
+            isInHitStun = true;
+            stunTime = startStunTime;
+            health -= damage;
+            print("OUCH: " + damage + "Im at: " + health);
+            //play damage effect and sound
+            CameraShaker.Instance.ShakeOnce(0.5f, 1f, 0.1f, 0.1f);
+            AkSoundEngine.PostEvent("Player_Damage", gameObject);
+            if (health <= 0)
+            {
+
+            }
         }
+
+      
         
     }
 
