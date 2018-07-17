@@ -85,6 +85,9 @@ public class Player : MonoBehaviour
 
         GetAnimationLengths();
 
+
+
+
         forward = Camera.main.transform.forward;
         forward.y = 0;
         forward = Vector3.Normalize(forward);
@@ -214,14 +217,14 @@ public class Player : MonoBehaviour
         if (Actions.A && _isGrounded && !attacking)
         { //jump
             _velocity.y += Mathf.Sqrt(JumpHeight * -2f * Gravity);
-            AkSoundEngine.PostEvent("Player_Jump", gameObject);
+
         }
 
 
 
         if (timeBetweenLightAttack <= 0) {
            
-            if (Actions.X.WasPressed)
+            if (Actions.X.WasPressed && !attacking)
             {
                 attacking = true;
                 _animator.Play("Attack");
@@ -238,7 +241,7 @@ public class Player : MonoBehaviour
         if (timeBetweenHeavyAttack <= 0)
         {
         
-            if (Actions.Y.WasPressed)
+            if (Actions.Y.WasPressed && !attacking)
             {
                 attacking = true;
                 _animator.Play("Heavy");
@@ -256,7 +259,7 @@ public class Player : MonoBehaviour
         if (timeBetweenSpecialAttack <= 0)
         {
             
-            if (Actions.B.WasPressed)
+            if (Actions.B.WasPressed && !attacking)
             {
                 attacking = true;
                 _animator.Play("Spin");
@@ -339,7 +342,7 @@ public class Player : MonoBehaviour
                 case MoveTypes.LTTP:
                     //rotHeading = Vector3.Normalize(rightMovement + upMovement);
 
-                    print(Actions.Move.X);
+                    //print(Actions.Move.X);
 
 
                     //Up
