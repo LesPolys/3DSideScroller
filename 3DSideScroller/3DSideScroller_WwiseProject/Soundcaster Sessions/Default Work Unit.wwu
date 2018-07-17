@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{B956715C-3AC7-41D2-9438-156D1D9AA280}" SchemaVersion="85">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{B956715C-3AC7-41D2-9438-156D1D9AA280}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{B956715C-3AC7-41D2-9438-156D1D9AA280}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="New Soundcaster Session" ID="{CD6C079A-1CC7-40E3-B7A7-BB35DA70B63C}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Level_Music" ID="{F736CB6E-8D1C-45A6-9DD0-0C5F0276EB60}" WorkUnitID="{C70FC4DB-5732-4249-BDF9-044646307A56}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Player_Block" ID="{DA44EEBE-B0D7-479C-A5AC-AFCF0ADA35BD}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Player_Damage" ID="{0F1978B8-3719-4277-8988-6AA8752D353D}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

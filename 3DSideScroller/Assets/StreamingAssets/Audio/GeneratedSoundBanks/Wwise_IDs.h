@@ -39,6 +39,7 @@ namespace AK
         static const AkUniqueID PLAYER_LIGHTATTACK = 751122599U;
         static const AkUniqueID PLAYER_MAGICATTACK = 853366470U;
         static const AkUniqueID PLAYER_POWERPICKUP = 1256435816U;
+        static const AkUniqueID PLAYER_SPINATTACK = 3713113629U;
         static const AkUniqueID SLICER_ATTACK = 4209431020U;
         static const AkUniqueID SLICER_FOOTSTEPS = 2298066109U;
         static const AkUniqueID TANKER_FOOTSTEPS = 3661249112U;

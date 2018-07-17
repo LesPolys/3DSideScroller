@@ -580,6 +580,7 @@ public class Player : MonoBehaviour
                 Damage(0);
                 //print("BLOCKED BITCH");
                 //play block effects and sounds
+                AkSoundEngine.PostEvent("Player_Block", gameObject);
             }
             else
             {
@@ -593,10 +594,10 @@ public class Player : MonoBehaviour
     public void Damage(int damage)
     {
         health -= damage;
-       // print("OUCH: " + damage + "Im at: " + health);
+        // print("OUCH: " + damage + "Im at: " + health);
         //play damage effect and sound
-
-        if(health <= 0)
+        AkSoundEngine.PostEvent("Player_Damage", gameObject);
+        if (health <= 0)
         {
 
         }
