@@ -3,6 +3,7 @@ using UnityEngine;
 using EZCameraShake;
 using System.Collections;
 using TMPro;
+using UnityEngine.UI;
 
 
 // This is just a simple "player" script that rotates and colors a cube
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
    
     [SerializeField]
     private float health;
+    private float startingHealth;
 
     #region Jumping/Grounding
     private Vector3 _velocity;
@@ -122,6 +124,9 @@ public class Player : MonoBehaviour
 
     public TextMeshPro damageText;
 
+    Image healthBar;
+    Image chargeBar;
+
 
     void Awake()
     {
@@ -132,12 +137,15 @@ public class Player : MonoBehaviour
 
 
         moveSpeed = normalMoveSpeed;
+        startingHealth = health;
 
         forward = Camera.main.transform.forward;
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
     }
+
+ 
 
     void GetAnimationLengths()
     {
@@ -224,8 +232,6 @@ public class Player : MonoBehaviour
         }
 
 
-
-
         _controller.Move(_velocity * Time.deltaTime);
 
 
@@ -234,12 +240,29 @@ public class Player : MonoBehaviour
             AttackOver();
         }
 
+        UpdateBars();
+
+
     }
 
     //CameraShaker.Instance.ShakeOnce(1f, 1f, 0.1f, 0.1f);
     //  Debug.Log("Dash");
     //  _velocity += Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
 
+    void UpdateBars()
+    {
+        if (healthBar != null)
+        {
+            float healthPerc = health / startingHealth;
+            healthBar.fillAmount = healthPerc;
+        }
+
+        if (chargeBar != null)
+        {
+            float charchePerc = chargeTime / maxChargeTime;
+            chargeBar.fillAmount = charchePerc;
+        }
+    }
 
 
 
@@ -661,6 +684,17 @@ public class Player : MonoBehaviour
         TextMeshPro hitText = Instantiate(damageText, new Vector3(transform.position.x, transform.position.y, transform.position.z - 1.5f), Quaternion.identity, transform);
         hitText.text = damage.ToString();
     }
+
+
+    public void SetBars(Image healthUI, Image chargeUI)
+    {
+        healthBar = healthUI;
+        chargeBar = chargeUI;
+
+        //healthBar.gameObject.SetActive(true);
+        //chargeBar.gameObject.SetActive(true);
+    }
+
 
 }
 
