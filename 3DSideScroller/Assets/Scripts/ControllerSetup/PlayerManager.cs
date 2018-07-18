@@ -133,14 +133,14 @@ public class PlayerManager : MonoBehaviour
 										
 						if (ThereIsNoPlayerUsingKeyboard())
 						{
-								CreatePlayer( null );
+								CreatePlayer( null , i);
 						}
 						
 					}else if(readyUpSpots[i].Actions.Device != null ){ // if we have a device bound which only happens with joysticks or gamepads so we can safely assume we can bind it to the new player
 						
 						if (ThereIsNoPlayerUsingJoystick( readyUpSpots[i].Actions.Device ))
 						{
-							CreatePlayer( readyUpSpots[i].Actions.Device ); // change this to look at ui element first
+							CreatePlayer( readyUpSpots[i].Actions.Device,  i ); // change this to look at ui element first
 						}
 					}
 				}
@@ -260,7 +260,7 @@ public class PlayerManager : MonoBehaviour
 	}
 
 
-	Player CreatePlayer( InputDevice inputDevice )
+	Player CreatePlayer( InputDevice inputDevice, int playerIconIndex )
 	{
 		if (players.Count < maxPlayers)
 		{
@@ -286,6 +286,8 @@ public class PlayerManager : MonoBehaviour
 
 				player.Actions = actions;
 			}
+
+            player.GetComponentInChildren<PlayerIcon>().SetIcon(playerIconIndex);
 
 			players.Add( player );
 
