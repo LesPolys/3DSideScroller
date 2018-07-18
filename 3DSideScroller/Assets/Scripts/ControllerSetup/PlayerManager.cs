@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using InControl;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 // This example iterates on the basic multiplayer example by using action sets with
@@ -10,6 +11,8 @@ using UnityEngine;
 //
 public class PlayerManager : MonoBehaviour
 {
+
+
 
 	private enum PlayerManagerStates{ISREADYINGPLAYERS, PLAYERSAREREADY  };
 	private PlayerManagerStates currentPLayerManagerState = PlayerManagerStates.ISREADYINGPLAYERS;
@@ -35,6 +38,9 @@ public class PlayerManager : MonoBehaviour
 	PlayerActions joystickListener;
 
     public MultiTargetCamera mltiCam;
+
+    public GameObject[] playerUIElements = new GameObject[4];
+
 
 	void Awake(){
 		foreach(ReadyUpUI ready in readyUpSpots){
@@ -288,7 +294,9 @@ public class PlayerManager : MonoBehaviour
 			}
 
             player.GetComponentInChildren<PlayerIcon>().SetIcon(playerIconIndex);
-
+            playerUIElements[playerIconIndex].SetActive(true);
+            playerUIElements[playerIconIndex].SetActive(true);
+            player.SetBars(playerUIElements[playerIconIndex].transform.Find("HealthMask/Health").GetComponent<Image>(), playerUIElements[playerIconIndex].transform.Find("ChargeMask/Charge").GetComponent<Image>());
 			players.Add( player );
 
             mltiCam.AddTarget(player.transform);

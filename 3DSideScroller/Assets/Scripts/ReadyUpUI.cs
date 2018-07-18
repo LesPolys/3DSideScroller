@@ -13,6 +13,9 @@ public class ReadyUpUI : MonoBehaviour {
     private int iconIndex = 0;
 
 
+    public Sprite characterNotReady;
+    public Sprite characterReady;
+
     public Image playerImage;
     public Image readyUpImage;
 
@@ -63,7 +66,7 @@ public class ReadyUpUI : MonoBehaviour {
 
                     if (!isReady)
                     {
-                        readyUpImage.color = Color.green;
+                        readyUpImage.sprite = characterReady;
                         isReady = true;
                     }
 
@@ -73,7 +76,7 @@ public class ReadyUpUI : MonoBehaviour {
                 {
                     if (isReady)
                     {
-                        readyUpImage.color = Color.red;
+                        readyUpImage.sprite = characterNotReady;
                         isReady = false;
                     }
                 }
@@ -103,7 +106,7 @@ public class ReadyUpUI : MonoBehaviour {
             {
                 if (Actions.A.WasPressed)
                 {
-
+                    readyUpImage.gameObject.SetActive(true);
                     hasAssignedInput = true;
 
                     SetImage();
