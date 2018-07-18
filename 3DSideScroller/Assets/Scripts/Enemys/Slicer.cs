@@ -50,6 +50,9 @@ public class Slicer : Enemy {
     private bool affectedByGravity = true;
     #endregion
 
+    public GameObject hellHoleParticle;
+    public Transform hellholespawnpoint;
+
 
     private bool dissapearing = false;
 
@@ -198,6 +201,7 @@ public class Slicer : Enemy {
                 //if health is zero or below then switch to dead
                 if (health <= 0)
                 {
+                    Instantiate(hellHoleParticle,hellholespawnpoint.position, Quaternion.identity,transform);
                     isDead = true;
                     currState = SlicerStates.DEAD;
                 }

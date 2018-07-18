@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
 
     #region STUN
     protected float stunTime;
-    protected float startStunTime = 0.1f;
+    protected float startStunTime ;
     bool isInHitStun = false;
     #endregion
 
@@ -157,11 +157,11 @@ public class Player : MonoBehaviour
             {
                 startTimeBetweenSpecialAttack = ac.animationClips[i].length;
             }
-            /*
-            if (ac.animationClips[i].name == "Stun")        //If it has the same name as your clip
+            
+            if (ac.animationClips[i].name == "Hit")        //If it has the same name as your clip
             {
                 startStunTime = ac.animationClips[i].length;
-            }*/
+            }
 
 
         }
@@ -227,6 +227,11 @@ public class Player : MonoBehaviour
         _controller.Move(_velocity * Time.deltaTime);
 
 
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        {
+            AttackOver();
+        }
+
     }
 
     //CameraShaker.Instance.ShakeOnce(1f, 1f, 0.1f, 0.1f);
@@ -238,6 +243,7 @@ public class Player : MonoBehaviour
 
     void HandleInput()
     {
+        //print("yo");
 
         if (Actions.Start.WasPressed)
         {
@@ -245,10 +251,15 @@ public class Player : MonoBehaviour
         }
 
 
+
         if (Actions.Move)
         {
             Move();
         }
+        
+        
+
+
 
 
         if (Actions.A && _isGrounded && !attacking)
@@ -309,29 +320,29 @@ public class Player : MonoBehaviour
             if (Actions.B.WasPressed && !attacking)
             {
                 charging = true;
-                print("pressed");
+                //print("pressed");
             }
 
             if (charging) //charging special attack
             {
                 chargeTime += Time.deltaTime;
-                print(chargeTime);
+                //print(chargeTime);
 
                 if (chargeTime >= tier1Time)
                 {
                     isTier1 = true;
-                    print("Tier1Achieved");
+                //    print("Tier1Achieved");
                     if(chargeTime >= tier2Time)
                     {
                         isTier2 = true;
-                        print("Tier2Achieved");
+                      //  print("Tier2Achieved");
                         if (chargeTime >= tier3Time)
                         {
                             isTier3 = true;
-                            print("Tier3Achieved");
+                          //  print("Tier3Achieved");
                             if (chargeTime >= maxChargeTime)
                             {
-                                print("POWER OVERWHELMING!");
+                             //   print("POWER OVERWHELMING!");
                                 forcedRelease = true;
                                 SpecialAttack();
                                 
@@ -347,12 +358,12 @@ public class Player : MonoBehaviour
             {
                 if (forcedRelease)
                 {
-                    print("control relinquished");
+                  //  print("control relinquished");
                     forcedRelease = false;
                 }
                 else
                 {
-                    print("released");
+                  //  print("released");
                     SpecialAttack();
                 }
                
@@ -367,6 +378,10 @@ public class Player : MonoBehaviour
         }
 
 
+       
+       
+
+
     }
 
     private void SpecialAttack()
@@ -377,30 +392,30 @@ public class Player : MonoBehaviour
 
         if (isTier3)
         {
-            print("Tier3 Attack");
+           // print("Tier3 Attack");
             _animator.Play("Spin");
             timeBetweenSpecialAttack = startTimeBetweenSpecialAttack;
 
         }
         else if (isTier2)
         {
-            print("Tier3 Attack");
+          //  print("Tier3 Attack");
             _animator.Play("Spin");
             timeBetweenSpecialAttack = startTimeBetweenSpecialAttack;
 
         }
         else if (isTier1)
         {
-            print("Tier3 Attack");
+           // print("Tier3 Attack");
             _animator.Play("Spin");
             timeBetweenSpecialAttack = startTimeBetweenSpecialAttack;
         }
 
-        print("Tier3 Spent");
+        //print("Tier3 Spent");
         isTier3 = false;
-        print("Tier2 Spent");
+       // print("Tier2 Spent");
         isTier2 = false;
-        print("Tier1 Spent");
+       // print("Tier1 Spent");
         isTier1 = false;
 
 
@@ -477,7 +492,7 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-
+        
         //Handle Isometric Direction according to camera
         Vector3 direction = new Vector3(Actions.Move.X, 0, Actions.Move.Y);
         Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Actions.Rotate.X;
@@ -488,7 +503,10 @@ public class Player : MonoBehaviour
 
         if (!_isGrounded || !attacking)
         {
-
+            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            {
+                _animator.Play("Walk");
+            }
 
             if (blocking)
             {
@@ -565,7 +583,11 @@ public class Player : MonoBehaviour
                     break;
                     #endregion
             }
+
+         
+
         }
+       
 
 
       
@@ -614,10 +636,11 @@ public class Player : MonoBehaviour
 
         if(damage > 0 && !isInHitStun)
         {
+            _animator.Play("Hit",-1,0);
             isInHitStun = true;
             stunTime = startStunTime;
             health -= damage;
-            print("OUCH: " + damage + "Im at: " + health);
+            //print("OUCH: " + damage + "Im at: " + health);
             //play damage effect and sound
             CameraShaker.Instance.ShakeOnce(0.5f, 1f, 0.1f, 0.1f);
             AkSoundEngine.PostEvent("Player_Damage", gameObject);
