@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 222721578352996032}
   - component: {fileID: 114136801554424326}
   - component: {fileID: 95695612112367162}
+  - component: {fileID: 114871067316168934}
   m_Layer: 14
   m_Name: Image
   m_TagString: Untagged
@@ -2230,6 +2231,23 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114871067316168934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1263525003893256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 338a0176250485847ac15af77dc9fb28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIcon: {fileID: 114136801554424326}
+  playerIcons:
+  - {fileID: 21300000, guid: f178146a44de340829e1c25c4ee4c072, type: 3}
+  - {fileID: 21300000, guid: 407bcdfe0e71249c998e8c6204913e70, type: 3}
+  - {fileID: 21300000, guid: 44129b51b5849444dbbf124320f77401, type: 3}
+  - {fileID: 21300000, guid: c080e12d534f64fc48bffb53d9f55fba, type: 3}
 --- !u!137 &137088807293094702
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
