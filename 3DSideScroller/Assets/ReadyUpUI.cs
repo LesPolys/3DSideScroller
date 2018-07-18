@@ -8,8 +8,13 @@ public class ReadyUpUI : MonoBehaviour {
 
     public PlayerActions Actions { get; set; }
 
-	public Image playerIconImage;
-	public Image readyUpImage;
+	public Sprite playerStartingIconImage;
+    public Sprite[] playerReadyIconImages;
+    private int iconIndex = 0;
+
+
+    public Image playerImage;
+    public Image readyUpImage;
 
 
 	[SerializeField]
@@ -40,31 +45,83 @@ public class ReadyUpUI : MonoBehaviour {
 	void Update () {
 
 		if(Actions != null){
-			
-			hasAssignedInput = true;
 
-			if(Actions.A.WasPressed){
 
-				if(isReady){
-					PlayerManager.AreAllPlayersReady();
-				}
 
-				if(!isReady){
-					readyUpImage.color = Color.green;
-					isReady = true;
-				}
-				
-			}
+            if (hasAssignedInput)
+            {
 
-			if(Actions.B){
-				if(isReady){
-					readyUpImage.color = Color.red;
-					isReady = false;
-				}
-			}
-		}
+
+                if (Actions.A.WasPressed)
+                {
+                    
+
+                    if (isReady)
+                    {
+                        PlayerManager.AreAllPlayersReady();
+                    }
+
+                    if (!isReady)
+                    {
+                        readyUpImage.color = Color.green;
+                        isReady = true;
+                    }
+
+                }
+
+                if (Actions.B)
+                {
+                    if (isReady)
+                    {
+                        readyUpImage.color = Color.red;
+                        isReady = false;
+                    }
+                }
+
+                if (Actions.Up.WasPressed)
+                {
+                    iconIndex++;
+                    if (iconIndex >= playerReadyIconImages.Length)
+                    {
+                        iconIndex = 0;
+                    }
+                    SetImage();
+                }
+                if (Actions.Down.WasPressed)
+                {
+                    iconIndex--;
+                    if (iconIndex < 0)
+                    {
+                        iconIndex = playerReadyIconImages.Length-1;
+                    }
+                    SetImage();
+                }
+               
+
+            }
+            else
+            {
+                if (Actions.A.WasPressed)
+                {
+
+                    hasAssignedInput = true;
+
+                    SetImage();
+
+                }
+            }
+          
+
+        
+        }
 
 	}
+
+    void SetImage()
+    {
+
+        playerImage.sprite = playerReadyIconImages[iconIndex];
+    }
 
 
 	
