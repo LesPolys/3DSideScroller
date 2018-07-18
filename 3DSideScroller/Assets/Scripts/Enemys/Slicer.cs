@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
+using TMPro;
 
 public class Slicer : Enemy {
 
@@ -52,6 +53,8 @@ public class Slicer : Enemy {
 
     public GameObject hellHoleParticle;
     public Transform hellholespawnpoint;
+
+    public TextMeshPro damageText;
 
 
     private bool dissapearing = false;
@@ -359,6 +362,7 @@ public class Slicer : Enemy {
             currState = SlicerStates.HIT;
             //PlayMode.StopAll
             health -= damage;
+            CreateDamageText(damage);
             CameraShaker.Instance.ShakeOnce(0.5f, 1f, 0.1f, 0.1f);
             _animator.Play("Hit",-1,0f);
         }
@@ -373,6 +377,12 @@ public class Slicer : Enemy {
         }
 
 
+    }
+
+    void CreateDamageText(int damage)
+    {
+        TextMeshPro hitText = Instantiate(damageText, new Vector3(transform.position.x, transform.position.y, transform.position.z - 1), Quaternion.identity, transform);
+        hitText.text = damage.ToString();
     }
 
     void CheckForHits()

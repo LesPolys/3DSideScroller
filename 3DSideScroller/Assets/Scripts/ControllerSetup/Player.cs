@@ -2,6 +2,7 @@
 using UnityEngine;
 using EZCameraShake;
 using System.Collections;
+using TMPro;
 
 
 // This is just a simple "player" script that rotates and colors a cube
@@ -119,6 +120,7 @@ public class Player : MonoBehaviour
     bool isInHitStun = false;
     #endregion
 
+    public TextMeshPro damageText;
 
 
     void Awake()
@@ -620,6 +622,7 @@ public class Player : MonoBehaviour
                 Damage(0);
                 //print("BLOCKED BITCH");
                 //play block effects and sounds
+                CreateDamageText(0);
                 AkSoundEngine.PostEvent("Player_Block", gameObject);
             }
             else
@@ -642,6 +645,7 @@ public class Player : MonoBehaviour
             health -= damage;
             //print("OUCH: " + damage + "Im at: " + health);
             //play damage effect and sound
+            CreateDamageText(damage);
             CameraShaker.Instance.ShakeOnce(0.5f, 1f, 0.1f, 0.1f);
             AkSoundEngine.PostEvent("Player_Damage", gameObject);
             if (health <= 0)
@@ -649,12 +653,14 @@ public class Player : MonoBehaviour
 
             }
         }
-
-      
-        
+ 
     }
 
-
+    void CreateDamageText(int damage)
+    {
+        TextMeshPro hitText = Instantiate(damageText, new Vector3(transform.position.x, transform.position.y, transform.position.z - 1.5f), Quaternion.identity, transform);
+        hitText.text = damage.ToString();
+    }
 
 }
 
