@@ -33,6 +33,10 @@ public class Player : MonoBehaviour
 
     Vector3 forward, right, lastCurrent;
 
+
+    Vector3 previousPos;
+    bool moving = false;
+
   
 
    
@@ -138,6 +142,7 @@ public class Player : MonoBehaviour
 
         moveSpeed = normalMoveSpeed;
         startingHealth = health;
+        previousPos = transform.position;
 
         forward = Camera.main.transform.forward;
         forward.y = 0;
@@ -281,10 +286,29 @@ public class Player : MonoBehaviour
         {
             Move();
         }
-        
-        
 
 
+        if (!attacking)
+        {
+            if (previousPos == transform.position)
+            {
+                if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Walk"))
+                {
+                    _animator.Play("Idle");
+                }
+                
+            }
+            else if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            {
+                _animator.Play("Walk");
+                _animator.Play("Walk");
+            }
+        }
+       
+
+        previousPos = transform.position;
+
+        print("current" + transform.position + " prev " + previousPos);
 
 
         if (Actions.A && _isGrounded && !attacking)
@@ -528,10 +552,7 @@ public class Player : MonoBehaviour
 
         if (!_isGrounded || !attacking)
         {
-            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-            {
-                _animator.Play("Walk");
-            }
+         
 
             if (blocking)
             {
@@ -609,8 +630,10 @@ public class Player : MonoBehaviour
                     #endregion
             }
 
-         
 
+
+
+                
         }
        
 
