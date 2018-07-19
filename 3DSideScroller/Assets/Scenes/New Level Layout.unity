@@ -3707,6 +3707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSelectScreen: {fileID: 592354356}
+  deadScreen: {fileID: 0}
   readyUpSpots:
   - {fileID: 1066768389}
   - {fileID: 522328087}
@@ -3719,6 +3720,7 @@ MonoBehaviour:
   - {fileID: 2124411557}
   - {fileID: 464520222}
   - {fileID: 871749236}
+  players: []
   mltiCam: {fileID: 263732746}
   playerUIElements:
   - {fileID: 711208771}
@@ -19538,7 +19540,7 @@ Prefab:
     - target: {fileID: 198575099269364022, guid: 81f969ae852c507468649213bff7290f,
         type: 2}
       propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.23529412
+      value: 0.3372549
       objectReference: {fileID: 0}
     - target: {fileID: 198575099269364022, guid: 81f969ae852c507468649213bff7290f,
         type: 2}
@@ -19557,6 +19559,10 @@ Prefab:
         type: 2}
       propertyPath: ShapeModule.m_Rotation.x
       value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359874770210278, guid: 81f969ae852c507468649213bff7290f, type: 2}
+      propertyPath: m_Name
+      value: BlackFog
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81f969ae852c507468649213bff7290f, type: 2}
