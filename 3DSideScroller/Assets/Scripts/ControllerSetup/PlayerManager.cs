@@ -135,6 +135,12 @@ public class PlayerManager : MonoBehaviour
             AkSoundEngine.PostEvent("Character_Ready", gameObject);
             //print("are you ready to rumble"); // the problem is here
 
+            foreach (ReadyUpUI rdyUI in readyUpSpots)
+            {
+                rdyUI.readUpMenuVisible = false;
+            }
+
+
             for (int i = 0; i < readyPlayerCount; i++){
 					if(readyUpSpots[i].Actions == keyboardListener){//if it is a keyboard binding then we add the player
 										
