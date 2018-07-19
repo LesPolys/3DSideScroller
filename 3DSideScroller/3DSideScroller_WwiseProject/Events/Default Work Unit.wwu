@@ -100,6 +100,39 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{08812792-4E7C-4588-AAF1-1057C97A21CB}" ShortID="993668291">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_SpinCharge03" ID="{B513ECDD-2C66-44A1-BBD9-ACDE67731B65}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{0F64A1AE-E93A-4E2D-A969-BDD15584AFE2}" ShortID="923853730">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_SpinCharge01" ID="{548A1A31-8F29-40CD-B153-6AD3111A4EDA}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{36171FE1-3DD1-415A-84BB-E21BCB8AD8D4}" ShortID="987551374">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_SpinCharge02" ID="{22DAE43A-3E07-417E-BF2F-60A0379BB52A}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 							</ChildrenList>
@@ -244,6 +277,16 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{EF55C3C8-0739-4793-A206-1CC70897D59A}" ShortID="951586664">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_SpinCharge01" ID="{548A1A31-8F29-40CD-B153-6AD3111A4EDA}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="Player_SpinCharge03" ID="{E80A615C-E71E-42A5-89E1-2EF368F9889C}">
@@ -255,6 +298,16 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Player_SpinCharge03" ID="{B513ECDD-2C66-44A1-BBD9-ACDE67731B65}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{4035D7C2-4C9C-4A1D-AB71-0AA7C74F4AF0}" ShortID="168990259">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_SpinCharge02" ID="{22DAE43A-3E07-417E-BF2F-60A0379BB52A}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

@@ -399,16 +399,31 @@ public class Player : MonoBehaviour
 
                 if (chargeTime >= tier1Time)
                 {
-                    isTier1 = true;
-                //    print("Tier1Achieved");
-                    if(chargeTime >= tier2Time)
+                    if (isTier1 == false)
                     {
+                        AkSoundEngine.PostEvent("Player_SpinCharge01", gameObject);
+                    }
+                    isTier1 = true;
+                    
+                    //    print("Tier1Achieved");
+                    if (chargeTime >= tier2Time)
+                    {
+                        if (isTier2 == false)
+                        {
+                            AkSoundEngine.PostEvent("Player_SpinCharge02", gameObject);
+                        }
                         isTier2 = true;
-                      //  print("Tier2Achieved");
+                        
+                        //  print("Tier2Achieved");
                         if (chargeTime >= tier3Time)
                         {
+                            if (isTier3 == false)
+                            {
+                                AkSoundEngine.PostEvent("Player_SpinCharge03", gameObject);
+                            }
                             isTier3 = true;
-                          //  print("Tier3Achieved");
+                            
+                            //  print("Tier3Achieved");
                             if (chargeTime >= maxChargeTime)
                             {
                              //   print("POWER OVERWHELMING!");
