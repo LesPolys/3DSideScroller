@@ -48,8 +48,8 @@ MonoBehaviour:
   defaultPoolSize: 4096
   EventWwu:
   - Guid: '{47AA1460-C47F-46D5-BF75-A67269DB8827}'
-    m_lastTimePart2: -1999246869
-    m_lastTimePsrt1: 2039976597
+    m_lastTimePart2: -1999246050
+    m_lastTimePsrt1: 1012741414
     ParentPhysicalPath: 
     PhysicalPath: Events\Default Work Unit.wwu
     List:
@@ -175,6 +175,20 @@ MonoBehaviour:
       - ElementName: Menu
         ObjectType: 4
       - ElementName: Menu_Cancel
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 47f5db7ea1778a44942fb4f28d490bf9
+      ID: -239400236
+      Name: Menu_Music
+      Path: Default Work Unit\Music\Menu_Music
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Menu_Music
         ObjectType: 3
       maxAttenuation: 0
       maxDuration: 0
@@ -467,6 +481,70 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - Guid: 72d53eb01ceaef4fa384b313e2135347
+      ID: -581853667
+      Name: Player_SpinAttack
+      Path: Default Work Unit\Player\Attack\Player_SpinAttack
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: Attack
+        ObjectType: 4
+      - ElementName: Player_SpinAttack
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 79bd10bad8e73348896da9d72ccc796a
+      ID: 1085344956
+      Name: Player_SpinCharge01
+      Path: Default Work Unit\Player\Spin Charge\Player_SpinCharge01
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: Spin Charge
+        ObjectType: 4
+      - ElementName: Player_SpinCharge01
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: f3d705b3eb339a47ace53c7621a63a4f
+      ID: 1085344959
+      Name: Player_SpinCharge02
+      Path: Default Work Unit\Player\Spin Charge\Player_SpinCharge02
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: Spin Charge
+        ObjectType: 4
+      - ElementName: Player_SpinCharge02
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 5c610ae81ee7a54289e12ef368f9889c
+      ID: 1085344958
+      Name: Player_SpinCharge03
+      Path: Default Work Unit\Player\Spin Charge\Player_SpinCharge03
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: Spin Charge
+        ObjectType: 4
+      - ElementName: Player_SpinCharge03
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - Guid: 115c9c5cefcbf140ab4f022683297f4b
       ID: -85536276
       Name: Slicer_Attack
@@ -533,8 +611,8 @@ MonoBehaviour:
       minDuration: 0
     - Guid: 43ec76ff06ba154c8a6388fab1da83c1
       ID: 951923072
-      Name: Tanker_ShockWave
-      Path: Default Work Unit\Enemies\Tanker\Tanker_ShockWave
+      Name: Tanker_Shockwave
+      Path: Default Work Unit\Enemies\Tanker\Tanker_Shockwave
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -542,7 +620,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Tanker
         ObjectType: 4
-      - ElementName: Tanker_ShockWave
+      - ElementName: Tanker_Shockwave
         ObjectType: 3
       maxAttenuation: 0
       maxDuration: 0
@@ -616,6 +694,8 @@ MonoBehaviour:
   - /3DSideScroller_WwiseProject/Events
   - /3DSideScroller_WwiseProject/Events/Default Work Unit
   - /3DSideScroller_WwiseProject/Events/Default Work Unit/Music
+  - /3DSideScroller_WwiseProject/Events/Default Work Unit/UI
+  - /3DSideScroller_WwiseProject/Events/Default Work Unit/UI/Character Select
   language: English(US)
   lowerPoolSize: 2048
   m_lastPopulateTimePart2: 0

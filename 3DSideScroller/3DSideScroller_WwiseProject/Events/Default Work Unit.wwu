@@ -216,6 +216,52 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="Spin Charge" ID="{B4BAD962-861C-4F28-9F52-30633097319F}" ShortID="997163985">
+							<ChildrenList>
+								<Event Name="Player_SpinCharge01" ID="{BA10BD79-E7D8-4833-896D-A9D72CCC796A}">
+									<ChildrenList>
+										<Action Name="" ID="{FB33DB7F-008B-4D35-A287-2F8D228FB13A}" ShortID="745194616">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_SpinCharge01" ID="{548A1A31-8F29-40CD-B153-6AD3111A4EDA}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Player_SpinCharge02" ID="{B305D7F3-33EB-479A-ACE5-3C7621A63A4F}">
+									<ChildrenList>
+										<Action Name="" ID="{374AA130-B798-4A11-A918-B8719333123B}" ShortID="815753052">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_SpinCharge02" ID="{22DAE43A-3E07-417E-BF2F-60A0379BB52A}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Player_SpinCharge03" ID="{E80A615C-E71E-42A5-89E1-2EF368F9889C}">
+									<ChildrenList>
+										<Action Name="" ID="{074BCD60-22D6-455C-8A1F-B8F3AF10E524}" ShortID="635922580">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_SpinCharge03" ID="{B513ECDD-2C66-44A1-BBD9-ACDE67731B65}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Enemies" ID="{EFE98C13-753D-4C8A-80D3-D91F8042BCE6}" ShortID="922685347">
@@ -574,6 +620,17 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{81C2631B-BC3D-4AFD-B661-C09D3C5AEA10}" ShortID="319086444">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Menu_Music" ID="{A2E5BA5A-D4F5-4D94-B65C-E938E79513FB}" WorkUnitID="{C70FC4DB-5732-4249-BDF9-044646307A56}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 							</ChildrenList>
@@ -623,6 +680,20 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Level_Music" ID="{0E428DE5-7582-4D3C-A803-D32E60DD22D0}" WorkUnitID="{C70FC4DB-5732-4249-BDF9-044646307A56}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Menu_Music" ID="{7EDBF547-77A1-448A-942F-B4F28D490BF9}">
+							<ChildrenList>
+								<Action Name="" ID="{610B3019-7A71-4409-9710-5E5BE5F698B0}" ShortID="677293031">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Menu_Music" ID="{A2E5BA5A-D4F5-4D94-B65C-E938E79513FB}" WorkUnitID="{C70FC4DB-5732-4249-BDF9-044646307A56}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

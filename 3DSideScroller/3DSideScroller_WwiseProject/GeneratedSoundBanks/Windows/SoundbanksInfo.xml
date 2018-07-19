@@ -29,6 +29,7 @@
 				<Event Id="1244594577" Name="Level_Music" ObjectPath="\Events\Default Work Unit\Music\Level_Music"/>
 				<Event Id="3429288859" Name="Menu_Accept" ObjectPath="\Events\Default Work Unit\UI\Menu\Menu_Accept"/>
 				<Event Id="3180909377" Name="Menu_Cancel" ObjectPath="\Events\Default Work Unit\UI\Menu\Menu_Cancel"/>
+				<Event Id="4055567060" Name="Menu_Music" ObjectPath="\Events\Default Work Unit\Music\Menu_Music"/>
 				<Event Id="2170009975" Name="Menu_Pause" ObjectPath="\Events\Default Work Unit\UI\Menu\Menu_Pause"/>
 				<Event Id="2072673020" Name="Menu_Scroll" ObjectPath="\Events\Default Work Unit\UI\Menu\Menu_Scroll"/>
 				<Event Id="2651857535" Name="MrSpines_Attack" ObjectPath="\Events\Default Work Unit\Enemies\MrSpines\MrSpines_Attack"/>
@@ -48,6 +49,9 @@
 				<Event Id="853366470" Name="Player_MagicAttack" ObjectPath="\Events\Default Work Unit\Player\Attack\Player_MagicAttack" MaxAttenuation="0.000000"/>
 				<Event Id="1256435816" Name="Player_PowerPickup" ObjectPath="\Events\Default Work Unit\Player\Pickup\Player_PowerPickup"/>
 				<Event Id="3713113629" Name="Player_SpinAttack" ObjectPath="\Events\Default Work Unit\Player\Attack\Player_SpinAttack"/>
+				<Event Id="1085344956" Name="Player_SpinCharge01" ObjectPath="\Events\Default Work Unit\Player\Spin Charge\Player_SpinCharge01"/>
+				<Event Id="1085344959" Name="Player_SpinCharge02" ObjectPath="\Events\Default Work Unit\Player\Spin Charge\Player_SpinCharge02"/>
+				<Event Id="1085344958" Name="Player_SpinCharge03" ObjectPath="\Events\Default Work Unit\Player\Spin Charge\Player_SpinCharge03"/>
 				<Event Id="4209431020" Name="Slicer_Attack" ObjectPath="\Events\Default Work Unit\Enemies\Slicer\Slicer_Attack"/>
 				<Event Id="2298066109" Name="Slicer_Footsteps" ObjectPath="\Events\Default Work Unit\Enemies\Slicer\Slicer_Footsteps"/>
 				<Event Id="3661249112" Name="Tanker_Footsteps" ObjectPath="\Events\Default Work Unit\Enemies\Tanker\Tanker_Footsteps"/>
@@ -98,6 +102,10 @@
 				<File Id="90691482" Language="SFX">
 					<ShortName>Enemy_Hit_04.wav</ShortName>
 					<Path>SFX\Enemy_Hit_04_1C9C67B2.wem</Path>
+				</File>
+				<File Id="106160777" Language="SFX">
+					<ShortName>Menu_Music_V1.wav</ShortName>
+					<Path>SFX\Menu_Music_V1_F17FB28C.wem</Path>
 				</File>
 				<File Id="123445036" Language="SFX">
 					<ShortName>Player_FootstepsRight_03.wav</ShortName>
@@ -215,6 +223,10 @@
 					<ShortName>Player_FootstepsLeft_02.wav</ShortName>
 					<Path>SFX\Player_FootstepsLeft_02_1C9C67B2.wem</Path>
 				</File>
+				<File Id="654303185" Language="SFX">
+					<ShortName>Player_SpinCharge01.wav</ShortName>
+					<Path>SFX\Player_SpinCharge01_F17FB28C.wem</Path>
+				</File>
 				<File Id="680167162" Language="SFX">
 					<ShortName>Enemy_Hit_05.wav</ShortName>
 					<Path>SFX\Enemy_Hit_05_1C9C67B2.wem</Path>
@@ -235,6 +247,10 @@
 					<ShortName>Enemy_Hit_01.wav</ShortName>
 					<Path>SFX\Enemy_Hit_01_1C9C67B2.wem</Path>
 				</File>
+				<File Id="704575736" Language="SFX">
+					<ShortName>Player_SpinCharge03.wav</ShortName>
+					<Path>SFX\Player_SpinCharge03_F17FB28C.wem</Path>
+				</File>
 				<File Id="705890519" Language="SFX">
 					<ShortName>Tanker_Swipe_01.wav</ShortName>
 					<Path>SFX\Tanker_Swipe_01_1C9C67B2.wem</Path>
@@ -242,6 +258,10 @@
 				<File Id="714264739" Language="SFX">
 					<ShortName>Tanker_Swipe_03.wav</ShortName>
 					<Path>SFX\Tanker_Swipe_03_1C9C67B2.wem</Path>
+				</File>
+				<File Id="728140184" Language="SFX">
+					<ShortName>Player_SpinCharge02.wav</ShortName>
+					<Path>SFX\Player_SpinCharge02_F17FB28C.wem</Path>
 				</File>
 				<File Id="737169049" Language="SFX">
 					<ShortName>Player_Vocal_02.wav</ShortName>
@@ -319,13 +339,13 @@
 					<ShortName>Enemy_Death_02.wav</ShortName>
 					<Path>SFX\Enemy_Death_02_1C9C67B2.wem</Path>
 				</File>
-				<File Id="983219118" Language="SFX">
-					<ShortName>Player_SpinAttack.wav</ShortName>
-					<Path>SFX\Player_SpinAttack_1C9C67B2.wem</Path>
-				</File>
 				<File Id="999720611" Language="SFX">
 					<ShortName>Player_FootstepsLeft_03.wav</ShortName>
 					<Path>SFX\Player_FootstepsLeft_03_1C9C67B2.wem</Path>
+				</File>
+				<File Id="1005235124" Language="SFX">
+					<ShortName>Player_SpinAttack_V2.wav</ShortName>
+					<Path>SFX\Player_SpinAttack_V2_1C9C67B2.wem</Path>
 				</File>
 				<File Id="1021214591" Language="SFX">
 					<ShortName>Tanker_Shockwave_02.wav</ShortName>

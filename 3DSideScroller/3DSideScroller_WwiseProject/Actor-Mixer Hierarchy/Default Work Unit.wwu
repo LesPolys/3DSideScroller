@@ -421,7 +421,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="Player_SpinAttack" ID="{23685F64-B2B7-4B9A-AB0C-28BCD8AB546D}" ShortID="30457178">
+										<Sound Name="Player_SpinAttack_V2" ID="{EF0378EB-CB13-4B42-94A6-3E668876FF9E}" ShortID="1005192767">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
@@ -431,13 +431,13 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Player_SpinAttack" ID="{01231564-FD2F-4E08-9449-DE1C38FCE7F0}" ShortID="983219118">
+												<AudioFileSource Name="Player_SpinAttack_V2" ID="{D8599A8A-0220-4DFB-8023-FA320AE35B8C}" ShortID="1005235124">
 													<Language>SFX</Language>
-													<AudioFile>Player_SpinAttack.wav</AudioFile>
+													<AudioFile>Player_SpinAttack_V2.wav</AudioFile>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="Player_SpinAttack" ID="{01231564-FD2F-4E08-9449-DE1C38FCE7F0}" Platform="Linked"/>
+												<ActiveSource Name="Player_SpinAttack_V2" ID="{D8599A8A-0220-4DFB-8023-FA320AE35B8C}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
@@ -625,6 +625,11 @@
 							<ChildrenList>
 								<RandomSequenceContainer Name="Player_Jump" ID="{2C05E539-5BF1-4D27-8A0C-FEA8A5A2A08E}" ShortID="497111365">
 									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>22</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Pitch" Type="int32">
 											<ModifierList>
 												<ModifierInfo>
@@ -638,6 +643,11 @@
 											</ModifierList>
 										</Property>
 										<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -886,6 +896,76 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Spin Charge" ID="{0BFB76FA-83A7-4A49-8C6C-D64AB5BD1AEF}" ShortID="961200879">
+							<ChildrenList>
+								<Sound Name="Player_SpinCharge01" ID="{548A1A31-8F29-40CD-B153-6AD3111A4EDA}" ShortID="909337808">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{303B7FD5-8973-4961-B03C-AF8FB88CBFB1}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Player_SpinCharge01" ID="{BF6C90E4-B421-449E-A82D-FF14CDAE4C07}" ShortID="654303185">
+											<Language>SFX</Language>
+											<AudioFile>Player_SpinCharge01.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Player_SpinCharge01" ID="{BF6C90E4-B421-449E-A82D-FF14CDAE4C07}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Player_SpinCharge02" ID="{22DAE43A-3E07-417E-BF2F-60A0379BB52A}" ShortID="1025157571">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{303B7FD5-8973-4961-B03C-AF8FB88CBFB1}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Player_SpinCharge02" ID="{36045591-0605-414B-9343-014EFB13FA47}" ShortID="728140184">
+											<Language>SFX</Language>
+											<AudioFile>Player_SpinCharge02.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Player_SpinCharge02" ID="{36045591-0605-414B-9343-014EFB13FA47}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Player_SpinCharge03" ID="{B513ECDD-2C66-44A1-BBD9-ACDE67731B65}" ShortID="539326025">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{303B7FD5-8973-4961-B03C-AF8FB88CBFB1}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Player_SpinCharge03" ID="{4C8E4958-E502-4FE4-BB5A-F75405C890F2}" ShortID="704575736">
+											<Language>SFX</Language>
+											<AudioFile>Player_SpinCharge03.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Player_SpinCharge03" ID="{4C8E4958-E502-4FE4-BB5A-F75405C890F2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
@@ -2014,7 +2094,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-6</Value>
+												<Value>-7</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2066,7 +2146,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-7</Value>
+												<Value>-13</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2092,7 +2172,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-3</Value>
+												<Value>-9</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>

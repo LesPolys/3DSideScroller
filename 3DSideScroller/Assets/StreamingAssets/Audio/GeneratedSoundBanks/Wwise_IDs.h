@@ -21,6 +21,7 @@ namespace AK
         static const AkUniqueID LEVEL_MUSIC = 1244594577U;
         static const AkUniqueID MENU_ACCEPT = 3429288859U;
         static const AkUniqueID MENU_CANCEL = 3180909377U;
+        static const AkUniqueID MENU_MUSIC = 4055567060U;
         static const AkUniqueID MENU_PAUSE = 2170009975U;
         static const AkUniqueID MENU_SCROLL = 2072673020U;
         static const AkUniqueID MRSPINES_ATTACK = 2651857535U;
@@ -40,6 +41,9 @@ namespace AK
         static const AkUniqueID PLAYER_MAGICATTACK = 853366470U;
         static const AkUniqueID PLAYER_POWERPICKUP = 1256435816U;
         static const AkUniqueID PLAYER_SPINATTACK = 3713113629U;
+        static const AkUniqueID PLAYER_SPINCHARGE01 = 1085344956U;
+        static const AkUniqueID PLAYER_SPINCHARGE02 = 1085344959U;
+        static const AkUniqueID PLAYER_SPINCHARGE03 = 1085344958U;
         static const AkUniqueID SLICER_ATTACK = 4209431020U;
         static const AkUniqueID SLICER_FOOTSTEPS = 2298066109U;
         static const AkUniqueID TANKER_FOOTSTEPS = 3661249112U;
