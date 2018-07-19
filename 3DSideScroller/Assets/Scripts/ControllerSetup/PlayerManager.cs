@@ -302,7 +302,7 @@ public class PlayerManager : MonoBehaviour
 
             player.GetComponentInChildren<PlayerIcon>().SetIcon(playerIconIndex);
             playerUIElements[playerIconIndex].SetActive(true);
-            playerUIElements[playerIconIndex].SetActive(true);
+          //  playerUIElements[playerIconIndex].SetActive(true);
             player.SetBars(playerUIElements[playerIconIndex].transform.Find("HealthMask/Health").GetComponent<Image>(), playerUIElements[playerIconIndex].transform.Find("ChargeMask/Charge").GetComponent<Image>());
 			players.Add( player );
 
