@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 143201580785640434}
   m_Layer: 14
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2185,7 +2185,8 @@ MonoBehaviour:
   normalMoveSpeed: 15
   blockMoveSpeed: 5
   knockUpForce: 100
-  health: 30
+  IsDead: 0
+  health: 5
   Gravity: -30
   _groundChecker: {fileID: 4058516008326462}
   GroundDistance: 0.2

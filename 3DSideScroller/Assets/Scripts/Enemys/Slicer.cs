@@ -174,7 +174,7 @@ public class Slicer : Enemy {
                 if (!dissapearing && _isGrounded)
                 {
                     _controller.enabled = false;
-                    StartCoroutine(Dissapear());
+                   // StartCoroutine(Dissapear());
                 }
             
                 //wait for timer
@@ -423,7 +423,8 @@ public class Slicer : Enemy {
 
         if (closestTargetHolder != null)
         {
-            target = closestTargetHolder.gameObject;
+            //target = closestTargetHolder.gameObject;
+            target = potentialTargets[Random.Range(0, potentialTargets.Length)].gameObject;
         }
 
     }

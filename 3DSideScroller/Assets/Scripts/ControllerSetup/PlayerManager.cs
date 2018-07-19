@@ -14,10 +14,11 @@ public class PlayerManager : MonoBehaviour
 
 
 
-	private enum PlayerManagerStates{ISREADYINGPLAYERS, PLAYERSAREREADY  };
+	private enum PlayerManagerStates{ISREADYINGPLAYERS, PLAYERSAREREADY, GAMEPLAYING  };
 	private PlayerManagerStates currentPLayerManagerState = PlayerManagerStates.ISREADYINGPLAYERS;
 	
 	public GameObject playerSelectScreen;
+    public GameObject deadScreen;
 
 
 	[SerializeField]
@@ -32,7 +33,7 @@ public class PlayerManager : MonoBehaviour
 
     public List<Transform> playerPositions;
 
-	List<Player> players = new List<Player>( maxPlayers );
+	public List<Player> players = new List<Player>( maxPlayers );
 
 	PlayerActions keyboardListener;
 	PlayerActions joystickListener;
@@ -110,16 +111,39 @@ public class PlayerManager : MonoBehaviour
 
 			case PlayerManagerStates.PLAYERSAREREADY:
 				playerSelectScreen.GetComponent<Animator>().Play("SlideUp");
-				//Move the UI Elements out of the way so we can see the GameScreen
-						
+                //Move the UI Elements out of the way so we can see the GameScreen
+                currentPLayerManagerState = PlayerManagerStates.GAMEPLAYING;		
 				break;
+            case PlayerManagerStates.GAMEPLAYING:
+                //playerSelectScreen.GetComponent<Animator>().Play("SlideUp");
+                //Move the UI Elements out of the way so we can see the GameScreen
+                AreAllPlayersDead();
+                break;
 
-
-		}
+        }
 
 
 		
 	}
+
+    public void AreAllPlayersDead()
+    {
+        foreach (Player player in players)
+        {
+            if (!player.IsDead)
+            {
+                return;
+            }
+
+        }
+
+
+        deadScreen.SetActive(true);
+        deadScreen.GetComponent<Animator>().Play("Died");
+
+    }
+
+
 
 	public void AreAllPlayersReady(){
 

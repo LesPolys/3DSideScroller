@@ -38,8 +38,8 @@ public class Player : MonoBehaviour
     Vector3 previousPos;
     bool moving = false;
 
-  
 
+    public bool IsDead;
    
     [SerializeField]
     private float health;
@@ -214,34 +214,16 @@ public class Player : MonoBehaviour
 	}
 
     // Update is called once per frame
-  
+
 
 
     void Update()
-	{
-        if (stunTime <= 0)
-        {
-            isInHitStun = false;
-            HandleInput();
-        }
-        else
-        {
-           
-            stunTime -= Time.deltaTime;
-        }
-      
-        CheckForHits();
+    {
+
 
         _isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore); // Check if grounded to reset velocity
         if (_isGrounded && _velocity.y < 0)
             _velocity.y = 0f;
-
-        #region DASHDRAG
-        _velocity.x /= 1 + Drag.x * Time.deltaTime;
-        _velocity.y /= 1 + Drag.y * Time.deltaTime;
-        _velocity.z /= 1 + Drag.z * Time.deltaTime;
-        #endregion
-
 
 
 
@@ -253,14 +235,54 @@ public class Player : MonoBehaviour
 
         _controller.Move(_velocity * Time.deltaTime);
 
+        #region DASHDRAG
+        _velocity.x /= 1 + Drag.x * Time.deltaTime;
+        _velocity.y /= 1 + Drag.y * Time.deltaTime;
+        _velocity.z /= 1 + Drag.z * Time.deltaTime;
+        #endregion
 
-        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        if (!IsDead)
         {
-            AttackOver();
+            if (health <= 0)
+            {
+                transform.position -= new Vector3(0, 1, 0);
+                transform.GetChild(0).transform.Rotate(new Vector3(-90, 0, 0));
+                _controller.enabled = false;
+
+                IsDead = true;
+            }
+        }
+
+        if(!IsDead) { 
+
+
+
+
+            if (stunTime <= 0)
+            {
+                isInHitStun = false;
+                HandleInput();
+            }
+            else
+            {
+
+                stunTime -= Time.deltaTime;
+            }
+
+            CheckForHits();
+
+
+
+
+            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            {
+                AttackOver();
+            }
+
+           
         }
 
         UpdateBars();
-
 
     }
 
