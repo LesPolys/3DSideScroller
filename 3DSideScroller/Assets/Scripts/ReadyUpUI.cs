@@ -86,25 +86,28 @@ public class ReadyUpUI : MonoBehaviour {
                         }
                     }
 
-                    if (Actions.Up.WasPressed)
-                    {
-                        AkSoundEngine.PostEvent("Menu_Scroll", gameObject);
-                        iconIndex++;
-                        if (iconIndex >= playerReadyIconImages.Length)
+                    if (!isReady) {
+
+                        if (Actions.Up.WasPressed)
                         {
-                            iconIndex = 0;
+                            AkSoundEngine.PostEvent("Menu_Scroll", gameObject);
+                            iconIndex++;
+                            if (iconIndex >= playerReadyIconImages.Length)
+                            {
+                                iconIndex = 0;
+                            }
+                            SetImage();
                         }
-                        SetImage();
-                    }
-                    if (Actions.Down.WasPressed)
-                    {
-                        AkSoundEngine.PostEvent("Menu_Scroll", gameObject);
-                        iconIndex--;
-                        if (iconIndex < 0)
+                        if (Actions.Down.WasPressed)
                         {
-                            iconIndex = playerReadyIconImages.Length - 1;
+                            AkSoundEngine.PostEvent("Menu_Scroll", gameObject);
+                            iconIndex--;
+                            if (iconIndex < 0)
+                            {
+                                iconIndex = playerReadyIconImages.Length - 1;
+                            }
+                            SetImage();
                         }
-                        SetImage();
                     }
 
 
