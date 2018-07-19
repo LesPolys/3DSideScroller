@@ -2204,10 +2204,10 @@ MonoBehaviour:
   heavyAttackRange: 1.2
   specialAttackPos: {fileID: 4400136375841524}
   specialAttackRange: 4.03
-  tier1Time: 0.2
-  tier2Time: 0.5
+  tier1Time: 0.1
+  tier2Time: 0.75
   tier3Time: 1
-  maxChargeTime: 1.5
+  maxChargeTime: 1.25
   block: {fileID: 1309287624202018}
   knockupAttackStunTime: 1
   knockupAttackStunHeight: 5

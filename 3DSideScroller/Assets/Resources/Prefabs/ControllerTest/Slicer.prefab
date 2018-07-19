@@ -583,42 +583,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6fea3d424c90a489453e305ed993f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  health: 5
+  moveSpeed: 3.5
+  health: 100
   canBeJuggled: 1
+  knockedUp: 0
   searchRadius: 10
   playerMask:
     serializedVersion: 2
     m_Bits: 16384
-  dangerHealthPerc: 50
-  cowardicePerc: 0
-  fleePoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  dangerHealthPerc: 52.4
+  cowardicePerc: 51.4
+  fleeSpeed: 5
+  fleePoints: []
   attackRadius: 0.56
   attackPos: {fileID: 4319624753306930}
   currState: 0
@@ -633,6 +609,10 @@ MonoBehaviour:
   hellholespawnpoint: {fileID: 4297389594390708}
   damageText: {fileID: 114215210557536910, guid: ac8ab777767afaf4594dc185d7ec8856,
     type: 2}
+  knockUpSpeed: 2
+  knockUpCoRun: 0
+  knockBackForce: 8
+  knockBackTime: 1.5
 --- !u!114 &114653704257375652
 MonoBehaviour:
   m_ObjectHideFlags: 1

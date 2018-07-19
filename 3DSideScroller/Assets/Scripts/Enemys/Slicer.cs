@@ -23,6 +23,8 @@ public class Slicer : Enemy {
     float cowardicePerc; // percentage roll check. When below the dangerhealthPerc we roll against this and see if the enemy got scared and runs away
 
     private bool testedCourage = false;
+    private bool afraid = false;
+    public float fleeSpeed;
 
     public Transform[] fleePoints;
     private Transform currentFleeTarget = null;
@@ -150,7 +152,8 @@ public class Slicer : Enemy {
                 //play running away anim
                 _animator.Play("Flee");
 
-
+                afraid = true;
+                moveSpeed = fleeSpeed;
 
                 if (Vector3.Distance(transform.position, currentFleeTarget.transform.position) <= 1)
                 {
@@ -240,8 +243,16 @@ public class Slicer : Enemy {
                     }
 
 
-                    if (!knockedUp && _isGrounded && !knockUpCoRun) { 
-                        ResetTarget();
+                    if (!knockedUp && _isGrounded && !knockUpCoRun) {
+                        if (!afraid)
+                        {
+                            ResetTarget();
+                        }
+                        else
+                        {
+                            currState = SlicerStates.FLEE;
+                        }
+                      
                     }
                 }
                 else

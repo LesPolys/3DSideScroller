@@ -7,11 +7,19 @@ public class MultiTargetCamera : MonoBehaviour {
     public List<Transform> targets;
 
     public Vector3 offset;
+
+
+    public float xCap;
+    public float yCap;
+    public float zCap;
+    
+
     public float smoothTime = 0.5f;
 
     public float minZoom = 40f;
     public float maxZoom = 10f;
     public float zoomLimiter = 50f;
+
 
     private Vector3 velocity;
 
@@ -36,6 +44,13 @@ public class MultiTargetCamera : MonoBehaviour {
     {
         Vector3 centerPoint = GetCenterPoint();
         Vector3 newPosition = centerPoint + offset;
+
+        if (newPosition.z <= zCap)
+        {
+            newPosition = new Vector3(newPosition.x, newPosition.y, zCap);
+        }
+
+
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
     }
 

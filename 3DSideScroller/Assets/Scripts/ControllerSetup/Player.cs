@@ -383,6 +383,12 @@ public class Player : MonoBehaviour
             if (Actions.B.WasPressed && !attacking)
             {
                 charging = true;
+                //print("Tier3 Spent");
+                isTier3 = false;
+                // print("Tier2 Spent");
+                isTier2 = false;
+                // print("Tier1 Spent");
+                isTier1 = false;
                 //print("pressed");
             }
 
@@ -474,12 +480,7 @@ public class Player : MonoBehaviour
             timeBetweenSpecialAttack = startTimeBetweenSpecialAttack;
         }
 
-        //print("Tier3 Spent");
-        isTier3 = false;
-       // print("Tier2 Spent");
-        isTier2 = false;
-       // print("Tier1 Spent");
-        isTier1 = false;
+      
 
 
     }
@@ -519,8 +520,31 @@ public class Player : MonoBehaviour
         }
         if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Spin"))
         {
+
+            //print(isTier1);
+            //print(isTier2);
+            //print(isTier3);
             //print("SPIN");
-            CheckForEnemiesHit(specialAttackPos, specialAttackRange, 1,AttackTypes.KNOCKUP);
+
+            if (isTier3)
+            {
+
+                CheckForEnemiesHit(specialAttackPos, specialAttackRange+3, 3, AttackTypes.KNOCKUP);
+            }
+            else if(isTier2)
+            {
+
+                CheckForEnemiesHit(specialAttackPos, specialAttackRange, 1, AttackTypes.KNOCKUP);
+            }else if(isTier1)
+            {
+                CheckForEnemiesHit(specialAttackPos, specialAttackRange, 1, AttackTypes.NORMAL);
+            }
+            else
+            {
+                CheckForEnemiesHit(specialAttackPos, specialAttackRange, 1, AttackTypes.NORMAL);
+            }
+
+           
 
         }
     }
