@@ -448,6 +448,12 @@
 							<ChildrenList>
 								<RandomSequenceContainer Name="Player_Block" ID="{DA44EEBE-B0D7-479C-A5AC-AFCF0ADA35BD}" ShortID="920214309">
 									<PropertyList>
+										<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Pitch" Type="int32">
 											<ModifierList>
 												<ModifierInfo>
@@ -461,6 +467,11 @@
 											</ModifierList>
 										</Property>
 										<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -472,6 +483,19 @@
 									</ReferenceList>
 									<ChildrenList>
 										<Sound Name="Player_Block_02" ID="{6E4EDF42-15F2-4144-841D-D32E3DCD2691}" ShortID="319193538">
+											<PropertyList>
+												<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>2</Value>
+													</ValueList>
+												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
@@ -491,6 +515,19 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="Player_Block_01" ID="{78B298C1-3AAA-4724-8E96-BAD7FE6878DA}" ShortID="990440967">
+											<PropertyList>
+												<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>2</Value>
+													</ValueList>
+												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
@@ -976,6 +1013,12 @@
 							<ChildrenList>
 								<RandomSequenceContainer Name="Slicer_Attack" ID="{325D5E34-0937-4076-BED1-255B62578E85}" ShortID="679355044">
 									<PropertyList>
+										<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>3</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Pitch" Type="int32">
 											<ModifierList>
 												<ModifierInfo>
@@ -989,6 +1032,11 @@
 											</ModifierList>
 										</Property>
 										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>1</Value>
@@ -1094,6 +1142,12 @@
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="Slicer_Footsteps" ID="{DE2500C9-CF6A-4413-B312-C1EBC4F3340F}" ShortID="643365497">
 									<PropertyList>
+										<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
@@ -1111,6 +1165,11 @@
 											</ModifierList>
 										</Property>
 										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-23</Value>
@@ -2264,6 +2323,55 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="Game_Win" ID="{DABE8482-69A4-4A3F-9447-17EDC90E3B9A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="In Game" ID="{CDCC8F17-DB89-4E75-A04C-89F47F5AAF0D}" ShortID="588050821">
+							<ChildrenList>
+								<Sound Name="Indicator_01" ID="{FB02FDB6-34D5-4C9E-9813-EB4EAD011C11}" ShortID="351599477">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-8</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{303B7FD5-8973-4961-B03C-AF8FB88CBFB1}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Indicator_01" ID="{08984A0D-BDD1-45BE-A7BA-BF323A6EF9AA}" ShortID="606580779">
+											<Language>SFX</Language>
+											<AudioFile>Indicator_01.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Indicator_01" ID="{08984A0D-BDD1-45BE-A7BA-BF323A6EF9AA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Valve_Close_01" ID="{776751DF-3A96-4AB1-BDC3-01A447CC9002}" ShortID="361927069">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{303B7FD5-8973-4961-B03C-AF8FB88CBFB1}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Valve_Close_01" ID="{AE400B9C-7AB7-4B45-BB66-273B7C8AE798}" ShortID="92885233">
+											<Language>SFX</Language>
+											<AudioFile>Valve_Close_01.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Valve_Close_01" ID="{AE400B9C-7AB7-4B45-BB66-273B7C8AE798}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>

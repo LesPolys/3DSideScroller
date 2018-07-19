@@ -702,6 +702,17 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{8882430A-18B5-4E36-95C2-0E5E430FBC52}" ShortID="964930502">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Level_Music" ID="{0E428DE5-7582-4D3C-A803-D32E60DD22D0}" WorkUnitID="{C70FC4DB-5732-4249-BDF9-044646307A56}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="Game_Win" ID="{7557A045-3448-4A84-A7CB-55914B3A0E08}">
@@ -713,6 +724,38 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Game_Win" ID="{E5C75025-A54B-4C6E-A669-D9AFA68B9270}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="In Game" ID="{38F1FF6F-2095-44DF-BA26-656ADE26712A}" ShortID="259732791">
+							<ChildrenList>
+								<Event Name="Indicator_Blip" ID="{7984167F-E678-419E-AFD4-CAC3B496AA46}">
+									<ChildrenList>
+										<Action Name="" ID="{964C8642-1212-40D8-B54B-FDC463B98884}" ShortID="734989794">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Indicator_01" ID="{FB02FDB6-34D5-4C9E-9813-EB4EAD011C11}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Valve_Close" ID="{6B338B66-C287-414D-BA17-B0BF4A7652A7}">
+									<ChildrenList>
+										<Action Name="" ID="{CF72CF68-3DE4-4B9A-BAAF-76DFA03A0FF6}" ShortID="945845076">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Valve_Close_01" ID="{776751DF-3A96-4AB1-BDC3-01A447CC9002}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

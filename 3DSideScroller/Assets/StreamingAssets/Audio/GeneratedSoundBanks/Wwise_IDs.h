@@ -18,6 +18,7 @@ namespace AK
         static const AkUniqueID ENEMY_HIT = 1010055213U;
         static const AkUniqueID GAME_OVER = 1432716332U;
         static const AkUniqueID GAME_WIN = 3218375656U;
+        static const AkUniqueID INDICATOR_BLIP = 3337449114U;
         static const AkUniqueID LEVEL_MUSIC = 1244594577U;
         static const AkUniqueID MENU_ACCEPT = 3429288859U;
         static const AkUniqueID MENU_CANCEL = 3180909377U;
@@ -50,6 +51,7 @@ namespace AK
         static const AkUniqueID TANKER_HOOK = 3281482822U;
         static const AkUniqueID TANKER_SHOCKWAVE = 951923072U;
         static const AkUniqueID TANKER_SWIPE = 2563941659U;
+        static const AkUniqueID VALVE_CLOSE = 1159027468U;
         static const AkUniqueID VEX_CHANTFINISH = 534424066U;
         static const AkUniqueID VEX_CHANTWINDUP = 276150034U;
         static const AkUniqueID VEX_FOOTSTEPS = 2904509426U;

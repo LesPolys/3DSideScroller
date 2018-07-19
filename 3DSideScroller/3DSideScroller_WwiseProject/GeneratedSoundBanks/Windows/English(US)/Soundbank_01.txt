@@ -12,6 +12,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1085344956	Player_SpinCharge01			\Default Work Unit\Player\Spin Charge\Player_SpinCharge01	
 	1085344958	Player_SpinCharge03			\Default Work Unit\Player\Spin Charge\Player_SpinCharge03	
 	1085344959	Player_SpinCharge02			\Default Work Unit\Player\Spin Charge\Player_SpinCharge02	
+	1159027468	Valve_Close			\Default Work Unit\UI\In Game\Valve_Close	
 	1205999388	Enemy_Death			\Default Work Unit\Enemies\Shared\Enemy_Death	
 	1244594577	Level_Music			\Default Work Unit\Music\Level_Music	
 	1256435816	Player_PowerPickup			\Default Work Unit\Player\Pickup\Player_PowerPickup	
@@ -32,6 +33,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3194464978	Oozer_Shoot			\Default Work Unit\Enemies\Oozer\Oozer_Shoot	
 	3218375656	Game_Win			\Default Work Unit\UI\Game State\Game_Win	
 	3281482822	Tanker_Hook			\Default Work Unit\Enemies\Tanker\Tanker_Hook	
+	3337449114	Indicator_Blip			\Default Work Unit\UI\In Game\Indicator_Blip	
 	3429288859	Menu_Accept			\Default Work Unit\UI\Menu\Menu_Accept	
 	3542219815	Player_HealthPickup			\Default Work Unit\Player\Pickup\Player_HealthPickup	
 	3661249112	Tanker_Footsteps			\Default Work Unit\Enemies\Tanker\Tanker_Footsteps	
@@ -58,6 +60,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	75773141	Player_Jump_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Jump_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Jump\Player_Jump\Player_Jump_01		52032
 	79083013	Menu_Scroll	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Menu_Scroll_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Menu\Menu_Scroll		175168
 	90691482	Enemy_Hit_04	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Enemy_Hit_04_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Shared\Enemy_Hit\Enemy_Hit_04		77888
+	92885233	Valve_Close_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Valve_Close_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\In Game\Valve_Close_01		146496
 	106160777	Menu_Music_V1	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Menu_Music_V1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Menu_Music\Menu_Music\Menu_Music_V1		8467264
 	123445036	Player_FootstepsRight_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_FootstepsRight_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Player_FootstepsRight\Player_FootstepsRight_03		23104
 	147565251	Tanker_Footsteps_05	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Tanker_Footsteps_05_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Tanker\Tanker_Footsteps\Tanker_Footsteps_05		84288
@@ -87,6 +90,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	567230979	Player_FootstepsRight_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_FootstepsRight_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Player_FootstepsRight\Player_FootstepsRight_01		17472
 	597642798	Enemy_Death_05	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Enemy_Death_05_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Shared\Enemy_Death\Enemy_Death_05		196672
 	599586263	Menu_Cancel	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Menu_Cancel_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Menu\Menu_Cancel		95296
+	606580779	Indicator_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Indicator_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\In Game\Indicator_01		36416
 	636492112	Player_FootstepsLeft_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_FootstepsLeft_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Player_FootstepsLeft\Player_FootstepsLeft_02		21568
 	654303185	Player_SpinCharge01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_SpinCharge01_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Spin Charge\Player_SpinCharge01		308764
 	680167162	Enemy_Hit_05	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Enemy_Hit_05_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Shared\Enemy_Hit\Enemy_Hit_05		87104
