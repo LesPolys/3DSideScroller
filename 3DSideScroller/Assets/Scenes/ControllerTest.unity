@@ -4396,7 +4396,17 @@ Prefab:
     - target: {fileID: 114139522557399956, guid: 75b8a44a44041f846a7dd938e11c2b2a,
         type: 2}
       propertyPath: health
-      value: 50
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114139522557399956, guid: 75b8a44a44041f846a7dd938e11c2b2a,
+        type: 2}
+      propertyPath: knockBackTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114139522557399956, guid: 75b8a44a44041f846a7dd938e11c2b2a,
+        type: 2}
+      propertyPath: knockBackForce
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75b8a44a44041f846a7dd938e11c2b2a, type: 2}

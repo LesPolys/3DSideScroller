@@ -64,6 +64,13 @@ public class Slicer : Enemy {
 
     private bool dissapearing = false;
 
+    public float knockBackForce;
+    public float knockBackTime;
+    private float knockBackCounter;
+    Vector3 knockBackDir;
+
+
+
     protected override void Awake()
     {
         base.Awake();
@@ -241,6 +248,23 @@ public class Slicer : Enemy {
                 {
                     stunTime -= Time.deltaTime;
                 }
+
+
+                if (knockBackCounter <= 0)
+                {
+                    //do normal things
+                }
+                else
+                {
+
+
+
+                    _controller.Move(knockBackDir * Time.deltaTime);
+                    knockBackCounter -= Time.deltaTime;
+                }
+
+
+
                 break;
 
             case SlicerStates.KNOCKUP:
@@ -419,7 +443,6 @@ public class Slicer : Enemy {
 
     }
 
-
     void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
@@ -431,7 +454,7 @@ public class Slicer : Enemy {
 
     }
 
-    protected override void OnDamage(int damage )
+    protected override void OnDamage(int damage, Vector3 hitPos)
     {
         if (!isDead && currState != SlicerStates.HIT) {
 
@@ -460,9 +483,7 @@ public class Slicer : Enemy {
 
     }
 
-
-
-    protected override void OnKnockUpDamage(int damage, float stunLenth,  float knockUpHeight)
+    protected override void OnKnockUpDamage(int damage, Vector3 hitPos, float stunLenth,  float knockUpHeight)
     {
         if (!isDead && currState != SlicerStates.KNOCKUP)
         {
@@ -472,11 +493,13 @@ public class Slicer : Enemy {
             useGravity = false;
 
 
+
             if (knockUpHeight == 0)
             {
                 print("KNockupbonus");
                 knockUpstunTime += stunLenth;
                 // kuHeight = knockUpHeight;
+                KnockBack(hitPos);
                 currState = SlicerStates.KNOCKUP;
             }
             else
@@ -506,8 +529,6 @@ public class Slicer : Enemy {
 
 
     }
-
-    
 
     void CreateDamageText(int damage)
     {
@@ -557,5 +578,13 @@ public class Slicer : Enemy {
 
     }
 
+    public void KnockBack(Vector3 hitter )
+    {
+        knockBackCounter = knockBackTime;
+        Vector3 hitDirection = transform.position - hitter;
+        hitDirection = hitDirection.normalized;
+        knockBackDir = hitDirection * knockBackForce;
+
+    }
 
 }

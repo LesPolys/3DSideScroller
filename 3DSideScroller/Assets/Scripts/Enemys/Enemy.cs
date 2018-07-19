@@ -48,21 +48,21 @@ public class Enemy : MonoBehaviour {
     }
 
 
-    public void Damage(int damage)
+    public void Damage(int damage, Vector3 hitPos)
     {
      
       
-        OnDamage(damage);
+        OnDamage(damage, hitPos);
 
 
     }
 
 
-    public void AirDamage(int damage, float stunLength, float knockUpForce)
+    public void AirDamage(int damage, Vector3 hitPos, float stunLength, float knockUpForce)
     {
 
        // print("ONAIRDAMAGE");
-        OnKnockUpDamage(  damage, stunLength,  knockUpForce);
+        OnKnockUpDamage(  damage, hitPos, stunLength,  knockUpForce);
 
        
 
@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour {
     }
 
 
-    protected virtual void OnDamage(int damage)
+    protected virtual void OnDamage(int damage, Vector3 hitPos)
     {
 
 
@@ -78,7 +78,7 @@ public class Enemy : MonoBehaviour {
     }
 
 
-    protected virtual void OnKnockUpDamage(int damage, float stunLenth, float KnockUpHeight)
+    protected virtual void OnKnockUpDamage(int damage, Vector3 hitPos, float stunLenth, float KnockUpHeight)
     {
 
 

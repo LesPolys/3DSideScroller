@@ -538,23 +538,23 @@ public class Player : MonoBehaviour
 
                 if(!_isGrounded && enemiesToDamage[i].GetComponent<Enemy>().knockedUp) {
                     //print("hit");
-                    enemiesToDamage[i].GetComponent<Enemy>().AirDamage(damage, 0.05f, 0);
+                    enemiesToDamage[i].GetComponent<Enemy>().AirDamage(damage, transform.position, 0.05f, 0);
                 }
                 else if (!_isGrounded && enemiesToDamage[i].GetComponent<Enemy>().canBeJuggled)
                 {
 
-                    enemiesToDamage[i].GetComponent<Enemy>().AirDamage(damage, knockupAttackStunTime, knockupAttackStunHeight);
+                    enemiesToDamage[i].GetComponent<Enemy>().AirDamage(damage, transform.position, knockupAttackStunTime, knockupAttackStunHeight);
                 }
                 else
                 {
-                    enemiesToDamage[i].GetComponent<Enemy>().Damage(damage);
+                    enemiesToDamage[i].GetComponent<Enemy>().Damage(damage,transform.position);
                 }
             }
 
             if(attackType == AttackTypes.KNOCKUP)
             {
                 //print("KUHIT");
-                enemiesToDamage[i].GetComponent<Enemy>().AirDamage(damage, knockupAttackStunTime, knockupAttackStunHeight);
+                enemiesToDamage[i].GetComponent<Enemy>().AirDamage(damage,transform.position, knockupAttackStunTime, knockupAttackStunHeight);
 
             }
           
