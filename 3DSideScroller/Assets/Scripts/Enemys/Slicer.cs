@@ -37,7 +37,7 @@ public class Slicer : Enemy {
     #endregion
 
     #region STATES
-    public enum SlicerStates { SEARCHING, FLEE, DEAD, SLICE, HIT, WALKING, IDLE }
+    public enum SlicerStates { SEARCHING, FLEE, DEAD, SLICE, HIT, KNOCKUP, WALKING, IDLE }
     public SlicerStates currState;
     #endregion
 
@@ -56,6 +56,11 @@ public class Slicer : Enemy {
 
     public TextMeshPro damageText;
 
+
+    float kuHeight;
+    public float knockUpSpeed;
+    public bool knockUpCoRun = false;
+  
 
     private bool dissapearing = false;
 
@@ -94,17 +99,24 @@ public class Slicer : Enemy {
 	void Update () {
 
         _isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore); // Check if grounded to reset velocity
-        if (_isGrounded && _velocity.y < 0)
+
+        if (useGravity)
         {
-            _velocity.y = 0f;
+            
+            if (_isGrounded && _velocity.y < 0)
+            {
+                _velocity.y = 0f;
+            }
+
+            if (affectedByGravity)
+            {
+                _velocity.y += Gravity * Time.deltaTime; //add gravity to velocity
+            }
+
+            _controller.Move(_velocity * Time.deltaTime);
         }
 
-        if (affectedByGravity)
-        {
-            _velocity.y += Gravity * Time.deltaTime; //add gravity to velocity
-        }
-
-        _controller.Move(_velocity * Time.deltaTime);
+        
 
 
         CheckForHits();
@@ -148,9 +160,10 @@ public class Slicer : Enemy {
             case SlicerStates.DEAD:
                 _animator.Play("Dead");
                 //turn off colliders
-                _controller.enabled = false;
-                if (!dissapearing)
+                useGravity = true;
+                if (!dissapearing && _isGrounded)
                 {
+                    _controller.enabled = false;
                     StartCoroutine(Dissapear());
                 }
             
@@ -199,32 +212,62 @@ public class Slicer : Enemy {
 
 
                 break;
+
             case SlicerStates.HIT:
                 //stun state counter
                 //if health is zero or below then switch to dead
                 if (health <= 0)
                 {
-                    Instantiate(hellHoleParticle,hellholespawnpoint.position, Quaternion.identity,transform);
+               
                     isDead = true;
                     currState = SlicerStates.DEAD;
                 }
 
                 if (stunTime <= 0)
                 {
-                    ResetTarget();
+                    // print("HIT");
+
+                    if (!knockUpCoRun && _isGrounded)
+                    {
+                        knockedUp = false;
+                    }
+
+
+                    if (!knockedUp && _isGrounded && !knockUpCoRun) { 
+                        ResetTarget();
+                    }
                 }
                 else
                 {
                     stunTime -= Time.deltaTime;
                 }
-
-
-            
-
-                //when counters done check for health roll if never checked before
-                    //if failed then switch to flee
-
                 break;
+
+            case SlicerStates.KNOCKUP:
+                //stun state counter
+                //if health is zero or below then switch to dead
+                //  print("We KnockedUp");
+               
+                
+                if (health <= 0)
+                {
+
+                    isDead = true;
+                    currState = SlicerStates.DEAD;
+                }
+
+                if (!knockUpCoRun)
+                {
+                    StartCoroutine(KnockUpCountDown());
+                }
+
+                currState = SlicerStates.HIT;
+                
+                
+                break;
+
+
+          
             case SlicerStates.SEARCHING:
 
                 //play idle animation
@@ -250,6 +293,38 @@ public class Slicer : Enemy {
 
 	}
 
+    IEnumerator KnockUpCountDown()
+    {
+        knockedUp = true;
+        knockUpCoRun = true;
+       while(knockUpstunTime > 0) {
+
+            if (transform.position.y > kuHeight)
+            {
+                knockUpstunTime -= Time.deltaTime;
+                yield return null;
+            }
+            else
+            {
+
+                _controller.Move(transform.up * knockUpSpeed * Time.deltaTime);
+            }
+
+            
+
+            
+            //print(knockUpstunTime);
+
+        }
+        useGravity = true;
+        knockUpCoRun = false;
+        yield break;
+
+
+      
+
+    }
+
     public void EndOfSlice()
     {
         timeBetweenAttack = startTimeBetweenAttack;
@@ -262,7 +337,8 @@ public class Slicer : Enemy {
         dissapearing = true;
         float elapsedTime = 0f;
         Vector3 startPos = transform.position;
-
+        yield return new WaitForSeconds(1f);
+        Instantiate(hellHoleParticle, hellholespawnpoint.position, Quaternion.identity, transform);
         yield return new WaitForSeconds(3f);
    
 
@@ -358,12 +434,17 @@ public class Slicer : Enemy {
     protected override void OnDamage(int damage )
     {
         if (!isDead && currState != SlicerStates.HIT) {
+
+           
             stunTime = startStunTime;
             currState = SlicerStates.HIT;
+
+           
+          
             //PlayMode.StopAll
             health -= damage;
             CreateDamageText(damage);
-            CameraShaker.Instance.ShakeOnce(0.5f, 1f, 0.1f, 0.1f);
+            CameraShaker.Instance.ShakeOnce(1f, 1f, 0.1f, 0.1f);
             _animator.Play("Hit",-1,0f);
         }
 
@@ -378,6 +459,55 @@ public class Slicer : Enemy {
 
 
     }
+
+
+
+    protected override void OnKnockUpDamage(int damage, float stunLenth,  float knockUpHeight)
+    {
+        if (!isDead && currState != SlicerStates.KNOCKUP)
+        {
+            //print("KNOCKUPHIT");
+         
+            canBeJuggled = false;
+            useGravity = false;
+
+
+            if (knockUpHeight == 0)
+            {
+                print("KNockupbonus");
+                knockUpstunTime += stunLenth;
+                // kuHeight = knockUpHeight;
+                currState = SlicerStates.KNOCKUP;
+            }
+            else
+            {
+                knockUpstunTime = stunLenth;
+                kuHeight = knockUpHeight;
+                currState = SlicerStates.KNOCKUP;
+            }
+         
+
+
+            //PlayMode.StopAll
+            health -= damage;
+            CreateDamageText(damage);
+            CameraShaker.Instance.ShakeOnce(1f, 1f, 0.1f, 0.1f);
+            _animator.Play("Hit", -1, 0f);
+
+
+            /*
+ if (canBeJuggled)
+    {
+        //print("cjknbf");
+        transform.position += transform.up* knockUpForce * Time.deltaTime;
+    }
+    */
+        }
+
+
+    }
+
+    
 
     void CreateDamageText(int damage)
     {

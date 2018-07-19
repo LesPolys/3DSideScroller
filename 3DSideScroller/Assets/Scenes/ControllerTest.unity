@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4210,8 +4210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_listeners:
-    initialListenerList:
-    - {fileID: 0}
+    initialListenerList: []
     useDefaultListeners: 1
   isEnvironmentAware: 1
   isStaticObject: 0
@@ -4389,6 +4388,16 @@ Prefab:
       propertyPath: fleePoints.Array.data[25]
       value: 
       objectReference: {fileID: 1251844188}
+    - target: {fileID: 114139522557399956, guid: 75b8a44a44041f846a7dd938e11c2b2a,
+        type: 2}
+      propertyPath: knockUpSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114139522557399956, guid: 75b8a44a44041f846a7dd938e11c2b2a,
+        type: 2}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75b8a44a44041f846a7dd938e11c2b2a, type: 2}
   m_IsPrefabParent: 0

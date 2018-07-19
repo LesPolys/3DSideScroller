@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
 
 
     Vector3 forward, right, lastCurrent;
+    public float knockUpForce;
 
 
     Vector3 previousPos;
@@ -107,6 +108,10 @@ public class Player : MonoBehaviour
     private bool isTier3 = false;
     public float maxChargeTime;
     private bool forcedRelease = false;
+
+
+    
+
     [Space(20)]
     #endregion
 
@@ -125,6 +130,15 @@ public class Player : MonoBehaviour
     protected float startStunTime ;
     bool isInHitStun = false;
     #endregion
+
+    #region KNOCKUP
+    [Header("KNOCKUP")]
+    public float knockupAttackStunTime;
+    public float knockupAttackStunHeight;
+    #endregion
+
+
+    private enum AttackTypes {AIRKNOCKUP, GROUNDEDKNOCKUP,KNOCKUP, NORMAL }
 
     public TextMeshPro damageText;
 
@@ -308,7 +322,7 @@ public class Player : MonoBehaviour
 
         previousPos = transform.position;
 
-        print("current" + transform.position + " prev " + previousPos);
+        //print("current" + transform.position + " prev " + previousPos);
 
 
         if (Actions.A && _isGrounded && !attacking)
@@ -494,41 +508,56 @@ public class Player : MonoBehaviour
         if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
             //print("ATTACK");
-            CheckForEnemiesHit(lightAttackPos, lightAttackRange, 1);
+            CheckForEnemiesHit(lightAttackPos, lightAttackRange, 1,AttackTypes.NORMAL);
 
         }
         if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Heavy"))
         {
             // print("HEAVY");
-            CheckForEnemiesHit(heavyAttackPos, heavyAttackRange, 2);
+            CheckForEnemiesHit(heavyAttackPos, heavyAttackRange, 2, AttackTypes.NORMAL);
 
         }
         if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Spin"))
         {
             //print("SPIN");
-            CheckForEnemiesHit(specialAttackPos, specialAttackRange, 1);
+            CheckForEnemiesHit(specialAttackPos, specialAttackRange, 1,AttackTypes.KNOCKUP);
 
         }
     }
 
-    void CheckForEnemiesHit(Transform attackPos, float attackRange, int damage)
+    void CheckForEnemiesHit(Transform attackPos, float attackRange, int damage, AttackTypes attackType)
     {
 
         Collider[] enemiesToDamage = Physics.OverlapSphere(attackPos.position, attackRange, enemyMask);
 
         for (int i = 0; i < enemiesToDamage.Length; i++)
         {
-     
-            
-            if (!_isGrounded && enemiesToDamage[i].GetComponent<Enemy>().canBeJuggled)
+
+            if (attackType == AttackTypes.NORMAL)
             {
 
-                enemiesToDamage[i].GetComponent<Enemy>().AirDamage(damage, transform);
+                if(!_isGrounded && enemiesToDamage[i].GetComponent<Enemy>().knockedUp) {
+                    //print("hit");
+                    enemiesToDamage[i].GetComponent<Enemy>().AirDamage(damage, 0.05f, 0);
+                }
+                else if (!_isGrounded && enemiesToDamage[i].GetComponent<Enemy>().canBeJuggled)
+                {
+
+                    enemiesToDamage[i].GetComponent<Enemy>().AirDamage(damage, knockupAttackStunTime, knockupAttackStunHeight);
+                }
+                else
+                {
+                    enemiesToDamage[i].GetComponent<Enemy>().Damage(damage);
+                }
             }
-            else
+
+            if(attackType == AttackTypes.KNOCKUP)
             {
-                enemiesToDamage[i].GetComponent<Enemy>().Damage(damage);
+                //print("KUHIT");
+                enemiesToDamage[i].GetComponent<Enemy>().AirDamage(damage, knockupAttackStunTime, knockupAttackStunHeight);
+
             }
+          
 
 
             

@@ -14,12 +14,16 @@ public class Enemy : MonoBehaviour {
     protected float stunTime;
     protected float startStunTime = 0;
 
+    protected float knockUpstunTime;
+    protected float knockUptartStunTme = 0;
+
     protected Animator _animator;
     protected CharacterController _controller;
 
-
+    protected bool useGravity = true;
 
     protected bool isDead = false;
+    public bool knockedUp;
 
     //Static variables are shared across all instances
     //of a class.
@@ -54,17 +58,13 @@ public class Enemy : MonoBehaviour {
     }
 
 
-    public void AirDamage(int damage, Transform playerPos)
+    public void AirDamage(int damage, float stunLength, float knockUpForce)
     {
-       
-        
-        OnDamage(damage);
 
-        if (canBeJuggled)
-        {
-            //print("cjknbf");
-            transform.position += transform.up * 100 * Time.deltaTime;
-        }
+       // print("ONAIRDAMAGE");
+        OnKnockUpDamage(  damage, stunLength,  knockUpForce);
+
+       
 
       
     }
@@ -75,6 +75,15 @@ public class Enemy : MonoBehaviour {
 
 
         //play effects
+    }
+
+
+    protected virtual void OnKnockUpDamage(int damage, float stunLenth, float KnockUpHeight)
+    {
+
+
+
+        //knockup
     }
 
 }
