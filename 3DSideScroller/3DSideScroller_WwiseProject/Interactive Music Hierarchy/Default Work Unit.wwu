@@ -90,20 +90,20 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<MusicTrack Name="Mellchunk_Mix_V1" ID="{01B514F1-7AD2-4FD8-8FC0-B1D7C7200F0E}" ShortID="1050910288">
+								<MusicTrack Name="Mellchunk_Mix_V1" ID="{DB1FA86B-18FF-4D5D-BDB5-45A54EE729D7}" ShortID="208017185">
 									<ReferenceList>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{303B7FD5-8973-4961-B03C-AF8FB88CBFB1}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Mellchunk_Mix_V1" ID="{B7BC77BF-24E4-4E53-9902-67558122A88D}" ShortID="397909767">
+										<AudioFileSource Name="Mellchunk_Mix_V1" ID="{1B39AC19-34E6-493B-A89F-A4AB30B389F9}" ShortID="152829484">
 											<Language>SFX</Language>
 											<AudioFile>Mellchunk_Mix_V1.wav</AudioFile>
 										</AudioFileSource>
 									</ChildrenList>
 									<TransitionList>
-										<MusicTransition Name="Root" ID="{42961841-CEE8-4C07-A8DF-326EE3A10329}">
+										<MusicTransition Name="Root" ID="{A89300BA-6507-40D1-8933-D2FEF7A29D37}">
 											<PropertyList>
 												<Property Name="IsFolder" Type="bool" Value="True"/>
 											</PropertyList>
@@ -111,15 +111,15 @@
 										</MusicTransition>
 									</TransitionList>
 									<SequenceList>
-										<MusicTrackSequence Name="" ID="{C68FBE9C-3579-430E-948E-F360AF36EDEA}">
+										<MusicTrackSequence Name="" ID="{36AF2914-776F-4BA4-B6B2-D5B7842853B8}">
 											<ClipList>
-												<MusicClip Name="Mellchunk_Mix_V1" ID="{8F5BD486-7323-4A9B-8805-F8888C56A43C}">
+												<MusicClip Name="Mellchunk_Mix_V1" ID="{6A59D127-D9AF-4742-A356-21A5C3F5A534}">
 													<PropertyList>
 														<Property Name="EndTrimOffset" Type="Real64" Value="162461.519274376"/>
 														<Property Name="FadeInMode" Type="int16" Value="0"/>
 														<Property Name="FadeOutMode" Type="int16" Value="0"/>
 													</PropertyList>
-													<AudioSourceRef Name="Mellchunk_Mix_V1" ID="{B7BC77BF-24E4-4E53-9902-67558122A88D}"/>
+													<AudioSourceRef Name="Mellchunk_Mix_V1" ID="{1B39AC19-34E6-493B-A89F-A4AB30B389F9}"/>
 												</MusicClip>
 											</ClipList>
 										</MusicTrackSequence>
@@ -158,6 +158,7 @@
 							<ChildrenList>
 								<MusicPlaylistItem Name="" ID="{7EFF41BE-C858-4385-8F23-6261A26FF3AD}" ShortID="628191863">
 									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
 										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
 									</PropertyList>
 									<SegmentRef Name="Level_Music" ID="{F736CB6E-8D1C-45A6-9DD0-0C5F0276EB60}"/>

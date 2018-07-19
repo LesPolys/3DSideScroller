@@ -21,11 +21,11 @@
 			<ShortName>Soundbank_01</ShortName>
 			<Path>English(US)\Soundbank_01.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2631240918" Name="Character_Ready" ObjectPath="\Events\Default Work Unit\UI\Character Select\Character_Ready" MaxAttenuation="0.000000"/>
+				<Event Id="2631240918" Name="Character_Ready" ObjectPath="\Events\Default Work Unit\UI\Character Select\Character_Ready"/>
 				<Event Id="1205999388" Name="Enemy_Death" ObjectPath="\Events\Default Work Unit\Enemies\Shared\Enemy_Death"/>
 				<Event Id="1010055213" Name="Enemy_Hit" ObjectPath="\Events\Default Work Unit\Enemies\Shared\Enemy_Hit"/>
 				<Event Id="1432716332" Name="Game_Over" ObjectPath="\Events\Default Work Unit\UI\Game State\Game_Over"/>
-				<Event Id="3218375656" Name="Game_Win" ObjectPath="\Events\Default Work Unit\UI\Game State\Game_Win" MaxAttenuation="0.000000"/>
+				<Event Id="3218375656" Name="Game_Win" ObjectPath="\Events\Default Work Unit\UI\Game State\Game_Win"/>
 				<Event Id="1244594577" Name="Level_Music" ObjectPath="\Events\Default Work Unit\Music\Level_Music"/>
 				<Event Id="3429288859" Name="Menu_Accept" ObjectPath="\Events\Default Work Unit\UI\Menu\Menu_Accept"/>
 				<Event Id="3180909377" Name="Menu_Cancel" ObjectPath="\Events\Default Work Unit\UI\Menu\Menu_Cancel"/>
@@ -107,6 +107,10 @@
 					<ShortName>Tanker_Footsteps_05.wav</ShortName>
 					<Path>SFX\Tanker_Footsteps_05_1C9C67B2.wem</Path>
 				</File>
+				<File Id="152829484" Language="SFX">
+					<ShortName>Mellchunk_Mix_V1.wav</ShortName>
+					<Path>SFX\Mellchunk_Mix_V1_F17FB28C.wem</Path>
+				</File>
 				<File Id="162363131" Language="SFX">
 					<ShortName>Slicer_Footsteps_03.wav</ShortName>
 					<Path>SFX\Slicer_Footsteps_03_1C9C67B2.wem</Path>
@@ -158,10 +162,6 @@
 				<File Id="397474051" Language="SFX">
 					<ShortName>Icepick_July 5_V1.wav</ShortName>
 					<Path>SFX\Icepick_July 5_V1_F17FB28C.wem</Path>
-				</File>
-				<File Id="397909767" Language="SFX">
-					<ShortName>Mellchunk_Mix_V1.wav</ShortName>
-					<Path>SFX\Mellchunk_Mix_V1_F17FB28C.wem</Path>
 				</File>
 				<File Id="407970367" Language="SFX">
 					<ShortName>Player_Vocal_04.wav</ShortName>
@@ -310,6 +310,10 @@
 				<File Id="949682697" Language="SFX">
 					<ShortName>Player_Vocal_01.wav</ShortName>
 					<Path>SFX\Player_Vocal_01_1C9C67B2.wem</Path>
+				</File>
+				<File Id="965117635" Language="SFX">
+					<ShortName>Game_Win.wav</ShortName>
+					<Path>SFX\Game_Win_1C9C67B2.wem</Path>
 				</File>
 				<File Id="969934758" Language="SFX">
 					<ShortName>Enemy_Death_02.wav</ShortName>

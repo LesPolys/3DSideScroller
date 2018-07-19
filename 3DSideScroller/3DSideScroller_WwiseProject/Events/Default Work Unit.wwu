@@ -552,7 +552,30 @@
 						</Folder>
 						<Folder Name="Character Select" ID="{35194222-8F5D-4771-829C-E9BAFAE5069B}" ShortID="984144164">
 							<ChildrenList>
-								<Event Name="Character_Ready" ID="{08A42616-B0F3-4527-83F4-D6ACDEC4E42B}"/>
+								<Event Name="Character_Ready" ID="{08A42616-B0F3-4527-83F4-D6ACDEC4E42B}">
+									<ChildrenList>
+										<Action Name="" ID="{5C75B942-1335-46CA-80A9-D17E626999A9}" ShortID="405411324">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Character_Ready" ID="{7C774CF7-F3BD-4B68-B3DE-6DD6AB4E53E1}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{B784576C-F4A7-41F8-937D-3C50092CBC0E}" ShortID="1021489398">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Level_Music" ID="{0E428DE5-7582-4D3C-A803-D32E60DD22D0}" WorkUnitID="{C70FC4DB-5732-4249-BDF9-044646307A56}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Game State" ID="{F74F3ADC-000C-48A5-8CB5-8A01449CFBD3}" ShortID="683892144">
@@ -571,7 +594,20 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Game_Win" ID="{7557A045-3448-4A84-A7CB-55914B3A0E08}"/>
+								<Event Name="Game_Win" ID="{7557A045-3448-4A84-A7CB-55914B3A0E08}">
+									<ChildrenList>
+										<Action Name="" ID="{534AABE5-7001-4323-B742-786122147ADA}" ShortID="671569833">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Game_Win" ID="{E5C75025-A54B-4C6E-A669-D9AFA68B9270}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>

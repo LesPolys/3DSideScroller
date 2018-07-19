@@ -2011,6 +2011,13 @@
 						<Folder Name="Menu" ID="{43CA2A3F-01EB-4F94-8635-0653B1B4140F}" ShortID="693650937">
 							<ChildrenList>
 								<Sound Name="Menu_Cancel" ID="{BA8FBAB9-C6CC-4AE3-913F-F34AB547612C}" ShortID="544800599">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
@@ -2030,6 +2037,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Menu_Pause" ID="{CFD38349-81D1-448A-A826-9129F0DBC892}" ShortID="330934051">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
@@ -2049,6 +2063,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Menu_Scroll" ID="{E3429998-8B5C-4107-AED5-19E61A586998}" ShortID="30575387">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
@@ -2068,6 +2089,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Menu_Accept" ID="{C9FD9BB7-CE25-4CC8-AC7F-0F0D439ACE4D}" ShortID="935251040">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
@@ -2091,6 +2119,13 @@
 						<Folder Name="Character Select" ID="{2D939CC6-E583-4564-A5E9-A7F28A6322A2}" ShortID="156885124">
 							<ChildrenList>
 								<Sound Name="Character_Ready" ID="{7C774CF7-F3BD-4B68-B3DE-6DD6AB4E53E1}" ShortID="149621137">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
@@ -2130,6 +2165,25 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="Game_Over" ID="{BA7C0730-FC10-4966-B494-5D5ADE5BF3C6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Game_Win" ID="{E5C75025-A54B-4C6E-A669-D9AFA68B9270}" ShortID="968627307">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{303B7FD5-8973-4961-B03C-AF8FB88CBFB1}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Game_Win" ID="{DABE8482-69A4-4A3F-9447-17EDC90E3B9A}" ShortID="965117635">
+											<Language>SFX</Language>
+											<AudioFile>Game_Win.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Game_Win" ID="{DABE8482-69A4-4A3F-9447-17EDC90E3B9A}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>

@@ -66,6 +66,7 @@ public class ReadyUpUI : MonoBehaviour {
 
                     if (!isReady)
                     {
+                        AkSoundEngine.PostEvent("Menu_Accept", gameObject);
                         readyUpImage.sprite = characterReady;
                         isReady = true;
                     }
@@ -76,6 +77,7 @@ public class ReadyUpUI : MonoBehaviour {
                 {
                     if (isReady)
                     {
+                        AkSoundEngine.PostEvent("Menu_Cancel", gameObject);
                         readyUpImage.sprite = characterNotReady;
                         isReady = false;
                     }
@@ -83,6 +85,7 @@ public class ReadyUpUI : MonoBehaviour {
 
                 if (Actions.Up.WasPressed)
                 {
+                    AkSoundEngine.PostEvent("Menu_Scroll", gameObject);
                     iconIndex++;
                     if (iconIndex >= playerReadyIconImages.Length)
                     {
@@ -92,6 +95,7 @@ public class ReadyUpUI : MonoBehaviour {
                 }
                 if (Actions.Down.WasPressed)
                 {
+                    AkSoundEngine.PostEvent("Menu_Scroll", gameObject);
                     iconIndex--;
                     if (iconIndex < 0)
                     {
@@ -108,7 +112,7 @@ public class ReadyUpUI : MonoBehaviour {
                 {
                     readyUpImage.gameObject.SetActive(true);
                     hasAssignedInput = true;
-
+                    AkSoundEngine.PostEvent("Menu_Pause", gameObject);
                     SetImage();
 
                 }
