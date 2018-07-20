@@ -36,6 +36,8 @@ public class Hatch : MonoBehaviour {
    
     public ParticleSystem gateParticle;
 
+    public bool hatchShut = false;
+
 
 
     //public Image rightArrow;
@@ -96,7 +98,8 @@ public class Hatch : MonoBehaviour {
                 {
                     StartCoroutine(ShutHatch());
                 }
-        
+
+                hatchShut = true;
                 //play the move right sign
                 break;
 

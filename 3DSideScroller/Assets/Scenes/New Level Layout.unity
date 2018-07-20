@@ -43586,6 +43586,17 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -0.336
       objectReference: {fileID: 0}
+    - target: {fileID: 114207530166649166, guid: f756cca755ff10847b2e4513ad06e14c,
+        type: 2}
+      propertyPath: slicerPrefab
+      value: 
+      objectReference: {fileID: 1341196531538308, guid: e2dbe89357ceaf546b26b625df438bc9,
+        type: 2}
+    - target: {fileID: 114207530166649166, guid: f756cca755ff10847b2e4513ad06e14c,
+        type: 2}
+      propertyPath: playermanager
+      value: 
+      objectReference: {fileID: 219978977}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f756cca755ff10847b2e4513ad06e14c, type: 2}
   m_IsPrefabParent: 0
@@ -44428,6 +44439,10 @@ Prefab:
         type: 2}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895857586367126, guid: 50fa4a1f5a50867419d3694cb38bc706, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50fa4a1f5a50867419d3694cb38bc706, type: 2}

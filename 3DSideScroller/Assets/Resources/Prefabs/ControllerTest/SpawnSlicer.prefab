@@ -584,7 +584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  health: 5
+  health: 20
   canBeJuggled: 1
   knockedUp: 0
   searchRadius: 30

@@ -26,9 +26,10 @@ public class ArrowTrigger : MonoBehaviour {
 
     IEnumerator PlayArrowAnim()
     {
+
         arrowImage.SetActive(true);
         arrowImage.GetComponent<Animator>().Play("Next");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(5);
         arrowImage.SetActive(false);
         animPlayed = true;
         yield break;
@@ -38,7 +39,7 @@ public class ArrowTrigger : MonoBehaviour {
     {
         foreach (Hatch hatch in hatches)
         {
-            if (hatch.hatchOpen)
+            if (hatch.hatchShut == false)
             {
                 return false;
             }
