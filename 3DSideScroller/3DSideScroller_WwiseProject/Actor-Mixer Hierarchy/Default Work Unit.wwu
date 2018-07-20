@@ -24,7 +24,7 @@
 										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-19</Value>
+												<Value>-15</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -131,7 +131,7 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-16</Value>
+												<Value>-12</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -398,6 +398,11 @@
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="Player_SpinAttack" ID="{D600B0BD-D241-4AEE-8F58-6E187905D569}" ShortID="838208493">
 									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>16</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Pitch" Type="int32">
 											<ModifierList>
 												<ModifierInfo>
@@ -1145,7 +1150,7 @@
 										<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 										<Property Name="MaxSoundPerInstance" Type="int16">
 											<ValueList>
-												<Value>5</Value>
+												<Value>2</Value>
 											</ValueList>
 										</Property>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
@@ -1172,7 +1177,7 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-23</Value>
+												<Value>-24</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2179,7 +2184,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-7</Value>
+												<Value>-4</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2205,7 +2210,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-13</Value>
+												<Value>-10</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2231,7 +2236,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-9</Value>
+												<Value>-5</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2333,7 +2338,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-8</Value>
+												<Value>-15</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2355,7 +2360,7 @@
 										<ActiveSource Name="Indicator_01" ID="{08984A0D-BDD1-45BE-A7BA-BF323A6EF9AA}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="Valve_Close_01" ID="{776751DF-3A96-4AB1-BDC3-01A447CC9002}" ShortID="361927069">
+								<Sound Name="Valve_Close_V2" ID="{4EAD5609-7961-4849-8181-3CEBE8CA8895}" ShortID="673543561">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
@@ -2365,13 +2370,13 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Valve_Close_01" ID="{AE400B9C-7AB7-4B45-BB66-273B7C8AE798}" ShortID="92885233">
+										<AudioFileSource Name="Valve_Close_V2" ID="{08934521-50A5-4D21-9729-3EDF8D6EAC80}" ShortID="406516954">
 											<Language>SFX</Language>
-											<AudioFile>Valve_Close_01.wav</AudioFile>
+											<AudioFile>Valve_Close_V2.wav</AudioFile>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="Valve_Close_01" ID="{AE400B9C-7AB7-4B45-BB66-273B7C8AE798}" Platform="Linked"/>
+										<ActiveSource Name="Valve_Close_V2" ID="{08934521-50A5-4D21-9729-3EDF8D6EAC80}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>

@@ -755,7 +755,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Valve_Close_01" ID="{776751DF-3A96-4AB1-BDC3-01A447CC9002}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
+													<ObjectRef Name="Valve_Close_V2" ID="{4EAD5609-7961-4849-8181-3CEBE8CA8895}" WorkUnitID="{11C66249-D8F4-4780-8EFC-312E6AD87A48}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
