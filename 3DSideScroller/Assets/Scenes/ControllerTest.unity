@@ -1662,6 +1662,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96179daa2a2a0d24e93e829e35e2f454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowImage: {fileID: 0}
+  hatches:
+  - {fileID: 1016756670}
 --- !u!4 &343045438
 Transform:
   m_ObjectHideFlags: 0
@@ -4297,6 +4300,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82a8e1b98c77f1041ad136f4220eea30, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1016756670 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114650691652866802, guid: 82a8e1b98c77f1041ad136f4220eea30,
+    type: 2}
+  m_PrefabInternal: {fileID: 1016756669}
+  m_Script: {fileID: 11500000, guid: 36dc1a103e06c214aae842ed7ed0a0a7, type: 3}
 --- !u!1001 &1017462898
 Prefab:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class Hatch : MonoBehaviour {
     bool isSpawning = false;
     bool waveSpawned = false;
 
-    bool hatchOpen = false;
+    public bool hatchOpen = false;
 
     bool pauseingbetweenwaves = false;
    

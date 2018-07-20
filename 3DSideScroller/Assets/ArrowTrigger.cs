@@ -5,24 +5,44 @@ using UnityEngine;
 public class ArrowTrigger : MonoBehaviour {
 
 
-    public GameObject arrowIMage;
+    public GameObject arrowImage;
     public Hatch[] hatches;
+    bool animPlayed = false;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+	void Awake()
+    {
+        arrowImage.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
-        CheckIfAllHatchesClosed();
+        if (CheckIfAllHatchesClosed() && !animPlayed)
+        {
+            
+        }
 
 	}
 
-    public void CheckIfAllHatchesClosed()
+    IEnumerator PlayArrowAnim()
     {
+        arrowImage.SetActive(true);
+        arrowImage.GetComponent<Animator>().Play("Next");
+        yield return new WaitForSeconds(2);
+        arrowImage.SetActive(false);
+        yield break;
+    }
 
+    public bool CheckIfAllHatchesClosed()
+    {
+        foreach (Hatch hatch in hatches)
+        {
+            if (hatch.hatchOpen)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
