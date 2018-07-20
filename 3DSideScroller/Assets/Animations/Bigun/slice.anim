@@ -12169,8 +12169,8 @@ AnimationClip:
   m_Events:
   - time: 0.6
     functionName: CallAudioEvent
-    data: Slicer_Attack
-    objectReferenceParameter: {fileID: 1522691385707128, guid: 75b8a44a44041f846a7dd938e11c2b2a,
+    data: Tanker_Swipe
+    objectReferenceParameter: {fileID: 1341196531538308, guid: e2dbe89357ceaf546b26b625df438bc9,
       type: 2}
     floatParameter: 0
     intParameter: 0
