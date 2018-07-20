@@ -6,14 +6,16 @@ public class PlayTitleCard : MonoBehaviour {
 
     public Hatch bossHatch;
     bool triggerOnce = false;
-    GameObject titleCard;
+    public GameObject titleCard;
+    public  GameObject titleCardBG;
 
     void Update()
     {
         if (bossHatch.hatchShut && !triggerOnce)
         {
+            print("HERE");
             triggerOnce = true;
-           // titleCard.GetComponent<Animator>().Play("");
+            titleCardBG.GetComponent<Animator>().Play("StanBackground");
             //PlayImageCard thing
 
         }

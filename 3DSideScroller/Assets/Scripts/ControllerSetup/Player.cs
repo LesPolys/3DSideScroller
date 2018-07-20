@@ -357,6 +357,12 @@ public class Player : MonoBehaviour
         {
             blocking = true;
             block.SetActive(true);
+            AttackOver();
+            isTier1 = false;
+            isTier2 = false;
+            isTier3 = false;
+            chargeTime = 0.0f;
+            charging = false;
         }
         else
         {
@@ -414,6 +420,7 @@ public class Player : MonoBehaviour
                 isTier1 = false;
                 //print("pressed");
             }
+            
 
             if (charging) //charging special attack
             {
@@ -780,6 +787,12 @@ public class Player : MonoBehaviour
             isInHitStun = true;
             stunTime = startStunTime;
             health -= damage;
+            AttackOver();
+            isTier1 = false;
+            isTier2 = false;
+            isTier3 = false;
+            chargeTime = 0.0f;
+            charging = false;
             //print("OUCH: " + damage + "Im at: " + health);
             //play damage effect and sound
             CreateDamageText(damage);
