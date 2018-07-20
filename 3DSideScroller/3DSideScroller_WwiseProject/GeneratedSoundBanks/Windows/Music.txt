@@ -1,0 +1,12 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1244594577	Level_Music			\Default Work Unit\Music\Level_Music	
+	1432716332	Game_Over			\Default Work Unit\UI\Game State\Game_Over	
+	2631240918	Character_Ready			\Default Work Unit\UI\Character Select\Character_Ready	
+	2985113282	Boss_Music			\Default Work Unit\Music\Boss_Music	
+	4055567060	Menu_Music			\Default Work Unit\Music\Menu_Music	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	106160777	Menu_Music_V1	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Menu_Music_V1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Menu_Music\Menu_Music\Menu_Music_V1		8467264
+	152829484	Mellchunk_Mix_V1	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Mellchunk_Mix_V1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level_Music\Mellchunk_Mix_V1		28658276
+	569923547	Icepick_Mix_V1	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Icepick_Mix_V1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Boss_Music\Boss_Music\Icepick_Mix_V1		21772864
+

@@ -8,7 +8,7 @@ public class BossMusicTrigger : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-
+            AkSoundEngine.PostEvent("Boss_Music", gameObject);
             this.gameObject.SetActive(false);
         }
     }
