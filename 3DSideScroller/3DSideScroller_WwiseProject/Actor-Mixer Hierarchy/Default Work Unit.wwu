@@ -945,6 +945,29 @@
 								<Sound Name="Player_SpinCharge01" ID="{548A1A31-8F29-40CD-B153-6AD3111A4EDA}" ShortID="909337808">
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{053B4AA8-0233-430C-A1E4-D3C012BECCCA}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="632"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{ADA85E79-8E41-452D-A146-48427754B83F}">
+														<PropertyList>
+															<Property Name="Max" Type="Real64" Value="42"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -967,6 +990,32 @@
 								<Sound Name="Player_SpinCharge02" ID="{22DAE43A-3E07-417E-BF2F-60A0379BB52A}" ShortID="1025157571">
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Lowpass" Type="int16">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{74D58E1D-1CEF-47AE-8C93-207F71788A43}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="10"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{33B88CB2-DE36-4693-83BE-F5C4FA95C433}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{356FEBC8-A490-4463-973D-10239D909C29}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -989,6 +1038,25 @@
 								<Sound Name="Player_SpinCharge03" ID="{B513ECDD-2C66-44A1-BBD9-ACDE67731B65}" ShortID="539326025">
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Lowpass" Type="int16">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{A33ED995-EDF8-4463-AB74-7A1383E36610}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{57367357-6734-46F0-B0C5-D92EF8C5E620}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="1011"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">

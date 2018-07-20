@@ -28,6 +28,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2651857535	MrSpines_Attack			\Default Work Unit\Enemies\MrSpines\MrSpines_Attack	
 	2882779481	Player_FootstepsLeft			\Default Work Unit\Player\Footsteps\Player_FootstepsLeft	
 	2904509426	Vex_Footsteps			\Default Work Unit\Enemies\Vex\Vex_Footsteps	
+	2985113282	Boss_Music			\Default Work Unit\Music\Boss_Music	
 	3136346432	MrSpines_Footsteps			\Default Work Unit\Enemies\MrSpines\MrSpines_Footsteps	
 	3180909377	Menu_Cancel			\Default Work Unit\UI\Menu\Menu_Cancel	
 	3194464978	Oozer_Shoot			\Default Work Unit\Enemies\Oozer\Oozer_Shoot	
@@ -76,7 +77,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	313078258	Player_HeavyAttack_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_HeavyAttack_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_HeavyAttack\Player_HeavyAttack_01		124480
 	376012603	Tanker_Footsteps_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Tanker_Footsteps_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Tanker\Tanker_Footsteps\Tanker_Footsteps_02		68800
 	396509472	Player_HeavyAttack_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_HeavyAttack_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_HeavyAttack\Player_HeavyAttack_02		132160
-	397474051	Icepick_July 5_V1	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Icepick_July 5_V1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Icepick_July 5_V1\Icepick_July 5_V1		9777664
 	406516954	Valve_Close_V2	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Valve_Close_V2_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\In Game\Valve_Close_V2		282176
 	407970367	Player_Vocal_04	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Vocal_04_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Vocal\Player_Vocal\Player_Vocal_04		60992
 	410400692	Player_Vocal_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Vocal_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Vocal\Player_Vocal\Player_Vocal_03		55872
@@ -88,6 +88,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	534963747	Player_Jump_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Jump_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Jump\Player_Jump\Player_Jump_02		46528
 	553139650	Player_FootstepsLeft_04	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_FootstepsLeft_04_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Player_FootstepsLeft\Player_FootstepsLeft_04		17472
 	567230979	Player_FootstepsRight_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_FootstepsRight_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Player_FootstepsRight\Player_FootstepsRight_01		17472
+	569923547	Icepick_Mix_V1	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Icepick_Mix_V1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Boss_Music\Boss_Music\Icepick_Mix_V1		21772864
 	597642798	Enemy_Death_05	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Enemy_Death_05_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Shared\Enemy_Death\Enemy_Death_05		196672
 	599586263	Menu_Cancel	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Menu_Cancel_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Menu\Menu_Cancel		95296
 	606580779	Indicator_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Indicator_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\In Game\Indicator_01		36416

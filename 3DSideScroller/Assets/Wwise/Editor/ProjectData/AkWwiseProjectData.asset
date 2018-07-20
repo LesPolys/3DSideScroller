@@ -28,11 +28,20 @@ MonoBehaviour:
     List: []
   BankWwu:
   - Guid: '{45194DFA-6FE8-4D68-9F20-955E35745C7E}'
-    m_lastTimePart2: -1999247907
-    m_lastTimePsrt1: -393168773
+    m_lastTimePart2: -1999245691
+    m_lastTimePsrt1: 398893025
     ParentPhysicalPath: 
     PhysicalPath: SoundBanks\Default Work Unit.wwu
     List:
+    - Guid: 5a05d0d388fa3e488266bcd74d3c5e6d
+      ID: -303024426
+      Name: Music
+      Path: Default Work Unit\Music
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 7
     - Guid: d47227045761b44db6eb7d5152140160
       ID: -1094016666
       Name: Soundbank_01
@@ -48,11 +57,25 @@ MonoBehaviour:
   defaultPoolSize: 4096
   EventWwu:
   - Guid: '{47AA1460-C47F-46D5-BF75-A67269DB8827}'
-    m_lastTimePart2: -1999246050
-    m_lastTimePsrt1: 1012741414
+    m_lastTimePart2: -1999245690
+    m_lastTimePsrt1: 1399697339
     ParentPhysicalPath: 
     PhysicalPath: Events\Default Work Unit.wwu
     List:
+    - Guid: d13028dd7f127947a495903fd31784f1
+      ID: -1309854014
+      Name: Boss_Music
+      Path: Default Work Unit\Music\Boss_Music
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Boss_Music
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - Guid: 1626a408f3b0274583f4d6acdec4e42b
       ID: -1663726378
       Name: Character_Ready
@@ -129,6 +152,22 @@ MonoBehaviour:
       - ElementName: Game State
         ObjectType: 4
       - ElementName: Game_Win
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 7f16847978e69e41afd4cac3b496aa46
+      ID: -957518182
+      Name: Indicator_Blip
+      Path: Default Work Unit\UI\In Game\Indicator_Blip
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: In Game
+        ObjectType: 4
+      - ElementName: Indicator_Blip
         ObjectType: 3
       maxAttenuation: 0
       maxDuration: 0
@@ -641,6 +680,22 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - Guid: 668b336b87c24d41ba17b0bf4a7652a7
+      ID: 1159027468
+      Name: Valve_Close
+      Path: Default Work Unit\UI\In Game\Valve_Close
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: In Game
+        ObjectType: 4
+      - ElementName: Valve_Close
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - Guid: 087862f21b6f4145a82e759e7c449449
       ID: 534424066
       Name: Vex_ChantFinish
@@ -696,6 +751,8 @@ MonoBehaviour:
   - /3DSideScroller_WwiseProject/Events/Default Work Unit/Music
   - /3DSideScroller_WwiseProject/Events/Default Work Unit/UI
   - /3DSideScroller_WwiseProject/Events/Default Work Unit/UI/Character Select
+  - /3DSideScroller_WwiseProject/SoundBanks
+  - /3DSideScroller_WwiseProject/SoundBanks/Default Work Unit
   language: English(US)
   lowerPoolSize: 2048
   m_lastPopulateTimePart2: 0

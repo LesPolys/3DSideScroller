@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4529,7 +4529,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 253085102}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 100, y: 3.36, z: 0}
+  m_LocalPosition: {x: 94.17, y: 3.36, z: 0}
   m_LocalScale: {x: 1, y: 32.5, z: 178.31}
   m_Children: []
   m_Father: {fileID: 0}
@@ -36534,6 +36534,7 @@ GameObject:
   - component: {fileID: 772161311}
   - component: {fileID: 772161313}
   - component: {fileID: 772161312}
+  - component: {fileID: 772161314}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -36655,6 +36656,25 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &772161314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 772161307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dce8a8c5b8c547419b99f23a82acf07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  bankName: Music
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  valueGuid: 5a05d0d388fa3e488266bcd74d3c5e6d
 --- !u!1001 &772216160
 Prefab:
   m_ObjectHideFlags: 0
@@ -97879,7 +97899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1799194209
 MonoBehaviour:
   m_ObjectHideFlags: 0

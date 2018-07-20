@@ -795,6 +795,31 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Boss_Music" ID="{DD2830D1-127F-4779-A495-903FD31784F1}">
+							<ChildrenList>
+								<Action Name="" ID="{5C8F4119-B83D-4C4A-AE10-57DEF5F41DD5}" ShortID="759342469">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Boss_Music" ID="{72206A42-9EEB-444B-91B8-41778B7A7BED}" WorkUnitID="{C70FC4DB-5732-4249-BDF9-044646307A56}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{9058551D-D986-4804-9994-1357E9A1ED9B}" ShortID="473439516">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="4"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Level_Music" ID="{0E428DE5-7582-4D3C-A803-D32E60DD22D0}" WorkUnitID="{C70FC4DB-5732-4249-BDF9-044646307A56}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
