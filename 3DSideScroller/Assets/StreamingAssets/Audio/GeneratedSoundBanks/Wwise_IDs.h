@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID BOSS_MUSIC = 2985113282U;
         static const AkUniqueID CHARACTER_READY = 2631240918U;
         static const AkUniqueID ENEMY_DEATH = 1205999388U;
         static const AkUniqueID ENEMY_HIT = 1010055213U;
@@ -60,6 +61,7 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID SOUNDBANK_01 = 3200950630U;
     } // namespace BANKS
 
