@@ -115,7 +115,6 @@ GameObject:
   - component: {fileID: 4616800982142288}
   - component: {fileID: 143014115740628342}
   - component: {fileID: 114595900380575782}
-  - component: {fileID: 95285945242049334}
   m_Layer: 13
   m_Name: BigUntest
   m_TagString: Untagged
@@ -555,24 +554,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1364204285025626}
   m_Mesh: {fileID: 4300000, guid: 21e37d9785972a84e9c8fe9880e0ae6a, type: 3}
---- !u!95 &95285945242049334
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1341196531538308}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &95990733757782126
 Animator:
   serializedVersion: 3
@@ -582,7 +563,7 @@ Animator:
   m_GameObject: {fileID: 1278176990535658}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c6c505f2b0206db4a8e100609dbff2b6, type: 3}
-  m_Controller: {fileID: 9100000, guid: 897a720ade2a1004cbf4a0928eae88e2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 57346a0f08c03fd49b7e8335d349acda, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -614,7 +595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6fea3d424c90a489453e305ed993f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 8
   health: 100
   canBeJuggled: 1
   knockedUp: 0
