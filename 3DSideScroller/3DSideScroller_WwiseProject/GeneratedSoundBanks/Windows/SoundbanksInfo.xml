@@ -21,6 +21,7 @@
 			<ShortName>Soundbank_01</ShortName>
 			<Path>English(US)\Soundbank_01.bnk</Path>
 			<IncludedEvents>
+				<Event Id="2985113282" Name="Boss_Music" ObjectPath="\Events\Default Work Unit\Music\Boss_Music"/>
 				<Event Id="2631240918" Name="Character_Ready" ObjectPath="\Events\Default Work Unit\UI\Character Select\Character_Ready"/>
 				<Event Id="1205999388" Name="Enemy_Death" ObjectPath="\Events\Default Work Unit\Enemies\Shared\Enemy_Death"/>
 				<Event Id="1010055213" Name="Enemy_Hit" ObjectPath="\Events\Default Work Unit\Enemies\Shared\Enemy_Hit"/>
@@ -168,10 +169,6 @@
 				<File Id="396509472" Language="SFX">
 					<ShortName>Player_HeavyAttack_02.wav</ShortName>
 					<Path>SFX\Player_HeavyAttack_02_1C9C67B2.wem</Path>
-				</File>
-				<File Id="397474051" Language="SFX">
-					<ShortName>Icepick_July 5_V1.wav</ShortName>
-					<Path>SFX\Icepick_July 5_V1_F17FB28C.wem</Path>
 				</File>
 				<File Id="406516954" Language="SFX">
 					<ShortName>Valve_Close_V2.wav</ShortName>
@@ -356,6 +353,10 @@
 				<File Id="1005235124" Language="SFX">
 					<ShortName>Player_SpinAttack_V2.wav</ShortName>
 					<Path>SFX\Player_SpinAttack_V2_1C9C67B2.wem</Path>
+				</File>
+				<File Id="1019301177" Language="SFX">
+					<ShortName>Icepick_Mix_V1.wav</ShortName>
+					<Path>SFX\Icepick_Mix_V1_F17FB28C.wem</Path>
 				</File>
 				<File Id="1021214591" Language="SFX">
 					<ShortName>Tanker_Shockwave_02.wav</ShortName>

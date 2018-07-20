@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID BOSS_MUSIC = 2985113282U;
         static const AkUniqueID CHARACTER_READY = 2631240918U;
         static const AkUniqueID ENEMY_DEATH = 1205999388U;
         static const AkUniqueID ENEMY_HIT = 1010055213U;
