@@ -14,7 +14,7 @@ public class Hatch : MonoBehaviour {
     public GameObject rightDoor;
     public GameObject combatArea;
 
-    //public Animator hatchAnimator;
+    public Animator hatchAnimator;
 
     List<Slicer> enemies = new List<Slicer>();
     public int maxNumEnemiesKilled;
@@ -101,9 +101,9 @@ public class Hatch : MonoBehaviour {
                 break;
 
         }
-        
 
 
+      
     }
 
 
@@ -114,6 +114,7 @@ public class Hatch : MonoBehaviour {
 
         gateParticle.Stop();
         yield return new WaitForSeconds(3);
+        hatchAnimator.Play("Seal");
         rightDoor.SetActive(false);
 
 

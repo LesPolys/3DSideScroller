@@ -28,7 +28,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1177533177399764
 GameObject:
   m_ObjectHideFlags: 1
@@ -168,7 +168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1622639575649258
 GameObject:
   m_ObjectHideFlags: 1
@@ -204,7 +204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1850161627607348
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +273,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217121475850516}
   m_LocalRotation: {x: 0.14490823, y: 0.69290507, z: -0.6915181, w: 0.14382946}
-  m_LocalPosition: {x: 28.075909, y: 4.87, z: 25.169975}
+  m_LocalPosition: {x: 23.3, y: 5, z: 10.1}
   m_LocalScale: {x: -100.00032, y: -100.0001, z: -100.00008}
   m_Children:
   - {fileID: 4412513541900948}
@@ -315,7 +315,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1037247012615594}
   m_LocalRotation: {x: -0.33457354, y: -0, z: 0.9423697, w: 0}
-  m_LocalPosition: {x: 0, y: -0.3, z: 0}
+  m_LocalPosition: {x: 0.1, y: -0.77, z: 0.06}
   m_LocalScale: {x: 67.776825, y: 67.77684, z: 67.77678}
   m_Children: []
   m_Father: {fileID: 4959889218112616}
@@ -794,11 +794,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36dc1a103e06c214aae842ed7ed0a0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves: 050000000500000005000000
+  waves: 01000000
   playermanager: {fileID: 0}
   leftDoor: {fileID: 1588697769838038}
   rightDoor: {fileID: 1805474571037038}
   combatArea: {fileID: 1177533177399764}
+  hatchAnimator: {fileID: 95228765627584006}
   maxNumEnemiesKilled: 0
   slicerPrefab: {fileID: 1522691385707128, guid: 2b3447318967f4442b3db4c05d24b7d4,
     type: 2}

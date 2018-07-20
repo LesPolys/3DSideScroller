@@ -167,7 +167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1931704578856316
 GameObject:
   m_ObjectHideFlags: 1
@@ -204,7 +204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4086661613240714
 Transform:
   m_ObjectHideFlags: 1
@@ -212,7 +212,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1053559106641708}
   m_LocalRotation: {x: -0.33457354, y: -0, z: 0.9423697, w: 0}
-  m_LocalPosition: {x: 0.1, y: -8.09, z: 0.06}
+  m_LocalPosition: {x: 0.1, y: -0.77, z: 0.06}
   m_LocalScale: {x: 67.776825, y: 67.77684, z: 67.77678}
   m_Children: []
   m_Father: {fileID: 4288379265729386}
@@ -237,8 +237,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1324144544255220}
-  m_LocalRotation: {x: -0.21174923, y: -0.67465717, z: -0.67465717, w: 0.21174923}
-  m_LocalPosition: {x: -26.6, y: 5.2, z: 25.2}
+  m_LocalRotation: {x: -0.21174826, y: -0.67465746, z: -0.67465746, w: 0.21174826}
+  m_LocalPosition: {x: -17.2, y: 5, z: 12}
   m_LocalScale: {x: 100.00018, y: 100.00008, z: 100}
   m_Children:
   - {fileID: 4288379265729386}
@@ -280,7 +280,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1566348533799074}
   m_LocalRotation: {x: -0, y: -0.34428847, z: -0, w: 0.9388639}
-  m_LocalPosition: {x: -0.0165, y: -0.0055, z: 0.0019}
+  m_LocalPosition: {x: -0.0165, y: 0.0086, z: 0.0019}
   m_LocalScale: {x: 0.02096581, y: 0.011256453, z: 0.009999998}
   m_Children: []
   m_Father: {fileID: 4660810530360710}
@@ -753,11 +753,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36dc1a103e06c214aae842ed7ed0a0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves: 050000000500000005000000
+  waves: 01000000
   playermanager: {fileID: 0}
   leftDoor: {fileID: 1821849344554468}
   rightDoor: {fileID: 1941007084263738}
   combatArea: {fileID: 1931704578856316}
+  hatchAnimator: {fileID: 95136028835017054}
   maxNumEnemiesKilled: 0
   slicerPrefab: {fileID: 1522691385707128, guid: 2b3447318967f4442b3db4c05d24b7d4,
     type: 2}
