@@ -11,7 +11,7 @@ public class ArrowTrigger : MonoBehaviour {
 
 	void Awake()
     {
-        arrowImage.SetActive(false);
+       
     }
 	
 	// Update is called once per frame
@@ -19,7 +19,7 @@ public class ArrowTrigger : MonoBehaviour {
 
         if (CheckIfAllHatchesClosed() && !animPlayed)
         {
-            
+            StartCoroutine(PlayArrowAnim());
         }
 
 	}
@@ -30,6 +30,7 @@ public class ArrowTrigger : MonoBehaviour {
         arrowImage.GetComponent<Animator>().Play("Next");
         yield return new WaitForSeconds(2);
         arrowImage.SetActive(false);
+        animPlayed = true;
         yield break;
     }
 
