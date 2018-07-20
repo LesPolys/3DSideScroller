@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using InControl;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 // This example iterates on the basic multiplayer example by using action sets with
@@ -120,6 +121,12 @@ public class PlayerManager : MonoBehaviour
                 AreAllPlayersDead();
                 break;
 
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         }
 
 
