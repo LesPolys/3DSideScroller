@@ -28,7 +28,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	2651857535	MrSpines_Attack			\Default Work Unit\Enemies\MrSpines\MrSpines_Attack	
 	2882779481	Player_FootstepsLeft			\Default Work Unit\Player\Footsteps\Player_FootstepsLeft	
 	2904509426	Vex_Footsteps			\Default Work Unit\Enemies\Vex\Vex_Footsteps	
-	2985113282	Boss_Music			\Default Work Unit\Music\Boss_Music	
 	3136346432	MrSpines_Footsteps			\Default Work Unit\Enemies\MrSpines\MrSpines_Footsteps	
 	3180909377	Menu_Cancel			\Default Work Unit\UI\Menu\Menu_Cancel	
 	3194464978	Oozer_Shoot			\Default Work Unit\Enemies\Oozer\Oozer_Shoot	
@@ -77,6 +76,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	313078258	Player_HeavyAttack_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_HeavyAttack_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_HeavyAttack\Player_HeavyAttack_01		124480
 	376012603	Tanker_Footsteps_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Tanker_Footsteps_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Tanker\Tanker_Footsteps\Tanker_Footsteps_02		68800
 	396509472	Player_HeavyAttack_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_HeavyAttack_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_HeavyAttack\Player_HeavyAttack_02		132160
+	397474051	Icepick_July 5_V1	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Icepick_July 5_V1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Icepick_July 5_V1\Icepick_July 5_V1		9777664
 	406516954	Valve_Close_V2	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Valve_Close_V2_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\In Game\Valve_Close_V2		282176
 	407970367	Player_Vocal_04	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Vocal_04_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Vocal\Player_Vocal\Player_Vocal_04		60992
 	410400692	Player_Vocal_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Vocal_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Vocal\Player_Vocal\Player_Vocal_03		55872
@@ -123,7 +123,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	969934758	Enemy_Death_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Enemy_Death_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Shared\Enemy_Death\Enemy_Death_02		163904
 	999720611	Player_FootstepsLeft_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_FootstepsLeft_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Player_FootstepsLeft\Player_FootstepsLeft_03		19264
 	1005235124	Player_SpinAttack_V2	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_SpinAttack_V2_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_SpinAttack\Player_SpinAttack_V2		330816
-	1019301177	Icepick_Mix_V1	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Icepick_Mix_V1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Boss_Music\Boss_Music\Icepick_Mix_V1		21772864
 	1021214591	Tanker_Shockwave_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Tanker_Shockwave_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Tanker\Tanker_Shockwave\Tanker_Shockwave_02		383040
 	1025477304	Tanker_Shockwave_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Tanker_Shockwave_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Tanker\Tanker_Shockwave\Tanker_Shockwave_01		505920
 	1040945162	Player_HealthPickup	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_HealthPickup_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Pickup\Player_HealthPickup		129088

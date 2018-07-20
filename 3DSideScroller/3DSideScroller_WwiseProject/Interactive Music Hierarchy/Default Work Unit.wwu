@@ -3,6 +3,70 @@
 	<InteractiveMusic>
 		<WorkUnit Name="Default Work Unit" ID="{C70FC4DB-5732-4249-BDF9-044646307A56}" PersistMode="Standalone">
 			<ChildrenList>
+				<MusicSegment Name="Icepick_July 5_V1" ID="{66502218-87A1-4D98-8162-BA7D38D59976}" ShortID="953243705">
+					<PropertyList>
+						<Property Name="EndPosition" Type="Real64" Value="55428.5714285714"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{303B7FD5-8973-4961-B03C-AF8FB88CBFB1}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="Icepick_July 5_V1" ID="{8EFB98AB-A6AF-418F-90DD-88E4FA956DAB}" ShortID="798289157">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{303B7FD5-8973-4961-B03C-AF8FB88CBFB1}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Icepick_July 5_V1" ID="{7D951663-E05D-45F1-B815-CDD4DD7092D9}" ShortID="397474051">
+									<Language>SFX</Language>
+									<AudioFile>Icepick_July 5_V1.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{FDA627CD-2F6D-4172-A37C-D918885312AB}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<SequenceList>
+								<MusicTrackSequence Name="" ID="{F08B19CF-398C-4458-A08E-E7BCB0F0A8C7}">
+									<ClipList>
+										<MusicClip Name="Icepick_July 5_V1" ID="{154FAA64-BA42-429E-AAB0-EC22F3021B63}">
+											<PropertyList>
+												<Property Name="EndTrimOffset" Type="Real64" Value="55428.5714285714"/>
+												<Property Name="FadeInMode" Type="int16" Value="0"/>
+												<Property Name="FadeOutMode" Type="int16" Value="0"/>
+											</PropertyList>
+											<AudioSourceRef Name="Icepick_July 5_V1" ID="{7D951663-E05D-45F1-B815-CDD4DD7092D9}"/>
+										</MusicClip>
+									</ClipList>
+								</MusicTrackSequence>
+							</SequenceList>
+						</MusicTrack>
+					</ChildrenList>
+					<CueList>
+						<MusicCue Name="Entry Cue" ID="{9718B590-86B0-4D21-A960-D7CC50ABE15E}"/>
+						<MusicCue Name="Exit Cue" ID="{814B5A0E-9295-41CB-92FF-D4FC1A40449C}">
+							<PropertyList>
+								<Property Name="CueType" Type="int16" Value="1"/>
+								<Property Name="TimeMs" Type="Real64" Value="55428.5714285714"/>
+							</PropertyList>
+						</MusicCue>
+					</CueList>
+				</MusicSegment>
 				<MusicPlaylistContainer Name="Level_Music" ID="{0E428DE5-7582-4D3C-A803-D32E60DD22D0}" ShortID="127754746">
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -205,106 +269,6 @@
 										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
 									</PropertyList>
 									<SegmentRef Name="Menu_Music" ID="{387AEBEB-A5E1-4693-86AE-E4083158A54F}"/>
-								</MusicPlaylistItem>
-							</ChildrenList>
-						</MusicPlaylistItem>
-					</Playlist>
-				</MusicPlaylistContainer>
-				<MusicPlaylistContainer Name="Boss_Music" ID="{6ED81E55-BF0B-4876-8097-4A7555D363B8}" ShortID="465133602">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{303B7FD5-8973-4961-B03C-AF8FB88CBFB1}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<MusicSegment Name="Boss_Music" ID="{D4D4F9A7-EFCD-4642-BD71-AF0BB181E02F}" ShortID="50808289">
-							<PropertyList>
-								<Property Name="EndPosition" Type="Real64" Value="123428.571428571"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{ABAEF8B7-85D1-43CA-A4F3-B01742C0F4B5}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{303B7FD5-8973-4961-B03C-AF8FB88CBFB1}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<MusicTrack Name="Icepick_Mix_V1" ID="{D2472BA0-4890-4CEF-A33A-FF947D6F124E}" ShortID="247044988">
-									<ReferenceList>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{303B7FD5-8973-4961-B03C-AF8FB88CBFB1}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Icepick_Mix_V1" ID="{6444D447-4FC3-4D94-AEED-4FACC68605D1}" ShortID="1019301177">
-											<Language>SFX</Language>
-											<AudioFile>Icepick_Mix_V1.wav</AudioFile>
-										</AudioFileSource>
-									</ChildrenList>
-									<TransitionList>
-										<MusicTransition Name="Root" ID="{5855B852-50A4-4CBB-A6B3-437BA184957F}">
-											<PropertyList>
-												<Property Name="IsFolder" Type="bool" Value="True"/>
-											</PropertyList>
-											<TransitionInfo/>
-										</MusicTransition>
-									</TransitionList>
-									<SequenceList>
-										<MusicTrackSequence Name="" ID="{EA22371F-C600-4F6C-A377-9DCC64E24D8B}">
-											<ClipList>
-												<MusicClip Name="Icepick_Mix_V1" ID="{E3CD6D70-F87E-4556-8F5E-C1CC1A6CA320}">
-													<PropertyList>
-														<Property Name="EndTrimOffset" Type="Real64" Value="123428.571428571"/>
-														<Property Name="FadeInMode" Type="int16" Value="0"/>
-														<Property Name="FadeOutMode" Type="int16" Value="0"/>
-													</PropertyList>
-													<AudioSourceRef Name="Icepick_Mix_V1" ID="{6444D447-4FC3-4D94-AEED-4FACC68605D1}"/>
-												</MusicClip>
-											</ClipList>
-										</MusicTrackSequence>
-									</SequenceList>
-								</MusicTrack>
-							</ChildrenList>
-							<CueList>
-								<MusicCue Name="Entry Cue" ID="{56DBA51D-6340-465B-A25F-A7B4E5C01FE4}"/>
-								<MusicCue Name="Exit Cue" ID="{6774C2FE-8A9C-4ADC-8A79-DA2A8C458B16}">
-									<PropertyList>
-										<Property Name="CueType" Type="int16" Value="1"/>
-										<Property Name="TimeMs" Type="Real64" Value="123428.571428571"/>
-									</PropertyList>
-								</MusicCue>
-							</CueList>
-						</MusicSegment>
-					</ChildrenList>
-					<TransitionList>
-						<MusicTransition Name="Root" ID="{7F1AB7C6-EA43-42D5-8316-3F5A831A8D4C}">
-							<PropertyList>
-								<Property Name="IsFolder" Type="bool" Value="True"/>
-							</PropertyList>
-							<ChildrenList>
-								<MusicTransition Name="Transition" ID="{EA0B40F1-55E8-43C0-B132-9A26B395CA0B}">
-									<TransitionInfo/>
-								</MusicTransition>
-							</ChildrenList>
-							<TransitionInfo/>
-						</MusicTransition>
-					</TransitionList>
-					<Playlist>
-						<MusicPlaylistItem Name="" ID="{1ABF4611-1906-4317-A03B-0007F9C2AE29}" ShortID="373085908">
-							<PropertyList>
-								<Property Name="LoopCount" Type="int16" Value="0"/>
-							</PropertyList>
-							<ChildrenList>
-								<MusicPlaylistItem Name="" ID="{F620BC5D-DCAE-46EE-BACF-2D41C0FB2E25}" ShortID="126092078">
-									<PropertyList>
-										<Property Name="LoopCount" Type="int16" Value="0"/>
-										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-									</PropertyList>
-									<SegmentRef Name="Boss_Music" ID="{D4D4F9A7-EFCD-4642-BD71-AF0BB181E02F}"/>
 								</MusicPlaylistItem>
 							</ChildrenList>
 						</MusicPlaylistItem>

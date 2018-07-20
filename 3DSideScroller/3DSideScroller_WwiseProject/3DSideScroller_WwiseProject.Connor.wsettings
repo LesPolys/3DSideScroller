@@ -42,7 +42,6 @@
 				<Property Name="Event Action List\{E80A615C-E71E-42A5-89E1-2EF368F9889C}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{EE153EF1-69D1-43A0-AC6E-453A830ACB37}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{F226C327-2993-4AB6-B6C8-2E48FF82F762}\x64_Expand States" Type="string" Value=""/>
-				<Property Name="Event Action List\{F31152A6-7CF0-46CF-9364-05579C7CBB84}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{FF76EC43-BA06-4C15-8A63-88FAB1DA83C1}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{FFB68F6E-AC11-4D47-8234-B742C04578FC}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
@@ -67,7 +66,6 @@
 				<Property Name="Interactive Music\x64_{387AEBEB-A5E1-4693-86AE-E4083158A54F} - SegmentEditorZoomInfo" Type="string" Value="knlUqzn6oz8AAAAAAADwPwAAAAAA+GJAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="Interactive Music\x64_{66502218-87A1-4D98-8162-BA7D38D59976} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwP3kSmYbt5iVAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="Interactive Music\x64_{D0714D91-8CE4-4D24-93E9-F69ACDF783C9} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPxymuQv+KjdAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
-				<Property Name="Interactive Music\x64_{D4D4F9A7-EFCD-4642-BD71-AF0BB181E02F} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPwAAAAAA+GJAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="Interactive Music\x64_{F736CB6E-8D1C-45A6-9DD0-0C5F0276EB60} - SegmentEditorZoomInfo" Type="string" Value="0NOYgM36gT8AAAAAAADwPwAAAAAA+GJAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
@@ -77,10 +75,7 @@
 				<Property Name="MonitoringManager\WatchMgr\x64_Watches" Type="string" Value=""/>
 				<Property Name="Music Transition List\{01B514F1-7AD2-4FD8-8FC0-B1D7C7200F0E}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Music Transition List\{0E428DE5-7582-4D3C-A803-D32E60DD22D0}\x64_Expand States" Type="string" Value=""/>
-				<Property Name="Music Transition List\{6ED81E55-BF0B-4876-8097-4A7555D363B8}\x64_Expand States" Type="string" Value=""/>
-				<Property Name="Music Transition List\{8EFB98AB-A6AF-418F-90DD-88E4FA956DAB}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Music Transition List\{A2E5BA5A-D4F5-4D94-B65C-E938E79513FB}\x64_Expand States" Type="string" Value=""/>
-				<Property Name="Music Transition List\{D2472BA0-4890-4CEF-A33A-FF947D6F124E}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Music Transition List\{DB1FA86B-18FF-4D5D-BDB5-45A54EE729D7}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\FirstVisible_10_1" Type="string" Value="{4C96B38B-3DB4-40C7-91C9-665510E38993}"/>
 				<Property Name="ProjectExplorer\FirstVisible_11_1" Type="string" Value="{23EC2DE3-3ED8-4B82-AC99-92E25F2E4C6B}"/>
