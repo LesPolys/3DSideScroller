@@ -99,7 +99,7 @@ public class Hatch : MonoBehaviour {
                     StartCoroutine(ShutHatch());
                 }
 
-                hatchShut = true;
+               
                 //play the move right sign
                 break;
 
@@ -184,6 +184,11 @@ public class Hatch : MonoBehaviour {
         waveSpawned = true;
         isSpawning = false;
          yield return null;
+    }
+
+    public void ShutTheHatch()
+    {
+        hatchShut = true;
     }
 
 }
