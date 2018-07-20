@@ -2217,7 +2217,7 @@ MonoBehaviour:
   blockMoveSpeed: 5
   knockUpForce: 100
   IsDead: 0
-  health: 5
+  health: 20
   Gravity: -30
   _groundChecker: {fileID: 4058516008326462}
   GroundDistance: 0.2
@@ -2231,11 +2231,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8192
   lightAttackPos: {fileID: 4003636345923016}
-  lightAttackRange: 1.2
+  lightAttackRange: 2.4
   heavyAttackPos: {fileID: 4348948246803282}
-  heavyAttackRange: 1.2
+  heavyAttackRange: 2
   specialAttackPos: {fileID: 4400136375841524}
-  specialAttackRange: 4.03
+  specialAttackRange: 6
   tier1Time: 0.1
   tier2Time: 0.75
   tier3Time: 1

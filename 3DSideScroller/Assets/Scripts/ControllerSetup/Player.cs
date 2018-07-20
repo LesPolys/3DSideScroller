@@ -405,6 +405,7 @@ public class Player : MonoBehaviour
             if (Actions.B.WasPressed && !attacking)
             {
                 charging = true;
+                chargeTime = 0.0f;
                 //print("Tier3 Spent");
                 isTier3 = false;
                 // print("Tier2 Spent");
@@ -604,7 +605,7 @@ public class Player : MonoBehaviour
                 else if (!_isGrounded && enemiesToDamage[i].GetComponent<Enemy>().canBeJuggled)
                 {
 
-                    enemiesToDamage[i].GetComponent<Enemy>().AirDamage(damage, transform.position, knockupAttackStunTime, knockupAttackStunHeight);
+                    //enemiesToDamage[i].GetComponent<Enemy>().AirDamage(damage, transform.position, knockupAttackStunTime, knockupAttackStunHeight);
                 }
                 else
                 {

@@ -84,7 +84,7 @@ public class PlayerManager : MonoBehaviour
 
 						if (ThereIsNoReadyUpUsingJoystick( inputDevice )) //make a copy of this function that checks against the UI element list rather than the player
 						{
-							print("CONTROLLER ADDED");
+							//print("CONTROLLER ADDED");
 							readyUpSpots[readyAssignedIndex].Actions = PlayerActions.CreateWithJoystickBindings();
 							readyUpSpots[readyAssignedIndex].Actions.Device = inputDevice;
 							readyAssignedIndex++;
@@ -95,7 +95,7 @@ public class PlayerManager : MonoBehaviour
 					{
 						if (ThereIsNoReadyUpUsingKeyboard()) //make a copy of this function that checks against the UI element list rather than the player
 						{
-							print("KEYBOARD ADDED");
+							//print("KEYBOARD ADDED");
 							readyUpSpots[readyAssignedIndex].Actions = PlayerActions.CreateWithKeyboardBindings();
 							readyUpSpots[readyAssignedIndex].Actions = keyboardListener;
 							readyAssignedIndex++;

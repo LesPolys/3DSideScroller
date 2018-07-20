@@ -19,7 +19,7 @@ public class PlayersEntered : MonoBehaviour {
 
     public void OnTriggerExit(Collider other)
     {
-        print("Leave");
+       // print("Leave");
         if (other.gameObject.tag == "Player")
         {
             hatch.ChangePlayerCount(-1);

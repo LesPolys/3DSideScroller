@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Hatch : MonoBehaviour {
 
+
+    public int[] waves;
+    private int currentWaveIndex;
+
     public PlayerManager playermanager;
 
     public GameObject leftDoor;
     public GameObject rightDoor;
     public GameObject combatArea;
+
+    //public Animator hatchAnimator;
 
     List<Slicer> enemies = new List<Slicer>();
     public int maxNumEnemiesKilled;
@@ -23,6 +29,14 @@ public class Hatch : MonoBehaviour {
 
     bool isSpawning = false;
     bool waveSpawned = false;
+
+    bool hatchOpen = false;
+
+    bool pauseingbetweenwaves = false;
+   
+    public ParticleSystem gateParticle;
+
+
 
     //public Image rightArrow;
 
@@ -40,19 +54,33 @@ public class Hatch : MonoBehaviour {
             case HATCHSTATES.LEFTDOORCLOSED:
                 leftDoor.SetActive(true);
                 
-                if (!isSpawning && !waveSpawned )
-                {
-
-                    StartCoroutine(SpawnSlicers(5));
-                }
+              
 
                 //print(enemies.Count);
 
                 if (!isSpawning && waveSpawned)
                 {
-                    CheckForEnemiesKilled();
+                    if (CheckForEnemiesKilled())
+                    {
+                        if (currentWaveIndex >= waves.Length-1)
+                        {
+                            currentHatchState = HATCHSTATES.ALLENEMIESDEAD;
+                        }
+                        else
+                        {
+                                currentWaveIndex++;
+                            waveSpawned = false;
+                        }
+                    
+                    }
                 }
-              
+
+                if (!isSpawning && !waveSpawned)
+                {
+                    enemies.Clear();
+                    StartCoroutine(SpawnSlicers(waves[currentWaveIndex]));
+                }
+
 
                 break;
             case HATCHSTATES.ALLENEMIESDEAD:
@@ -64,7 +92,11 @@ public class Hatch : MonoBehaviour {
                 break;
             case HATCHSTATES.HATCHCLOSED:
                 //turn off right door
-                rightDoor.SetActive(false);
+                if (hatchOpen == false)
+                {
+                    StartCoroutine(ShutHatch());
+                }
+        
                 //play the move right sign
                 break;
 
@@ -72,6 +104,21 @@ public class Hatch : MonoBehaviour {
         
 
 
+    }
+
+
+    IEnumerator ShutHatch()
+    {
+        hatchOpen = true;
+        
+
+        gateParticle.Stop();
+        yield return new WaitForSeconds(3);
+        rightDoor.SetActive(false);
+
+
+
+        yield return null;
     }
 
     void CheckForPlayersInArea()
@@ -85,18 +132,18 @@ public class Hatch : MonoBehaviour {
 
     }
 
-    void CheckForEnemiesKilled()
+    bool CheckForEnemiesKilled()
     {
         //if players have killed x number of enemies
         foreach (Slicer slicer in enemies)
         {
             if (slicer.currState != Slicer.SlicerStates.DEAD)
             {
-                return ;
+                return false ;
             }
         }
 
-        currentHatchState = HATCHSTATES.ALLENEMIESDEAD;
+        return true;
     }
 
     void HasHatchBeenClosed()
@@ -127,7 +174,7 @@ public class Hatch : MonoBehaviour {
             GameObject newSlicer = Instantiate(slicerPrefab, spawnPos.position, Quaternion.identity);
             enemies.Add(newSlicer.GetComponent<Slicer>());
             yield return new WaitForSeconds(1.5f);
-            print(currentNumSlicers);
+           // print(currentNumSlicers);
         }
 
         waveSpawned = true;

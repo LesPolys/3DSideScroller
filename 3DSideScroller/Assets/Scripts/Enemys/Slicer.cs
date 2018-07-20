@@ -231,6 +231,7 @@ public class Slicer : Enemy {
                
                     isDead = true;
                     currState = SlicerStates.DEAD;
+                    break;
                 }
 
                 if (stunTime <= 0)
@@ -264,12 +265,13 @@ public class Slicer : Enemy {
                 if (knockBackCounter <= 0)
                 {
                     //do normal things
+                    //useGravity = true;
+                    _controller.detectCollisions = false;
                 }
                 else
                 {
-
-
-
+                    //useGravity = false;
+                    _controller.detectCollisions = false;
                     _controller.Move(knockBackDir * Time.deltaTime);
                     knockBackCounter -= Time.deltaTime;
                 }
@@ -289,12 +291,15 @@ public class Slicer : Enemy {
 
                     isDead = true;
                     currState = SlicerStates.DEAD;
+                    break;
                 }
 
+                /*
                 if (!knockUpCoRun)
                 {
+                    StopAllCoroutines();
                     StartCoroutine(KnockUpCountDown());
-                }
+                }*/
 
                 currState = SlicerStates.HIT;
                 
@@ -439,7 +444,7 @@ public class Slicer : Enemy {
     {
       
 
-        if(Random.Range(0,100) < cowardicePerc)
+        if(Random.Range(1,100) < cowardicePerc)
         {
             PickNewRandomPoint();
             currState = SlicerStates.FLEE;
@@ -488,7 +493,7 @@ public class Slicer : Enemy {
            
             if (health <= startingHealth * dangerHealthPerc)
             {
-                TestOfCourage();
+                //TestOfCourage();
             }
         }
 
@@ -502,16 +507,20 @@ public class Slicer : Enemy {
             //print("KNOCKUPHIT");
          
             canBeJuggled = false;
-            useGravity = false;
+            //useGravity = false;
 
+            KnockBack(hitPos);
+            knockUpstunTime = stunLenth;
+            kuHeight = knockUpHeight;
+            currState = SlicerStates.HIT;
 
-
+            /*
             if (knockUpHeight == 0)
             {
-                print("KNockupbonus");
+               // print("KNockupbonus");
                 knockUpstunTime += stunLenth;
-                // kuHeight = knockUpHeight;
-                KnockBack(hitPos);
+                 kuHeight = knockUpHeight;
+               KnockBack(hitPos);
                 currState = SlicerStates.KNOCKUP;
             }
             else
@@ -519,8 +528,8 @@ public class Slicer : Enemy {
                 knockUpstunTime = stunLenth;
                 kuHeight = knockUpHeight;
                 currState = SlicerStates.KNOCKUP;
-            }
-         
+            }*/
+
 
 
             //PlayMode.StopAll
@@ -596,6 +605,7 @@ public class Slicer : Enemy {
         Vector3 hitDirection = transform.position - hitter;
         hitDirection = hitDirection.normalized;
         knockBackDir = hitDirection * knockBackForce;
+        knockBackDir.y = knockBackForce;
 
     }
 

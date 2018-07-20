@@ -1,0 +1,88 @@
+Event	ID	Name			Wwise Object Path	Notes
+	187604770	Oozer_Footsteps			\Default Work Unit\Enemies\Oozer\Oozer_Footsteps	
+	269686156	Player_FootstepsRight			\Default Work Unit\Player\Footsteps\Player_FootstepsRight	
+	276150034	Vex_ChantWindup			\Default Work Unit\Enemies\Vex\Vex_ChantWindup	
+	366571179	Oozer_HitPlayer			\Default Work Unit\Enemies\Oozer\Oozer_HitPlayer	
+	534424066	Vex_ChantFinish			\Default Work Unit\Enemies\Vex\Vex_ChantFinish	
+	751122599	Player_LightAttack			\Default Work Unit\Player\Attack\Player_LightAttack	
+	837528085	Oozer_HitGround			\Default Work Unit\Enemies\Oozer\Oozer_HitGround	
+	853366470	Player_MagicAttack			\Default Work Unit\Player\Attack\Player_MagicAttack	
+	951923072	Tanker_ShockWave			\Default Work Unit\Enemies\Tanker\Tanker_ShockWave	
+	1010055213	Enemy_Hit			\Default Work Unit\Enemies\Shared\Enemy_Hit	
+	1205999388	Enemy_Death			\Default Work Unit\Enemies\Shared\Enemy_Death	
+	1244594577	Level_Music			\Default Work Unit\Music\Level_Music	
+	1256435816	Player_PowerPickup			\Default Work Unit\Player\Pickup\Player_PowerPickup	
+	1305133589	Player_Jump			\Default Work Unit\Player\Jump\Player_Jump	
+	1432716332	Game_Over			\Default Work Unit\UI\Game State\Game_Over	
+	1833036836	Player_Block			\Default Work Unit\Player\Hit\Player_Block	
+	2072673020	Menu_Scroll			\Default Work Unit\UI\Menu\Menu_Scroll	
+	2074073782	Player_Damage			\Default Work Unit\Player\Hit\Player_Damage	
+	2170009975	Menu_Pause			\Default Work Unit\UI\Menu\Menu_Pause	
+	2298066109	Slicer_Footsteps			\Default Work Unit\Enemies\Slicer\Slicer_Footsteps	
+	2563941659	Tanker_Swipe			\Default Work Unit\Enemies\Tanker\Tanker_Swipe	
+	2631240918	Character_Ready			\Default Work Unit\UI\Character Select\Character_Ready	
+	2651857535	MrSpines_Attack			\Default Work Unit\Enemies\MrSpines\MrSpines_Attack	
+	2882779481	Player_FootstepsLeft			\Default Work Unit\Player\Footsteps\Player_FootstepsLeft	
+	2904509426	Vex_Footsteps			\Default Work Unit\Enemies\Vex\Vex_Footsteps	
+	3136346432	MrSpines_Footsteps			\Default Work Unit\Enemies\MrSpines\MrSpines_Footsteps	
+	3180909377	Menu_Cancel			\Default Work Unit\UI\Menu\Menu_Cancel	
+	3194464978	Oozer_Shoot			\Default Work Unit\Enemies\Oozer\Oozer_Shoot	
+	3218375656	Game_Win			\Default Work Unit\UI\Game State\Game_Win	
+	3281482822	Tanker_Hook			\Default Work Unit\Enemies\Tanker\Tanker_Hook	
+	3429288859	Menu_Accept			\Default Work Unit\UI\Menu\Menu_Accept	
+	3542219815	Player_HealthPickup			\Default Work Unit\Player\Pickup\Player_HealthPickup	
+	3661249112	Tanker_Footsteps			\Default Work Unit\Enemies\Tanker\Tanker_Footsteps	
+	3816881566	Player_HeavyAttack			\Default Work Unit\Player\Attack\Player_HeavyAttack	
+	4209431020	Slicer_Attack			\Default Work Unit\Enemies\Slicer\Slicer_Attack	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	542909	Tanker_Footsteps_04	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Tanker_Footsteps_04_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Tanker\Tanker_Footsteps\Tanker_Footsteps_04		60608
+	18194984	Player_HeavyAttack_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_HeavyAttack_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_HeavyAttack\Player_HeavyAttack_03		133184
+	42664974	Enemy_Death_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Enemy_Death_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Shared\Enemy_Death\Enemy_Death_03		168000
+	62236274	Slicer_Footsteps_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Slicer_Footsteps_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Slicer\Slicer_Footsteps\Slicer_Footsteps_01		49216
+	70792518	Tanker_Footsteps_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Tanker_Footsteps_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Tanker\Tanker_Footsteps\Tanker_Footsteps_01		104000
+	75773141	Player_Jump_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Jump_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Jump\Player_Jump\Player_Jump_01		52032
+	90691482	Enemy_Hit_04	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Enemy_Hit_04_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Shared\Enemy_Hit\Enemy_Hit_04		77888
+	123445036	Player_FootstepsRight_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_FootstepsRight_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Player_FootstepsRight\Player_FootstepsRight_03		23104
+	147565251	Tanker_Footsteps_05	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Tanker_Footsteps_05_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Tanker\Tanker_Footsteps\Tanker_Footsteps_05		84288
+	162363131	Slicer_Footsteps_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Slicer_Footsteps_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Slicer\Slicer_Footsteps\Slicer_Footsteps_03		58176
+	173472038	Slicer_Attack_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Slicer_Attack_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Slicer\Slicer_Attack\Slicer_Attack_02		85056
+	195939589	Enemy_Hit_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Enemy_Hit_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Shared\Enemy_Hit\Enemy_Hit_02		67712
+	225566854	Enemy_Hit_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Enemy_Hit_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Shared\Enemy_Hit\Enemy_Hit_03		115776
+	273365161	Player_Block_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Block_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hit\Player_Block\Player_Block_01		79936
+	278658358	Slicer_Footsteps_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Slicer_Footsteps_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Slicer\Slicer_Footsteps\Slicer_Footsteps_02		46912
+	297194671	Slicer_Footsteps_04	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Slicer_Footsteps_04_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Slicer\Slicer_Footsteps\Slicer_Footsteps_04		67136
+	313078258	Player_HeavyAttack_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_HeavyAttack_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_HeavyAttack\Player_HeavyAttack_01		124480
+	376012603	Tanker_Footsteps_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Tanker_Footsteps_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Tanker\Tanker_Footsteps\Tanker_Footsteps_02		68800
+	396509472	Player_HeavyAttack_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_HeavyAttack_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_HeavyAttack\Player_HeavyAttack_02		132160
+	397474051	Icepick_July 5_V1	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Icepick_July 5_V1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Icepick_July 5_V1\Icepick_July 5_V1		9777664
+	397909767	Mellchunk_Mix_V1	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Mellchunk_Mix_V1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level_Music\Mellchunk_Mix_V1		28658276
+	418150509	Player_LightAttack_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_LightAttack_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_LightAttack\Player_LightAttack_01		76224
+	469836435	Player_FootstepsRight_04	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_FootstepsRight_04_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Player_FootstepsRight\Player_FootstepsRight_04		14464
+	527821656	Player_Damage_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Damage_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hit\Player_Damage\Player_Damage_02		87104
+	534963747	Player_Jump_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Jump_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Jump\Player_Jump\Player_Jump_02		46528
+	553139650	Player_FootstepsLeft_04	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_FootstepsLeft_04_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Player_FootstepsLeft\Player_FootstepsLeft_04		17472
+	567230979	Player_FootstepsRight_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_FootstepsRight_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Player_FootstepsRight\Player_FootstepsRight_01		17472
+	597642798	Enemy_Death_05	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Enemy_Death_05_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Shared\Enemy_Death\Enemy_Death_05		196672
+	636492112	Player_FootstepsLeft_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_FootstepsLeft_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Player_FootstepsLeft\Player_FootstepsLeft_02		21568
+	680167162	Enemy_Hit_05	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Enemy_Hit_05_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Shared\Enemy_Hit\Enemy_Hit_05		87104
+	689879146	Player_FootstepsRight_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_FootstepsRight_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Player_FootstepsRight\Player_FootstepsRight_02		19520
+	689902386	Enemy_Hit_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Enemy_Hit_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Shared\Enemy_Hit\Enemy_Hit_01		77632
+	742938008	Tanker_Footsteps_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Tanker_Footsteps_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Tanker\Tanker_Footsteps\Tanker_Footsteps_03		85696
+	762934067	Player_FootstepsLeft_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_FootstepsLeft_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Player_FootstepsLeft\Player_FootstepsLeft_01		21824
+	767889989	Player_Block_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Block_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hit\Player_Block\Player_Block_02		97344
+	768975541	Slicer_Attack_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Slicer_Attack_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Slicer\Slicer_Attack\Slicer_Attack_01		84544
+	783400296	Slicer_Footsteps_06	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Slicer_Footsteps_06_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Slicer\Slicer_Footsteps\Slicer_Footsteps_06		53568
+	796772036	Enemy_Death_04	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Enemy_Death_04_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Shared\Enemy_Death\Enemy_Death_04		143424
+	800335321	Player_LightAttack_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_LightAttack_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_LightAttack\Player_LightAttack_02		80960
+	892917799	Slicer_Footsteps_05	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Slicer_Footsteps_05_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Slicer\Slicer_Footsteps\Slicer_Footsteps_05		45888
+	907919031	Slicer_Attack_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Slicer_Attack_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Slicer\Slicer_Attack\Slicer_Attack_03		91712
+	918671085	Player_Damage_01	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_Damage_01_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hit\Player_Damage\Player_Damage_01		90176
+	920939829	Player_LightAttack_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_LightAttack_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Attack\Player_LightAttack\Player_LightAttack_03		79936
+	969934758	Enemy_Death_02	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Enemy_Death_02_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Shared\Enemy_Death\Enemy_Death_02		163904
+	999720611	Player_FootstepsLeft_03	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Player_FootstepsLeft_03_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Player_FootstepsLeft\Player_FootstepsLeft_03		19264
+	1059291202	Enemy_Death_01_V2	F:\Documents\Project 99\3DSideScroller\3DSideScroller\3DSideScroller_WwiseProject\.cache\Windows\SFX\Enemy_Death_01_V2_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Shared\Enemy_Death\Enemy_Death_01_V2		145216
+
